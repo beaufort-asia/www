@@ -4,6 +4,7 @@ import { Layout } from '../components/Layout';
 import { graphql } from "gatsby";
 import { RichText } from "prismic-reactjs";
 import { linkResolver } from "../utils/linkResolver";
+import { MyQuery } from './__generated__/MyQuery';
 
 export const query = graphql`
   query MyQuery {
@@ -11,7 +12,7 @@ export const query = graphql`
       allHomes {
         edges {
           node {
-            title
+            title,
           }
         }
       }
@@ -20,23 +21,13 @@ export const query = graphql`
 `;
 
 interface IndexProps {
-  data: {
-    prismic: {
-      allHomes: {
-        edges: {
-          node: {
-            title: any;
-          }
-        }[]
-      }
-    }
-  }
+  data: MyQuery
 }
 
 const Index: React.SFC<IndexProps> = ({ data }) => {
 
-  console.log(data);
-  const doc = data.prismic.allHomes.edges[0].node;
+  const doc = data.prismic.allHomes.edges?.[0]?.node;
+
   if (!doc) return null;
 
   const [date, setDate] = useState<string | null>(null);

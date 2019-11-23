@@ -29,6 +29,12 @@ module.exports = {
         //   component: require.resolve('./src/templates/page.js'),
         // }],
       }
-    }
+    },
+    {
+      resolve: "gatsby-plugin-codegen",
+      options: {
+        localSchemaFile: ".graphql-schema.json"
+      }
+    },
   ]
 };

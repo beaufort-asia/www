@@ -27,3 +27,12 @@ You can deploy your new Gatsby project, along with [Serverless Functions](https:
 ```shell
 $ now
 ```
+
+### Refreshing Prismic's graphql schema.
+
+The GraphQL schema from Prismic is cached in .cache, the following steps are needed to get the latest graphql schema:
+
+1. Something must be published for the change to be updated in Prismic's GraphQL Schema (deletes won't update it)
+2. Delete the `.cache` folder and then run `now dev` again.
+
+This sucks, but at the moment is the only way.

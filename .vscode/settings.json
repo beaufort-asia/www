@@ -1,0 +1,10 @@
+{
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "files.exclude": {
+        "**/__generated__": true,
+        "**/.cache": true,
+        "**/.graphql-schema.json": true,
+        "**/public": true,
+        "**/apollo.config.js": true
+    }
+}
