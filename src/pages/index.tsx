@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import '../styles/index.css';
 
 function Index() {
-  const [date, setDate] = useState(null);
+  const [date, setDate] = useState<string | null>(null);
   useEffect(() => {
     async function getDate() {
       const res = await fetch('/api/date');
@@ -15,7 +15,7 @@ function Index() {
   return (
     <main>
       <Helmet>
-        <title>Gatsby + Node.js (TypeScript) API</title>
+        <title>Gatsby and Node.js (TypeScript) API</title>
       </Helmet>
       <h1>Gatsby + Node.js (TypeScript) API</h1>
       <h2>
