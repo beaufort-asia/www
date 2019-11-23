@@ -1,13 +1,44 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
 import '../styles/index.css';
-import styled from "@emotion/styled";
+import { Layout } from '../components/Layout';
+import { graphql } from "gatsby";
+import { RichText } from "prismic-reactjs";
+import { linkResolver } from "../utils/linkResolver";
 
-const Box = styled.div`
-  border: 1px solid red;
-`
+export const query = graphql`
+  query MyQuery {
+    prismic {
+      allHomes {
+        edges {
+          node {
+            title
+          }
+        }
+      }
+    }
+  }
+`;
 
-function Index() {
+interface IndexProps {
+  data: {
+    prismic: {
+      allHomes: {
+        edges: {
+          node: {
+            title: any;
+          }
+        }[]
+      }
+    }
+  }
+}
+
+const Index: React.SFC<IndexProps> = ({ data }) => {
+
+  console.log(data);
+  const doc = data.prismic.allHomes.edges[0].node;
+  if (!doc) return null;
+
   const [date, setDate] = useState<string | null>(null);
   useEffect(() => {
     async function getDate() {
@@ -18,45 +49,14 @@ function Index() {
     getDate();
   }, []);
   return (
-    <main>
-      <Helmet>
-        <title>Gatsby and Node.js (TypeScript) API</title>
-      </Helmet>
-      <h1>Gatsby + Node.js (TypeScript) API</h1>
-      <Box>
-        <h2>
-          Deployed with{' '}
-          <a
-            href="https://zeit.co/docs"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            ZEIT Now
-        </a>
-          !
-      </h2>
-      </Box>
-      <p>
-        <a
-          href="https://github.com/zeit/now-examples/blob/master/gatsby-functions"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          This project
-        </a>{' '}
-        is a <a href="https://www.gatsbyjs.org/">Gatsby</a> app with two
-        directories, <code>/src</code> for static content and <code>/api</code>{' '}
-        which contains a serverless{' '}
-        <a href="https://nodejs.org/en/">Node.js (TypeScript)</a> function. See{' '}
-        <a href="/api/date">
-          <code>api/date</code> for the Date API with Node.js (TypeScript)
-        </a>
-        .
-      </p>
-      <br />
+    <Layout>
+      <RichText
+        render={doc.title}
+        linkResolver={linkResolver}
+      />
       <h2>The date according to Node.js (TypeScript) is:</h2>
       <p>{date ? date : 'Loading date...'}</p>
-    </main>
+    </Layout>
   );
 }
 
