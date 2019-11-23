@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import '../styles/index.css';
+import styled from "@emotion/styled";
+
+const Box = styled.div`
+  border: 1px solid red;
+`
 
 function Index() {
   const [date, setDate] = useState<string | null>(null);
@@ -18,17 +23,19 @@ function Index() {
         <title>Gatsby and Node.js (TypeScript) API</title>
       </Helmet>
       <h1>Gatsby + Node.js (TypeScript) API</h1>
-      <h2>
-        Deployed with{' '}
-        <a
-          href="https://zeit.co/docs"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          ZEIT Now
+      <Box>
+        <h2>
+          Deployed with{' '}
+          <a
+            href="https://zeit.co/docs"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            ZEIT Now
         </a>
-        !
+          !
       </h2>
+      </Box>
       <p>
         <a
           href="https://github.com/zeit/now-examples/blob/master/gatsby-functions"
