@@ -1,0 +1,524 @@
+<?xml version="1.0" ?>
+<SiteContent xmlns="http://tempuri.org/ContentModel.xsd"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <HeaderLeft>
+        <Title/>
+        <HtmlPart>&lt;p&gt;&lt;a href="http://tinypic.com?ref=2enq7gj" target="_blank"&gt;&lt;img src="http://i62.tinypic.com/2enq7gj.png" border="0" alt="Image and video hosting by TinyPic"&gt;&lt;/a&gt;&lt;p&gt;</HtmlPart>
+    </HeaderLeft>
+    <HeaderRight>
+        <Title/>
+        <HtmlPart>&lt;p&gt; &lt;a href="http://tinypic.com?ref=2nhjfya" target="_blank"&gt;&lt;img src="http://i61.tinypic.com/2nhjfya.png" border="0" alt="Image and video hosting by TinyPic"&gt;&lt;/a&gt; &lt;p&gt;</HtmlPart>
+    </HeaderRight>
+    <Section>
+        <Title>News</Title>
+        <Article>
+            <Date>2019-06-14</Date>
+            <Title>NEW SONG</Title>
+            <Image>
+                <ThumbFileName>ThatFeelingTiny.png</ThumbFileName>
+            </Image>
+            <Html>&lt;p&gt; New single 'THAT FEELING (feat. Meli Sul) is here! Listen on &lt;a href="https://open.spotify.com/track/5w9wLTuK9PP7aAAnasnGMd"&gt;Spotify&lt;/a&gt; or &lt;a href="https://soundcloud.com/beaufort/that-feeling-feat-meli-sul"&gt;Soundcloud&lt;/a&gt; or &lt;a href="https://www.youtube.com/watch?v=oEj8XP0IjAk"&gt;Youtube&lt;/a&gt;. Buy on &lt;a href="https://beaufort.bandcamp.com/track/that-feeling-feat-meli-sul"&gt; Bandcamp&lt;/a&gt; or download on &lt;a href="https://www.triplejunearthed.com/artist/beaufort"&gt;Triple J Unearthed&lt;/a&gt;.&lt;p&gt; </Html>
+        </Article>
+        <Article>
+            <Date>2019-06-07</Date>
+            <Title>THAT FEELING - coming soon</Title>
+            <Html>&lt;p&gt; New single 'That Feeling' is landing 10 June. Over a decade in the making, with four vocalists across three continents.&lt;/a&gt; </Html>
+        </Article>
+        <Article>
+            <Date>2017-11-21</Date>
+            <Title>GROWING UP GRACEFULLY</Title>
+            <Html>&lt;p&gt; Recently directed a music video for ABC's comedy TV show, 'Growing Up Gracefully'. &lt;p&gt; Join over 7 million people and watch it &lt;a href="https://www.facebook.com/ABCiview/videos/10159044024925543/"&gt;here!&lt;/a&gt; </Html>
+            <Image>
+                <ThumbFileName>Gug.png</ThumbFileName>
+            </Image>
+        </Article>
+        <Article>
+            <Date>2016-08-17</Date>
+            <Title>NEW GAME</Title>
+            <Image>
+                <ThumbFileName>AmbulanceWeb.png</ThumbFileName>
+            </Image>
+            <Html>&lt;p&gt; The first graphical Beaufort game is here - "The Ledge" - a ten-minute thriller available for download on &lt;a href="https://beaufort.itch.io/theledge"&gt;itch.io&lt;/a&gt;, &lt;a href="http://gamejolt.com/games/the-ledge/179649"&gt;gamejolt&lt;/a&gt;, or &lt;a href="https://rpgmaker.net/games/9093/"&gt;rpgmaker.net&lt;/a&gt;. Right now it's only available for Mac and PC, but stay tuned for Android and iOS support! </Html>
+        </Article>
+        <Article>
+            <Date>2016-02-17</Date>
+            <Archived>true</Archived>
+            <Title>NEW YEAR</Title>
+            <Image>
+                <ThumbFileName>NewTigerWeb.png</ThumbFileName>
+            </Image>
+            <Html>&lt;p&gt; Beaufort have spent the last several months developing new projects and scripts. We're currently in Tokyo setting up the next thing so stay tuned! &lt;p&gt; </Html>
+        </Article>
+        <Article>
+            <Date>2015-10-08</Date>
+            <Archived>true</Archived>
+            <Title>STORIES</Title>
+            <Html>&lt;p&gt; The short story 'Durian Durian' from the collection 'Emergency? Yeah!' is now online and interactive! Made as an experiment with Twine, the pathways are pretty basic, but the first-person perspective suits the format:
+
+ &lt;a href="http://duriandurian.neocities.org"&gt;http://duriandurian.neocities.org/&lt;/a&gt;
+
+&lt;p&gt;
+</Html>
+        </Article>
+        <Article>
+            <Date>2015-07-20</Date>
+            <Archived>true</Archived>
+            <Title>CINEMA</Title>
+            <Html>&lt;p&gt; ARIADNE is now online! &lt;p&gt; ----------------&gt; &lt;p&gt; The script for Ariadne was originally simply a sequence in a feature script, but when it was cut during development, it seemed self-contained enough to shoot on its own. We shot it over a day in January. Thanks again to all cast and crew. &lt;p&gt; </Html>
+        </Article>
+        <Article>
+            <Date>2015-07-17</Date>
+            <Archived>true</Archived>
+            <Title>CINEMA</Title>
+            <Html>&lt;p&gt; ARIADNE, our new short film, will premiere online Monday morning 20th July, Sydney-time. &lt;p&gt; &lt;p&gt; In other news, James McFay has been writing a film with Patrick Hughes (Red Hill, Expendables 3). &lt;p&gt; &lt;p&gt; There will be an interactive story from Emergency? Yeah! coming soon. &lt;p&gt;</Html>
+        </Article>
+        <Article>
+            <Date>2014-12-22</Date>
+            <Archived>true</Archived>
+            <Title>MUSIC</Title>
+            <Html>&lt;p&gt; We have a new album available - it's called 'Cinehearts' and is a collection of instrumentals made over the last five years for films, including Tiger, Burning Hearts and Ariadne. The album is free to stream on &lt;a href="https://soundcloud.com/beaufort/sets/cinehearts"&gt;Soundcloud&lt;/A&gt; and available to buy on &lt;a href="https://beaufort.bandcamp.com/"&gt;Bandcamp&lt;/A&gt;. &lt;p&gt; </Html>
+            <Image>
+                <ThumbFileName>CineheartsMinibanner.png</ThumbFileName>
+            </Image>
+        </Article>
+        <Article>
+            <Date>2014-07-03</Date>
+            <Archived>true
+</Archived>
+            <Subtitle>MUSIC</Subtitle>
+            <Html>&lt;p&gt; A little piece of music made for a interview with Lucy Kaldor to promote 'Tiger' in 2010. </Html>
+            <Soundcloud>
+                <SoundId>157064768</SoundId>
+                <SoundType>tracks</SoundType>
+                <ColorHex>FFB870</ColorHex>
+                <Height>60</Height>
+            </Soundcloud>
+        </Article>
+        <Article>
+            <Date>2014-06-19</Date>
+            <Archived>true</Archived>
+            <Subtitle>INTERVIEWS</Subtitle>
+            <Html>&lt;p&gt; We have a new Soundcloud playlist called 'Interviews' and so far it features three tracks: &lt;p&gt;&lt;p&gt;1) A 3-hour interview with Oscar-winning Quebecoise director Denys Arcand, conducted by James McFay.&lt;p&gt; </Html>
+            <Image>
+                <ThumbFileName>Denys.png</ThumbFileName>
+            </Image>
+            <Soundcloud>
+                <SoundId>152611541</SoundId>
+                <SoundType>tracks</SoundType>
+                <ColorHex>401b20</ColorHex>
+                <Height>60</Height>
+            </Soundcloud>
+            <Html>&lt;p&gt;&lt;p&gt;2) An interview about Burning Hearts with James McFay by Raymond Kouguell  for Voice Of America, 'Focus on Asia'.</Html>
+            <Image>
+                <ThumbFileName>BurningHeartsLogoBW2.png</ThumbFileName>
+            </Image>
+            <Soundcloud>
+                <SoundId>152466343</SoundId>
+                <SoundType>tracks</SoundType>
+                <ColorHex>4c591c </ColorHex>
+                <Height>60</Height>
+            </Soundcloud>
+            <Html>&lt;p&gt;&lt;p&gt;3) The Indonesian translation of the Voice Of America interview, for the Indonesian service.</Html>
+            <Soundcloud>
+                <SoundId>152466341</SoundId>
+                <SoundType>tracks</SoundType>
+                <ColorHex>ab5b60</ColorHex>
+                <Height>60</Height>
+            </Soundcloud>
+        </Article>
+        <Article>
+            <Date>2014-05-21</Date>
+            <Archived>true</Archived>
+            <Html>&lt;p&gt;A teaser trailer for our new short Ariadne is now online.&lt;/p&gt; &lt;/p&gt;                     </Html>
+            <Vimeo>
+                <VimeoId>95950086</VimeoId>
+                <ThumbFileName>AriadneTeaserNEW.png</ThumbFileName>
+            </Vimeo>
+        </Article>
+        <Article>
+            <Date>2013-12-30</Date>
+            <Archived>true</Archived>
+            <Html>           &lt;p&gt;FINAL NEWS FOR 2013: &lt;/p&gt; &lt;/p&gt;
+
+1. Beaufort has completed a new short 'Ariadne' which is currently in post.&lt;/p&gt; &lt;/p&gt;
+
+
+
+                 </Html>
+            <Html>&lt;/p&gt; 2. 'Burning Hearts' won the International Grand Prix at the Curtocircuito Film Festival in Spain. &lt;/p&gt;&lt;/p&gt;</Html>
+            <Image>
+                <ThumbFileName>Curto.png</ThumbFileName>
+            </Image>
+            <Html>&lt;/p&gt; 3. The Emergency? Yeah! code was cracked by Andrew Johnston of NSW. He won the $100 Amazon Voucher. &lt;/p&gt;&lt;/p&gt;  4. Beaufort will cease all music production in 2014. &lt;/p&gt;  &lt;/p&gt;</Html>
+        </Article>
+        <Article>
+            <Date>2013-08-28</Date>
+            <Archived>true</Archived>
+            <Html>           &lt;p&gt;'Emergency? Yeah!' is in it's 3rd Edition, and to celebrate, Beaufort is giving away a $100 Amazon voucher! The first person to successfully crack the code and decipher the secret section at the back of the book will win a $100 Amazon Voucher. &lt;p&gt;HOW TO ENTER: Buy the book &lt;a href="http://www.amazon.com/Emergency-Yeah-James-McFay/dp/1482035804"&gt;here&lt;/a&gt; and follow the instructions in the hidden code!&lt;/p&gt;                   </Html>
+            <Image>
+                <ThumbFileName>Amazon50.png</ThumbFileName>
+            </Image>
+        </Article>
+        <Article>
+            <Date>2013-08-04</Date>
+            <Archived>true</Archived>
+            <Html>&lt;p&gt; 'Emergency? Yeah!' won best in Fiction at the &lt;a href="http://www.woollahra.nsw.gov.au/library/events/local_writers_word_festival"&gt;Woollahra Local Writer's Word Festival&lt;/a&gt;in Sydney, Australia.&lt;p&gt; The competition is for self-published books. &lt;p&gt;</Html>
+        </Article>
+        <Article>
+            <Date>2012-04-01</Date>
+            <Archived>true</Archived>
+            <Html><![CDATA[
+          <p>All the major works by Beaufort are now, very definitely, available to download in one torrent file. Download it <a href="~/Content/Downloads/Beaufort_Beginners_Pack.torrent">here</a> or learn more below in the <a href="#Download">Download</a> section.</p>          
+        ]]></Html>
+            <Image>
+                <ThumbFileName>BeginnersPackNEWS.png</ThumbFileName>
+            </Image>
+        </Article>
+        <Article>
+            <Date>2012-12-14</Date>
+            <Archived>true</Archived>
+            <Html><![CDATA[         
+        <p>We have a new piece of music online.<p>
+        <p>It’s called ‘Money On You’.</p>
+        ]]></Html>
+            <Soundcloud>
+                <SoundId>80752773</SoundId>
+                <SoundType>tracks</SoundType>
+                <ColorHex>204171</ColorHex>
+                <Height>166</Height>
+            </Soundcloud>
+        </Article>
+        <Article>
+            <Date>2013-02-10</Date>
+            <Archived>true</Archived>
+            <Html><![CDATA[
+        <p>Our short film ‘Burning Hearts’ is now online.</p>
+        ]]></Html>
+            <Vimeo>
+                <VimeoId>36539560</VimeoId>
+                <ThumbFileName>burning-hearts-icon.png</ThumbFileName>
+            </Vimeo>
+            <Html><![CDATA[
+<p>Watch it above or in the cinema section to the right.</p>
+<p>Here is a review from the recent Glasgow Film Festival:</p>
+
+<p>“If I’m to be sincere, from all the different fiction works included in the international sections, there was only one which truly amazed me. I won’t discuss some of the flaws of the work, as that leads nowhere.</p>
+
+<p>Burning hearts is one of those works made with naturalness and courage, a kamikaze short film, with no prejudice in making a U turn in its plot just to take us into a vortex of blood and kung fu.
+The Japanese short film by James Mcfay is just like that; you take it or leave it.</p>
+
+<p>I’ll take it.” </p>
+
+<p>-Jorge Rivero</p>
+        ]]></Html>
+        </Article>
+        <Article>
+            <Date>2012-12-14</Date>
+            <Archived>true</Archived>
+            <Highlight>true</Highlight>
+            <Subtitle>Burning Hearts in Scotland</Subtitle>
+            <Html>
+        
+        &lt;p&gt;Burning Hearts has just been confirmed as screening in the Glasgow Film Festival, 2013.&lt;/p&gt;
+        &lt;p&gt;CCA Cinema Thurs 7th Feb at 21.15 and Sat 9th Feb at 11.15.&lt;/p&gt;
+        &lt;p&gt;More info to come.&lt;/p&gt;
+        
+      </Html>
+        </Article>
+        <Article>
+            <Date>2012-10-04</Date>
+            <Archived>true</Archived>
+            <Subtitle>Petit Homme</Subtitle>
+            <Html>
+        
+        &lt;p&gt;While the book of short stories is at the printers being proofed, I thought it was time to upload an old short film - the first from Beaufort. For some reason it has never been shown to the public in any form until now. Shot in 2006, by a bunch of Power Rangers actors and crew on their weekend off.&lt;/p&gt;
+      
+      </Html>
+            <Vimeo>
+                <VimeoId>55510184</VimeoId>
+                <ThumbFileName>PetithommeNEW.png</ThumbFileName>
+            </Vimeo>
+            <Html>
+        
+        &lt;p&gt;CREDITS &lt;a href="#"&gt;here&lt;/a&gt;.&lt;/p&gt;
+      </Html>
+        </Article>
+        <Article>
+            <Date>2012-10-04</Date>
+            <Archived>true</Archived>
+            <Subtitle>Cambridge Film Festival + Other Stuff</Subtitle>
+            <Html>
+        
+        &lt;p&gt;Burning Hearts will make it’s UK premiere this month at the Cambridge Film Festival:&lt;/p&gt;
+        
+      </Html>
+            <Link>
+                <LinkUrl>http://www.cambridgefilmfestival.org.uk/films/2012/burning-hearts</LinkUrl>
+            </Link>
+            <Html>
+        
+        &lt;p&gt;For those asking, all screenings of Burning Hearts prior to June 2012 were of a work-in-progress (unfinished grade, soundtrack and FX).&lt;/p&gt;
+        &lt;p&gt;Burning Hearts, in its finished state, made its world premiere in June at the Sydney Film Festival. Cambridge will be its third proper screening after the Cannes short film corner.&lt;/p&gt;
+        &lt;p&gt;In other news, Beaufort’s book of short stories is almost finished (only six years in the making!) and some new music will be on our Soundcloud player before the year is out.&lt;/p&gt;
+        
+      </Html>
+        </Article>
+    </Section>
+    <Section>
+        <Title>Cinema</Title>
+        <Article>
+            <Title>ARIADNE</Title>
+            <Html>&lt;p&gt;Drama, 9mins.&lt;p&gt;</Html>
+            <Vimeo>
+                <VimeoId>87821264</VimeoId>
+                <ThumbFileName>AriadneWeb.png</ThumbFileName>
+            </Vimeo>
+            <Subtitle/>
+        </Article>
+        <Article>
+            <Title>BURNING HEARTS</Title>
+            <Html>&lt;p&gt;Action, 15mins.&lt;p&gt;</Html>
+            <Vimeo>
+                <VimeoId>36539560</VimeoId>
+                <ThumbFileName>BurningHeartsNEW.png</ThumbFileName>
+            </Vimeo>
+        </Article>
+        <Article>
+            <Title>TIGER</Title>
+            <Html>&lt;p&gt;Drama, 57mins.&lt;p&gt;</Html>
+            <Vimeo>
+                <VimeoId>57765423</VimeoId>
+                <ThumbFileName>TigerFilmPicNEW.png</ThumbFileName>
+            </Vimeo>
+        </Article>
+        <Article>
+            <Title>PETIT HOMME</Title>
+            <Html>&lt;p&gt;Absurd, 11mins.&lt;p&gt;</Html>
+            <Vimeo>
+                <VimeoId>55510184</VimeoId>
+                <ThumbFileName>petit-homme.gif</ThumbFileName>
+            </Vimeo>
+        </Article>
+    </Section>
+    <Section>
+        <Title>Games</Title>
+        <Article>
+            <Title>THE LEDGE</Title>
+            <Html>Computer game.&lt;p&gt;</Html>
+            <Image>
+                <ThumbFileName>LedgeWeb.png</ThumbFileName>
+            </Image>
+            <Html>Avert a suicide in this tiny thriller for PC &amp; Mac. &lt;p&gt;&lt;p&gt;Featuring custom synth soundtrack and two endings. &lt;p&gt;&lt;p&gt; &lt;a href="https://beaufort.itch.io/theledge"&gt;DOWNLOAD HERE&lt;/a&gt; &lt;p&gt;</Html>
+            <Html>&lt;p&gt;and watch the trailer below.&lt;p&gt;</Html>
+            <Vimeo>
+                <VimeoId>179135981</VimeoId>
+                <ThumbFileName>LedgeTrailer8bit.png</ThumbFileName>
+            </Vimeo>
+        </Article>
+        <Article>
+            <Title>DURIAN DURIAN</Title>
+            <Html>Text-based online game.&lt;p&gt;</Html>
+            <Image>
+                <ThumbFileName>DurianDurianTwine.png</ThumbFileName>
+            </Image>
+            <Html>REINVENT YOURSELF. CHANGE YOUR LIFE. Play the short, interactive mystery  &lt;a href="http://duriandurian.neocities.org"&gt;Durian Durian&lt;/a&gt; online as a 90s-style text adventure. &lt;p&gt; </Html>
+        </Article>
+    </Section>
+    <Section>
+        <Title>Music</Title>
+        <Article>
+            <Title>THAT FEELING</Title>
+            <Html>&lt;p&gt;Single.&lt;p&gt;</Html>
+            <Image>
+                <ThumbFileName>ThatFeeling.png</ThumbFileName>
+                <FullFileName>ThatFeelingLarge.png</FullFileName>
+            </Image>
+            <Html>Twelve years in the making, with four vocalists across three continents, 'THAT FEELING feat. Meli Sul' is the latest single from Beaufort. &lt;p&gt; &lt;p&gt; Listen on &lt;a href="https://open.spotify.com/track/5w9wLTuK9PP7aAAnasnGMd"&gt;Spotify&lt;/a&gt; or Soundcloud below or buy on &lt;a href="https://beaufort.bandcamp.com/"&gt;Bandcamp&lt;/A&gt;. &lt;p&gt; </Html>
+            <Soundcloud>
+                <SoundId>800821089</SoundId>
+                <SoundType>playlists</SoundType>
+                <ColorHex>#008080</ColorHex>
+                <Height>166</Height>
+            </Soundcloud>
+        </Article>
+        <Article>
+            <Title>Cinehearts</Title>
+            <Html>&lt;p&gt;Album, 12 tracks.&lt;p&gt;</Html>
+            <Image>
+                <ThumbFileName>CineheartsSquare.png</ThumbFileName>
+            </Image>
+            <Html>A collection of instrumentals from film and video works of the last five years. Buy the collection here on &lt;a href="https://beaufort.bandcamp.com/"&gt;Bandcamp&lt;/A&gt; or stream below. &lt;p&gt;</Html>
+            <Soundcloud>
+                <SoundId>63808398</SoundId>
+                <SoundType>playlists</SoundType>
+                <ColorHex>#e51616</ColorHex>
+                <Height>450</Height>
+            </Soundcloud>
+        </Article>
+        <Article>
+            <Subtitle>2006-2013</Subtitle>
+            <Html>&lt;p&gt;Album, 10 tracks.&lt;p&gt; </Html>
+            <Image>
+                <ThumbFileName>MusicpicNEW.png</ThumbFileName>
+            </Image>
+            <Html>         &lt;p&gt;Recordings, mostly stuff made for film soundtracks. Everything can be downloaded with the button on the player.&lt;/p&gt;      </Html>
+            <Soundcloud>
+                <SoundId>875715</SoundId>
+                <SoundType>playlists</SoundType>
+                <ColorHex>204171</ColorHex>
+                <Height>450</Height>
+            </Soundcloud>
+        </Article>
+        <Article>
+            <Link>
+                <ThumbFileName>UnearthedLogo.png</ThumbFileName>
+                <LinkUrl>http://www.triplejunearthed.com/Beaufort</LinkUrl>
+            </Link>
+        </Article>
+    </Section>
+    <Section>
+        <Title>Stories</Title>
+        <Article>
+            <Title>EMERGENCY? YEAH!</Title>
+            <Html>&lt;p&gt;Book, 202 pages. </Html>
+            <Image>
+                <ThumbFileName>3D-Book-(store)2.png</ThumbFileName>
+            </Image>
+            <Html>&lt;p&gt;A collection of 23 short stories, mostly about love, with many unexpected twists. Buy it below on Amazon." </Html>
+            <Link>
+                <ThumbFileName>AmazonBuyButton.png</ThumbFileName>
+                <LinkUrl>http://www.amazon.com/Emergency-Yeah-James-McFay/dp/1482035804</LinkUrl>
+            </Link>
+            <Html><![CDATA[        <p>Read a sample story first - "Halcyon Days: Part 1" here on <a href="Content/Downloads/Halcyon_Days_Part_1_-_James_McFay.pdf">PDF</a>, <a href="Content/Downloads/Halcyon_Days_Part_1_-_James McFay.epub">Ebook</a> or <a href="Content/Downloads/Halcyon_Days_Part_1_-_James_McFay.mobi">MOBI</a>.</p>
+        ]]></Html>
+            <Image>
+                <ThumbFileName>BeaufortBooks.png</ThumbFileName>
+            </Image>
+        </Article>
+        <Article>
+            <Title>Secret Section</Title>
+            <Html><![CDATA[        <p>To solve the Secret Section in Emergency? Yeah! here's a clue - cross-match the Key at the back with the design on the cover. You’ll see there are 26 objects that relate to the letters of the alphabet. This one below is Z.</p>        
+        ]]></Html>
+            <Image>
+                <ThumbFileName>Zebra.png</ThumbFileName>
+            </Image>
+        </Article>
+    </Section>
+    <Section>
+        <Title>Videos</Title>
+        <Article>
+            <Title>Music Videos</Title>
+            <Html>'She Don't Care' - Beaufort&lt;p&gt;</Html>
+            <Vimeo>
+                <VimeoId>13197816</VimeoId>
+                <ThumbFileName>she-dont-care.png</ThumbFileName>
+            </Vimeo>
+            <Html>'Girl Crazy Go!' - Muscles&lt;p&gt;</Html>
+            <Vimeo>
+                <VimeoId>16664736</VimeoId>
+                <ThumbFileName>girl-crazy-go-thumb.png</ThumbFileName>
+            </Vimeo>
+            <Image>
+                <LinkText>STORYBOARDS</LinkText>
+                <FullFileName>gcg-storyboard-web.png</FullFileName>
+            </Image>
+            <Link>
+                <LinkText>INTERVIEW</LinkText>
+                <LinkUrl>http://www.musicvideotheory.com/2011/01/director-beaufort.html</LinkUrl>
+            </Link>
+            <Html>'Fun Punch' - Bag Raiders&lt;p&gt;</Html>
+            <Vimeo>
+                <VimeoId>9638476</VimeoId>
+                <ThumbFileName>fun-punch-thumb.png</ThumbFileName>
+            </Vimeo>
+            <Html>'Island' - Pomomofo&lt;p&gt;</Html>
+            <Vimeo>
+                <VimeoId>12728199</VimeoId>
+                <ThumbFileName>pomo-thumb.png</ThumbFileName>
+            </Vimeo>
+        </Article>
+        <Article>
+            <Title>MODEL INTERVIEWS TO PROMOTE TIGER</Title>
+            <Html>Tiago Lobo&lt;p&gt;</Html>
+            <Vimeo>
+                <VimeoId>10383546</VimeoId>
+                <ThumbFileName>tiago.png</ThumbFileName>
+            </Vimeo>
+            <Html>&lt;p&gt; View the rest on &lt;a href="http://vimeo.com/beaufortribbons"&gt;Vimeo.&lt;/a&gt; &lt;p&gt;</Html>
+        </Article>
+    </Section>
+    <Section>
+        <Title>Miscellany</Title>
+        <Article>
+            <Html>Unproduced treatment. &lt;p&gt;</Html>
+            <Link>
+                <ThumbFileName>cast-away.png</ThumbFileName>
+                <LinkUrl>http://beaufort.asia/Content/Downloads/CastAway_BeaufortTreatment.pdf</LinkUrl>
+            </Link>
+        </Article>
+        <Article>
+            <Html>The original 360 Fashion mobile magazine used to promote Tiger. &lt;p&gt;</Html>
+            <Link>
+                <ThumbFileName>tiger-mobile-magazine.png</ThumbFileName>
+                <LinkUrl>http://mobilemags.mobi/11103</LinkUrl>
+            </Link>
+        </Article>
+    </Section>
+    <Section>
+        <Title>Friends</Title>
+        <Article>
+            <Image>
+                <ThumbFileName>friends.png</ThumbFileName>
+            </Image>
+            <Html><![CDATA[        
+        <a href="http://adnauseamthefilm.com/">Ad Nauseam</a>
+
+         <br/> <a href="http://backseatrebel.com/">Back Seat Rebel</a>
+
+         <br/><a href="http://www.bos-stunts.com/">BOS Action Studio</a>
+ <br/>
+        <a href="http://unijapan.org/">UNI-JAPAN</a>
+ <br/>
+       <a href="http://pff.jp/">Pia Film Festival</a>
+
+     <br/>
+        <a href="http://mightandwonder.com/">Might & Wonder</a>
+ <br/>
+ <a href="http://www.facebook.com/TheNiceGuysRule?ref=hl">The Nice Guys</a>
+
+      <br/>
+        <a href="http://rorystewart.bandcamp.com/">Rory Stewart</a>
+
+  <br/>
+        <a href="http://anina.net/">Anina.net</a> 
+
+
+<a href="http://www.360fashion.net/">360 Fashion</a>
+
+<br/>
+        <a href="http://www.thefestivalists.com/">The Festivalists</a>
+
+      <br/>
+        <a href="http://musclesmusic.tumblr.com/">Muscles</a>
+
+       <br/>
+        <a href="http://www.seanlotman.com/">Sean Lotman</a>  
+   
+<br/><a href="http://www.team-evviva.com/">Team/Evviva</a>  
+
+<br/><a href="http://www.beachhousefilms.com.au/">Beach House Films</a>     
+
+<p>
+        ]]></Html>
+        </Article>
+    </Section>
+    <Section>
+        <Title>About</Title>
+        <Article>
+            <Image>
+                <ThumbFileName>james.png</ThumbFileName>
+            </Image>
+            <Html/>
+        </Article>
+    </Section>
+</SiteContent>

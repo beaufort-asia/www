@@ -6,5 +6,6 @@
         "**/.graphql-schema.json": true,
         "**/public": true,
         "**/apollo.config.js": true
-    }
+    },
+    "god.tsconfig": "./tsconfig.json"
 }

@@ -107,16 +107,6 @@
                   "defaultValue": null
                 },
                 {
-                  "name": "context",
-                  "description": "",
-                  "type": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "SitePageContextFilterInput",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
                   "name": "pluginCreator",
                   "description": "",
                   "type": {
@@ -1057,27 +1047,6 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "SitePageContextFilterInput",
-          "description": null,
-          "fields": null,
-          "inputFields": [
-            {
-              "name": "prismicPreviewPage",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "BooleanQueryOperatorInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            }
-          ],
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "INPUT_OBJECT",
           "name": "SitePluginFilterInput",
           "description": null,
           "fields": null,
@@ -1719,18 +1688,6 @@
               "deprecationReason": null
             },
             {
-              "name": "context",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "SitePageContext",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "pluginCreator",
               "description": null,
               "args": [],
@@ -2001,29 +1958,6 @@
                   "name": "String",
                   "ofType": null
                 }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "SitePageContext",
-          "description": null,
-          "fields": [
-            {
-              "name": "prismicPreviewPage",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null
@@ -2707,16 +2641,6 @@
               "defaultValue": null
             },
             {
-              "name": "context",
-              "description": "",
-              "type": {
-                "kind": "INPUT_OBJECT",
-                "name": "SitePageContextFilterInput",
-                "ofType": null
-              },
-              "defaultValue": null
-            },
-            {
               "name": "pluginCreator",
               "description": "",
               "type": {
@@ -3340,12 +3264,6 @@
             },
             {
               "name": "isCreatedByStatefulCreatePages",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "context___prismicPreviewPage",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -9114,7 +9032,7 @@
         {
           "kind": "SCALAR",
           "name": "PRISMIC_Long",
-          "description": "The `Long` scalar type represents non-fractional signed whole numeric values. Long can represent values between -(2^63) and 2^63 - 1.",
+          "description": "The `Long` scalar type represents non-fractional signed whole numeric values.\nLong can represent values between -(2^63) and 2^63 - 1.",
           "fields": null,
           "inputFields": null,
           "interfaces": null,

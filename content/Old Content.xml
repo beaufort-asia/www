@@ -1,0 +1,487 @@
+<?xml version="1.0" ?>
+<SiteContent xmlns="http://tempuri.org/ContentModel.xsd"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <HeaderLeft>
+        <Title>About</Title>
+        <HtmlPart>
+      
+      &lt;p&gt;Beaufort is a collaboration between James McFay and friends.&lt;/p&gt;
+      &lt;p&gt;&lt;a href="#About"&gt;MORE&lt;/a&gt;&lt;/p&gt;
+    </HtmlPart>
+    </HeaderLeft>
+    <HeaderRight>
+        <Title>Download</Title>
+        <HtmlPart>
+      
+      &lt;p&gt;Download all the major works by Beaufort for free in the &lt;a href="~/Content/Downloads/Beaufort_Beginners_Pack.torrent"&gt;BEAUFORT BEGINNER'S PACK&lt;/a&gt; torrent.&lt;/p&gt;
+    
+    </HtmlPart>
+    </HeaderRight>
+    <Section>
+        <Title>News</Title>
+        <Article>
+            <Date>2012-04-01</Date>
+            <Html><![CDATA[
+          <p>All the major works by Beaufort are now, very definitely, available to download in one torrent file. Download it <a href="~/Content/Downloads/Beaufort_Beginners_Pack.torrent">here</a> or learn more below in the <a href="#Download">Download</a> section.</p>          
+        ]]></Html>
+            <Image>
+                <ThumbFileName>BeginnersPackNEWS.png</ThumbFileName>
+            </Image>
+        </Article>
+        <Article>
+            <Date>2012-12-14</Date>
+            <Html><![CDATA[         
+        <p>We have a new piece of music online.<p>
+        <p>It’s called ‘Money On You’.</p>
+        ]]></Html>
+            <Soundcloud>
+                <SoundId>80752773</SoundId>
+                <SoundType>tracks</SoundType>
+                <ColorHex>204171</ColorHex>
+                <Height>166</Height>
+            </Soundcloud>
+        </Article>
+        <Article>
+            <Date>2013-02-10</Date>
+            <Html><![CDATA[
+        <p>Our short film ‘Burning Hearts’ is now online.</p>
+        ]]></Html>
+            <Vimeo>
+                <VimeoId>36539560</VimeoId>
+                <ThumbFileName>burning-hearts-icon.png</ThumbFileName>
+            </Vimeo>
+            <Html><![CDATA[
+<p>Watch it above or in the cinema section to the right.</p>
+<p>Here is a review from the recent Glasgow Film Festival:</p>
+
+<p>“If I’m to be sincere, from all the different fiction works included in the international sections, there was only one which truly amazed me. I won’t discuss some of the flaws of the work, as that leads nowhere.</p>
+
+<p>Burning hearts is one of those works made with naturalness and courage, a kamikaze short film, with no prejudice in making a U turn in its plot just to take us into a vortex of blood and kung fu.
+The Japanese short film by James Mcfay is just like that; you take it or leave it.</p>
+
+<p>I’ll take it.” </p>
+
+<p>-Jorge Rivero</p>
+        ]]></Html>
+        </Article>
+        <Article>
+            <Date>2012-12-14</Date>
+            <Archived>true</Archived>
+            <Highlight>true</Highlight>
+            <Subtitle>Burning Hearts in Scotland</Subtitle>
+            <Html>
+        
+        &lt;p&gt;Burning Hearts has just been confirmed as screening in the Glasgow Film Festival, 2013.&lt;/p&gt;
+        &lt;p&gt;CCA Cinema Thurs 7th Feb at 21.15 and Sat 9th Feb at 11.15.&lt;/p&gt;
+        &lt;p&gt;More info to come.&lt;/p&gt;
+        
+      </Html>
+        </Article>
+        <Article>
+            <Date>2012-10-04</Date>
+            <Archived>true</Archived>
+            <Subtitle>Petit Homme</Subtitle>
+            <Html>
+        
+        &lt;p&gt;While the book of short stories is at the printers being proofed, I thought it was time to upload an old short film - the first from Beaufort. For some reason it has never been shown to the public in any form until now. Shot in 2006, by a bunch of Power Rangers actors and crew on their weekend off.&lt;/p&gt;
+      
+      </Html>
+            <Vimeo>
+                <VimeoId>55510184</VimeoId>
+                <ThumbFileName>PetithommeNEW.png</ThumbFileName>
+            </Vimeo>
+            <Html>
+        
+        &lt;p&gt;CREDITS &lt;a href="#"&gt;here&lt;/a&gt;.&lt;/p&gt;
+      </Html>
+        </Article>
+        <Article>
+            <Date>2012-10-04</Date>
+            <Archived>true</Archived>
+            <Subtitle>Cambridge Film Festival + Other Stuff</Subtitle>
+            <Html>
+        
+        &lt;p&gt;Burning Hearts will make it’s UK premiere this month at the Cambridge Film Festival:&lt;/p&gt;
+        
+      </Html>
+            <Link>
+                <LinkUrl>http://www.cambridgefilmfestival.org.uk/films/2012/burning-hearts</LinkUrl>
+            </Link>
+            <Html>
+        
+        &lt;p&gt;For those asking, all screenings of Burning Hearts prior to June 2012 were of a work-in-progress (unfinished grade, soundtrack and FX).&lt;/p&gt;
+        &lt;p&gt;Burning Hearts, in its finished state, made its world premiere in June at the Sydney Film Festival. Cambridge will be its third proper screening after the Cannes short film corner.&lt;/p&gt;
+        &lt;p&gt;In other news, Beaufort’s book of short stories is almost finished (only six years in the making!) and some new music will be on our Soundcloud player before the year is out.&lt;/p&gt;
+        
+      </Html>
+        </Article>
+    </Section>
+    <Section>
+        <Title>Cinema</Title>
+        <Article>
+            <Title>Short Film</Title>
+            <Image>
+                <ThumbFileName>short-film-awards.png</ThumbFileName>
+            </Image>
+            <Vimeo>
+                <VimeoId>36539560</VimeoId>
+                <ThumbFileName>BurningHeartsNEW.png</ThumbFileName>
+            </Vimeo>
+            <Subtitle>Burning Hearts</Subtitle>
+            <Html>
+        
+        &lt;p&gt;Genre-busting short made in Tokyo for the Japanese government. &lt;br/&gt; RED 4K. 15mins.&lt;/p&gt;
+        &lt;p&gt;Watch above or download in &lt;a href="http://vimeo.com/36539560"&gt;HD&lt;/a&gt;.&lt;/p&gt;
+        
+      </Html>
+        </Article>
+        <Article>
+            <Title>Mid-Length Feature</Title>
+            <Vimeo>
+                <VimeoId>57765423</VimeoId>
+                <ThumbFileName>tiger.png</ThumbFileName>
+            </Vimeo>
+            <Html>
+        
+        &lt;p&gt;A story of heartbreak between two models in Tokyo. 16mm. 60 mins.&lt;/p&gt;
+        &lt;p&gt;Vimeo Staff Pick; Winner of Special Jury Prize at 32nd Pia Film Festival.&lt;/p&gt;
+        
+      </Html>
+            <Image>
+                <ThumbFileName>pia-film-festival.png</ThumbFileName>
+            </Image>
+            <Html>
+        
+        &lt;p&gt;Watch it above on YouTube or buy the 2-disc DVD set &lt;a href="http://beaufort.bigcartel.com/product/tiger-2-disc-dvd-cd-set"&gt;HERE&lt;/a&gt;.&lt;/p&gt;        
+        
+      </Html>
+            <Image>
+                <ThumbFileName>tiger-box-set.png</ThumbFileName>
+            </Image>
+            <Html>
+        
+        &lt;p&gt;The Tiger DVD set includes rehearsal footage, deleted scenes, stills gallery, a separate soundtrack inspired by the film and a mobile version with Japanese subs.&lt;/p&gt;        
+        
+      </Html>
+        </Article>
+        <Article>
+            <Title>Short Film</Title>
+            <Vimeo>
+                <VimeoId>55510184</VimeoId>
+                <ThumbFileName>petit-homme.gif</ThumbFileName>
+            </Vimeo>
+            <Subtitle>Petit Homme</Subtitle>
+            <Html>
+        
+          &lt;p&gt;An experimental short film made by a bunch of Power Ranger actors and crew on their weekend off. HD. 11mins.&lt;/p&gt;
+          &lt;p&gt;Watch above or download in &lt;a href="http://vimeo.com/55510184"&gt;HD&lt;/a&gt;.&lt;/p&gt;
+        
+      </Html>
+        </Article>
+    </Section>
+    <Section>
+        <Title>Music</Title>
+        <Article>
+            <Subtitle>2006-2013</Subtitle>
+            <Image>
+                <ThumbFileName>MusicpicNEW.png</ThumbFileName>
+            </Image>
+            <Soundcloud>
+                <SoundId>875715</SoundId>
+                <SoundType>playlists</SoundType>
+                <ColorHex>204171</ColorHex>
+                <Height>450</Height>
+            </Soundcloud>
+            <Html><![CDATA[
+        Or if you feel like helping support our next project, buy it all <a href="https://soundcloud.com/beaufort">here</a>.
+        ]]></Html>
+        </Article>
+        <Article>
+            <Title>Music Video</Title>
+            <Vimeo>
+                <VimeoId>13197816</VimeoId>
+                <ThumbFileName>she-dont-care.png</ThumbFileName>
+            </Vimeo>
+            <Subtitle>SHE DON’T CARE</Subtitle>
+            <Html><![CDATA[
+        <p>From the extra soundtrack included in the Tiger DVD set, with video created from Tiger outtakes.</p>
+        <p>Download in <a href="http://vimeo.com/13197816#at=0">HD</a></p>
+        ]]></Html>
+        </Article>
+        <Article>
+            <Html><![CDATA[
+        <p>Beaufort on <a href="http://www.triplejunearthed.com/Beaufort">Triple J Unearthed</a>.<p>
+        ]]></Html>
+            <Image>
+                <ThumbFileName>UnearthedLogo.png</ThumbFileName>
+            </Image>
+        </Article>
+    </Section>
+    <Section>
+        <Title>Stories</Title>
+        <Article>
+            <Image>
+                <ThumbFileName>3D-Book-(store).png</ThumbFileName>
+            </Image>
+            <Title>EMERGENCY? YEAH!</Title>
+            <Html><![CDATA[
+        <p>A book of 23 short stories, with addictive tales of romance, drama and adventure. WHEN WAS THE LAST TIME A BOOK MADE YOU FEEL THIS GOOD?</p>
+        <p>Support us and buy a physical or Kindle copy on <a href="http://www.amazon.com/Emergency-Yeah-James-McFay/dp/1482035804">Amazon</a> or directly from <a href="http://beaufort.bigcartel.com/product/emergency-yeah">Beaufort</a>.</p>
+        <p>Read a sample story first - Halcyon Days: Part 1 here on <a href="Content/Downloads/Halcyon_Days_Part_1_-_James_McFay.pdf">PDF</a>, <a href="Content/Downloads/Halcyon_Days_Part_1_-_James McFay.epub">Ebook</a> or <a href="Content/Downloads/Halcyon_Days_Part_1_-_James_McFay.mobi">MOBI</a>.</p>
+        ]]></Html>
+            <Image>
+                <ThumbFileName>BeaufortBooks.png</ThumbFileName>
+            </Image>
+        </Article>
+        <Article>
+            <Title>Secret Section</Title>
+            <Html><![CDATA[        
+        <p>Stuck on the Secret Section inside Emergency? Yeah!?</p>
+        <p>Here’s a clue - cross-match the Key at the back with the design on the cover. You’ll see there are 26 objects that relate to the letters of the alphabet. This one below is Z.</p>        
+        ]]></Html>
+            <Image>
+                <ThumbFileName>Zebra.png</ThumbFileName>
+            </Image>
+            <Html><![CDATA[
+        <p>If you’re still stuck, let us know on <a href="https://www.facebook.com/pages/Beaufort/164766124602">Facebook</a>.</p>
+        <p>Otherwise, keep trying to solve the mystery of Emergency? Yeah!</p>
+        ]]></Html>
+        </Article>
+    </Section>
+    <Section>
+        <Title>Videos</Title>
+        <Article>
+            <Title>Music Videos for Universal/Modular/Sony</Title>
+            <Vimeo>
+                <VimeoId>16664736</VimeoId>
+                <ThumbFileName>girl-crazy-go-thumb.png</ThumbFileName>
+            </Vimeo>
+            <Subtitle>GIRL CRAZY GO! - MUSCLES</Subtitle>
+            <Image>
+                <TextBefore>See</TextBefore>
+                <LinkText>STORYBOARDS</LinkText>
+                <FullFileName>gcg-storyboard-web.png</FullFileName>
+            </Image>
+            <Link>
+                <TextBefore>Read making-of</TextBefore>
+                <LinkText>INTERVIEW</LinkText>
+                <LinkUrl>http://www.musicvideotheory.com/2011/01/director-beaufort.html</LinkUrl>
+            </Link>
+            <Vimeo>
+                <VimeoId>9638476</VimeoId>
+                <ThumbFileName>fun-punch-thumb.png</ThumbFileName>
+            </Vimeo>
+            <Subtitle>BAG RAIDERS - FUN PUNCH</Subtitle>
+            <Vimeo>
+                <VimeoId>12728199</VimeoId>
+                <ThumbFileName>pomo-thumb.png</ThumbFileName>
+            </Vimeo>
+            <Subtitle>POMOMOFO - ISLAND</Subtitle>
+            <Link>
+                <TextBefore>Lead Singer Nikos' debut</TextBefore>
+                <LinkText>FEATURE</LinkText>
+                <LinkUrl>http://adnauseamthefilm.com/</LinkUrl>
+            </Link>
+        </Article>
+        <Article>
+            <Title>MODEL INTERVIEWS TO PROMOTE TIGER</Title>
+            <Vimeo>
+                <VimeoId>10108493</VimeoId>
+                <ThumbFileName>valeska.png</ThumbFileName>
+            </Vimeo>
+            <Html><![CDATA[<p>Valeska Mosich-Miller</p>]]></Html>
+            <Vimeo>
+                <VimeoId>11626047</VimeoId>
+                <ThumbFileName>anina.png</ThumbFileName>
+            </Vimeo>
+            <Html><![CDATA[<p>Anina.net</p>]]></Html>
+            <Vimeo>
+                <VimeoId>10383546</VimeoId>
+                <ThumbFileName>tiago.png</ThumbFileName>
+            </Vimeo>
+            <Html><![CDATA[<p>Tiago Lobo</p>]]></Html>
+            <Subtitle>More Model Interviews:</Subtitle>
+            <Vimeo>
+                <VimeoId>10077974</VimeoId>
+                <LinkText>Rebecca Victoria</LinkText>
+            </Vimeo>
+            <Vimeo>
+                <VimeoId>10997640</VimeoId>
+                <LinkText>Louise Wearn</LinkText>
+            </Vimeo>
+            <Vimeo>
+                <VimeoId>11294288</VimeoId>
+                <LinkText>Sophy Jones</LinkText>
+            </Vimeo>
+            <Vimeo>
+                <VimeoId>10710924</VimeoId>
+                <LinkText>Melise Williams</LinkText>
+            </Vimeo>
+            <Vimeo>
+                <VimeoId>10517718</VimeoId>
+                <LinkText>Lucy Kaldor</LinkText>
+            </Vimeo>
+        </Article>
+    </Section>
+    <Section>
+        <Title>Miscellany</Title>
+        <Article>
+            <Link>
+                <ThumbFileName>cast-away.png</ThumbFileName>
+                <LinkUrl>http://beaufort.asia/Content/Downloads/CastAway_BeaufortTreatment.pdf</LinkUrl>
+            </Link>
+        </Article>
+        <Article>
+            <Link>
+                <ThumbFileName>tiger-mobile-magazine.png</ThumbFileName>
+                <LinkUrl>http://mobilemags.mobi/11103</LinkUrl>
+            </Link>
+        </Article>
+    </Section>
+    <Section>
+        <Title>Friends</Title>
+        <Article>
+            <Image>
+                <ThumbFileName>friends.png</ThumbFileName>
+            </Image>
+            <Html><![CDATA[        
+        <p><a href="http://adnauseamthefilm.com/">Ad Nauseam</a></p>
+
+        <p><a href="http://www.bos-stunts.com/">BOS Action Studio</a></p>
+
+        <p><a href="http://unijapan.org/">UNI-JAPAN</a></p>
+
+        <p><a href="http://pff.jp/">Pia Film Festival</a></p>
+
+        <p><br/>
+        <a href="http://mightandwonder.com/">Might & Wonder</a></p>
+
+        <p><a href="http://www.facebook.com/TheNiceGuysRule?ref=hl">The Nice Guys</a></p>
+
+        <p><br/>
+        <a href="http://rorystewart.bandcamp.com/">Rory Stewart</a></p>
+
+        <p><br/>
+        <a href="http://anina.net/">Anina.net</a> 
+<p>
+
+<a href="http://www.360fashion.net/">360 Fashion</a></p>
+
+        <p><br/>
+        <a href="http://www.thefestivalists.com/">The Festivalists</a></p>
+
+        <p><br/>
+        <a href="http://musclesmusic.tumblr.com/">Muscles</a></p>
+
+        <p><br/>
+        <a href="http://www.seanlotman.com/">Sean Lotman</a></p>
+        
+        <p><br/>
+        <a href="http://nataliecantell.com/">Natalie Cantell</a></p
+
+        <p><br/><a href="http://www.team-evviva.com/">Team/Evviva</a></p>        
+        ]]></Html>
+        </Article>
+    </Section>
+    <Section>
+        <Title>Download</Title>
+        <Article>
+            <Image>
+                <ThumbFileName>BeaufortBeginnersPack.png</ThumbFileName>
+            </Image>
+            <Html><![CDATA[<p>If you have a torrent client, you can torrent the <a href="~/Content/Downloads/Beaufort_Beginners_Pack.torrent">Beaufort Beginner’s Pack</a>.</p>]]></Html>
+            <Image>
+                <ThumbFileName>download-here.png</ThumbFileName>
+            </Image>
+            <Html><![CDATA[
+        <p>It features all the major works from Beaufort. It's called the ‘Beginner's Pack' because everything's been made in a spirit of experimentation and learning.</p>
+<p>FILMS
+<ul>
+<li>Tiger</li>
+<li>Burning Hearts</li>
+<li>She Don't Care (music video)</li>
+</ul>
+</p>
+
+<p>STORIES
+<ul>
+<li>Emergency? Yeah!.pdf
+<li>Emergency? Yeah!.mobi
+<li>Emergency? Yeah!.epub
+</ul>
+</p>
+
+<p>MUSIC
+<ul>
+<li>She Don't Care (Tiger Version).mp3</li>
+<li>Kraken.mp3</li>
+<li>Money On You.mp3</li>
+<li>We Are Moving On.mp3</li>
+<li>Galliano '96.mp3</li>
+<li>Check Out.mp3</li>
+<li>I Don't Wanna Die.mp3</li>
+<li>Marathon.mp3</li>
+<li>Oh! Sister.mp3</li>
+<li>Fuck The Google.mp3</li>
+</ul>
+</p>
+
+<p>Mp3's are 320kbps<br/>
+Videos are 960x540, .MOV, 25fps, 16:9</p>
+
+<p>Get it from the <a href="http://thepiratebay.se/torrent/8305096">Piratebay</a> too. </p>
+
+<p>If you don't have a Torrent client, or would prefer to download pieces individually, the links are all over this page.</p>
+
+<p>MUSIC - the Soundcloud player has little ‘downwards arrow' icons.</p>
+
+<p>CINEMA and VIDEO - If you go to our Vimeo link at the bottom of the page, all the videos there include a download button. If you would like Tiger with all the features, buy a region-free copy on DVD to the right.</p>
+
+<p>STORIES - Links are above. If there's another format or eReader you would like us to make a conversion for, let us know at wearebeaufort@gmail.com.</p>
+        ]]></Html>
+            <Image>
+                <ThumbFileName>beginners-pack-logo.png</ThumbFileName>
+            </Image>
+        </Article>
+    </Section>
+    <Section>
+        <Title>About</Title>
+        <Article>
+            <Image>
+                <ThumbFileName>james.png</ThumbFileName>
+            </Image>
+            <Html><![CDATA[        
+        <p>Beaufort is the collective name for some of the projects initiated by James McFay. </p>
+        <p>The word comes from the most ridiculously French name I could think of when I was asked to DJ at a French House night in 2006.</p>
+        <p>I later used it for the music video Fun Punch in order to avoid legal action. 
+        <p>Nothing on this site could have been made without the collaborations of many people, so it made sense to do it under this umbrella name.</p>
+        ]]></Html>
+        </Article>
+    </Section>
+    <Section>
+        <Title>Store</Title>
+        <Article>
+            <Title>Emergency? Yeah!</Title>
+            <Link>
+                <ThumbFileName>3D-Book-(store).png</ThumbFileName>
+                <LinkUrl>http://beaufort.bigcartel.com/product/emergency-yeah</LinkUrl>
+            </Link>
+            <Title>Music 2006-2013</Title>
+            <Link>
+                <ThumbFileName>beaufort-music.png</ThumbFileName>
+                <LinkUrl>https://ganxy.com/i/26966/beaufort/demos-2006-2011</LinkUrl>
+            </Link>
+            <Title>Tiger DVD Set</Title>
+            <Link>
+                <ThumbFileName>TigerDVD(store).png</ThumbFileName>
+                <LinkUrl>http://beaufort.bigcartel.com/product/tiger-2-disc-dvd-cd-set</LinkUrl>
+            </Link>
+            <Title>Tiger T-Shirt</Title>
+            <Html><![CDATA[<p class="item-title" style="color: #db2d56;">SOLD OUT</p>]]></Html>
+            <Link>
+                <ThumbFileName>tiger-shirt.png</ThumbFileName>
+                <LinkUrl>http://beaufort.bigcartel.com/product/tiger-t-shirt</LinkUrl>
+            </Link>
+        </Article>
+    </Section>
+</SiteContent>
