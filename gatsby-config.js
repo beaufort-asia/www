@@ -36,5 +36,13 @@ module.exports = {
         localSchemaFile: ".graphql-schema.json"
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/content/IMAGES/`,
+        ignore: [`**/\.*`], // ignore files starting with a dot
+      },
+    },
   ]
 };
