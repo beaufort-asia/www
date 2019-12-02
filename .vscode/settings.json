@@ -1,7 +1,7 @@
 {
     "typescript.tsdk": "node_modules/typescript/lib",
     "files.exclude": {
-        "**/__generated__": true,
+        "**/__generated__": false,
         "**/.cache": true,
         "**/.graphql-schema.json": true,
         "**/public": true,

@@ -9762,6 +9762,16 @@
               "defaultValue": null
             },
             {
+              "name": "addTypename",
+              "description": "",
+              "type": {
+                "kind": "INPUT_OBJECT",
+                "name": "BooleanQueryOperatorInput",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
               "name": "path",
               "description": "",
               "type": {
@@ -10352,6 +10362,18 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "addTypename",
+              "description": null,
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -11415,6 +11437,12 @@
             },
             {
               "name": "pluginOptions___localSchemaFile",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "pluginOptions___addTypename",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null
@@ -13208,6 +13236,12 @@
             },
             {
               "name": "pluginCreator___pluginOptions___localSchemaFile",
+              "description": null,
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "pluginCreator___pluginOptions___addTypename",
               "description": null,
               "isDeprecated": false,
               "deprecationReason": null

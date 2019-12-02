@@ -4,36 +4,43 @@ import { Layout } from '../components/Layout';
 import { graphql } from "gatsby";
 import { RichText } from "prismic-reactjs";
 import { linkResolver } from "../utils/linkResolver";
-import { MyQuery } from './__generated__/MyQuery';
+import styled from '@emotion/styled';
+import {
+  HomeQuery
+} from './__generated__/HomeQuery';
 
 export const query = graphql`
-  query MyQuery {
+query HomeQuery {
   prismic {
     allHomes {
       edges {
         node {
+          homepageTitle
+          header_right_title
+          header_right_rich_text
+          header_left_title
+          header_left_rich_text
           column_1_sections {
             column_1_section {
-              _linkType
               ... on PRISMIC_Section {
-                section_title
                 _linkType
+                section_title,
                 section_articles {
                   section_article {
-                    _linkType
                     ... on PRISMIC_Article {
-                      articleDate
-                      highlight
-                      _meta {
-                        id
-                      }
-                      _linkType
+                      articleDate,
+                      highlight,
                       body {
                         ... on PRISMIC_ArticleBodyHtml {
                           type
-                          label
                           primary {
                             html_rich_text
+                          }
+                        },
+                        ... on PRISMIC_ArticleBodyImage {
+                          type
+                          primary {
+                            image_file
                           }
                         }
                       }
@@ -43,28 +50,81 @@ export const query = graphql`
               }
             }
           }
-          header_left_rich_text
-          header_left_title
-          header_right_rich_text
-          header_right_title
-          homepageTitle
         }
       }
     }
   }
 }
 
-`;
+`;;
+
+interface IHeaderProps {
+  home: any;
+}
+
+const Header: React.FC<IHeaderProps> = ({ home }) => {
+
+  return (
+    <div>
+
+    </div>
+  );
+};
+
+const Columns = styled.div``;
+
+interface IColumn {
+  sections: ISection[];
+}
+
+interface ISection {
+  title: string;
+  articles: IArticle[];
+}
+
+interface IArticle {
+  date: Date;
+  highlight: boolean;
+  body: [];
+}
+
+interface IHeader {
+  title: string;
+  body: [];
+}
 
 interface IndexProps {
-  data: MyQuery
+  data: HomeQuery;
 }
+
+const getSection = (section: any): ISection => ({
+  title: section.section_title,
+  articles: section.section_articles
+    .map(articles => articles.section_article)
+    .map(getArticle)
+})
+
+const getArticle = (article: any): IArticle => {
+  console.log(article);
+  return ({
+    date: new Date(),
+    highlight: false,
+    body: []
+  })
+}
+
+const getColumnSections = (home: any, column: number) => home[`column_${column}_sections`]
+  .map(sections => sections[`column_${column}_section`])
+  .map(getSection);
 
 const Index: React.SFC<IndexProps> = ({ data }) => {
 
-  const doc = data.prismic.allHomes.edges?.[0]?.node;
-  console.log(doc?.column_1_sections?.[0].column_1_section);
-  if (!doc) return null;
+  const home = data.prismic.allHomes.edges?.[0]?.node;
+
+  if (!home) return null;
+  console.log(home);
+
+  const column1Sections = getColumnSections(home, 1);
 
   const [date, setDate] = useState<string | null>(null);
   useEffect(() => {
@@ -77,10 +137,14 @@ const Index: React.SFC<IndexProps> = ({ data }) => {
   }, []);
   return (
     <Layout>
-      <RichText
-        render={doc.homepageTitle}
-        linkResolver={linkResolver}
-      />
+      <Header {...{ home }} />
+      <Columns>
+        {/* <Column />
+        <Column />
+        <Column />
+        <Column />
+        <Column /> */}
+      </Columns>
       <h2>The date according to Node.js (TypeScript) is:</h2>
       <p>{date ? date : 'Loading date...'}</p>
     </Layout>
