@@ -13,38 +13,31 @@ export const query = graphql`
 query HomeQuery {
   prismic {
     allHomes {
-      edges {
-        node {
-          homepageTitle
-          header_right_title
-          header_right_rich_text
-          header_left_title
-          header_left_rich_text
-          column_1_sections {
-            column_1_section {
-              ... on PRISMIC_Section {
-                _linkType
-                section_title,
-                section_articles {
-                  section_article {
-                    ... on PRISMIC_Article {
-                      articleDate,
-                      highlight,
-                      body {
-                        ... on PRISMIC_ArticleBodyHtml {
-                          type
-                          primary {
-                            html_rich_text
-                          }
-                        },
-                        ... on PRISMIC_ArticleBodyImage {
-                          type
-                          primary {
-                            image_file
-                          }
-                        }
-                      }
-                    }
+    edges {
+      node {
+        homepageTitle,
+        header_left_title,
+        header_left_rich_text,
+        header_right_title,
+        header_right_rich_text
+      }
+    }
+  }
+  allSections {
+    edges {
+      node {
+        section_title,
+        column,
+        section_articles {
+          section_article {
+            ... on PRISMIC_Article {
+              articleDate,
+              highlight,
+              body {
+                ... on PRISMIC_ArticleBodyHtml {
+                  type,
+                  primary {
+                    html_rich_text
                   }
                 }
               }
@@ -54,7 +47,9 @@ query HomeQuery {
       }
     }
   }
+  }
 }
+
 
 `;;
 
@@ -105,7 +100,7 @@ const getSection = (section: any): ISection => ({
 })
 
 const getArticle = (article: any): IArticle => {
-  console.log(article);
+
   return ({
     date: new Date(),
     highlight: false,
@@ -113,18 +108,18 @@ const getArticle = (article: any): IArticle => {
   })
 }
 
-const getColumnSections = (home: any, column: number) => home[`column_${column}_sections`]
-  .map(sections => sections[`column_${column}_section`])
-  .map(getSection);
+const getColumnSections = (data: HomeQuery, column: number) =>
+  data.prismic.allSections!.edges!.map(edge => edge!.node!)
+    .filter(section => section.column === column.toString())
+    .map(getSection);
 
 const Index: React.SFC<IndexProps> = ({ data }) => {
 
   const home = data.prismic.allHomes.edges?.[0]?.node;
 
   if (!home) return null;
-  console.log(home);
 
-  const column1Sections = getColumnSections(home, 1);
+  const column1Sections = getColumnSections(data, 1);
 
   const [date, setDate] = useState<string | null>(null);
   useEffect(() => {

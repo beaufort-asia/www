@@ -15751,106 +15751,6 @@
               "deprecationReason": null
             },
             {
-              "name": "column_1_sections",
-              "description": "",
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "PRISMIC_HomeColumn_1_sections",
-                    "ofType": null
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "column_2_sections",
-              "description": "",
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "PRISMIC_HomeColumn_2_sections",
-                    "ofType": null
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "column_3_sections",
-              "description": "",
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "PRISMIC_HomeColumn_3_sections",
-                    "ofType": null
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "column_4_sections",
-              "description": "",
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "PRISMIC_HomeColumn_4_sections",
-                    "ofType": null
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "column_5_sections",
-              "description": "",
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "PRISMIC_HomeColumn_5_sections",
-                    "ofType": null
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "_meta",
               "description": "",
               "args": [],
@@ -15956,121 +15856,6 @@
           "fields": null,
           "inputFields": null,
           "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "PRISMIC_HomeColumn_1_sections",
-          "description": "",
-          "fields": [
-            {
-              "name": "column_1_section",
-              "description": "",
-              "args": [],
-              "type": {
-                "kind": "INTERFACE",
-                "name": "PRISMIC__Linkable",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "PRISMIC_HomeColumn_2_sections",
-          "description": "",
-          "fields": [
-            {
-              "name": "column_2_section",
-              "description": "",
-              "args": [],
-              "type": {
-                "kind": "INTERFACE",
-                "name": "PRISMIC__Linkable",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "PRISMIC_HomeColumn_3_sections",
-          "description": "",
-          "fields": [
-            {
-              "name": "column_3_section",
-              "description": "",
-              "args": [],
-              "type": {
-                "kind": "INTERFACE",
-                "name": "PRISMIC__Linkable",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "PRISMIC_HomeColumn_4_sections",
-          "description": "",
-          "fields": [
-            {
-              "name": "column_4_section",
-              "description": "",
-              "args": [],
-              "type": {
-                "kind": "INTERFACE",
-                "name": "PRISMIC__Linkable",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "PRISMIC_HomeColumn_5_sections",
-          "description": "",
-          "fields": [
-            {
-              "name": "column_5_section",
-              "description": "",
-              "args": [],
-              "type": {
-                "kind": "INTERFACE",
-                "name": "PRISMIC__Linkable",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
           "enumValues": null,
           "possibleTypes": null
         },
@@ -17174,6 +16959,18 @@
               "description": "",
               "isDeprecated": false,
               "deprecationReason": null
+            },
+            {
+              "name": "column_ASC",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "column_DESC",
+              "description": "",
+              "isDeprecated": false,
+              "deprecationReason": null
             }
           ],
           "possibleTypes": null
@@ -17187,6 +16984,26 @@
             {
               "name": "section_title_fulltext",
               "description": "section_title",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "column",
+              "description": "",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
+            },
+            {
+              "name": "column_fulltext",
+              "description": "",
               "type": {
                 "kind": "SCALAR",
                 "name": "String",
@@ -17313,6 +17130,18 @@
               "type": {
                 "kind": "SCALAR",
                 "name": "PRISMIC_Json",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "column",
+              "description": "",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
                 "ofType": null
               },
               "isDeprecated": false,
