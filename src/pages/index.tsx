@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import '../styles/index.css';
 import { Layout } from '../components/Layout';
 import { graphql } from "gatsby";
-import { RichText } from "prismic-reactjs";
-import { linkResolver } from "../utils/linkResolver";
 import styled from '@emotion/styled';
 import {
   HomeQuery
 } from './__generated__/HomeQuery';
+import { getHeader } from '../utils/getHeader';
+import { getColumnSections } from '../utils/getColumnSections';
+import { Header } from '../components/Header';
+import { Column } from '../components/Column';
 
 export const query = graphql`
 query HomeQuery {
@@ -49,77 +51,25 @@ query HomeQuery {
   }
   }
 }
-
-
-`;;
-
-interface IHeaderProps {
-  home: any;
-}
-
-const Header: React.FC<IHeaderProps> = ({ home }) => {
-
-  return (
-    <div>
-
-    </div>
-  );
-};
+`;
 
 const Columns = styled.div``;
-
-interface IColumn {
-  sections: ISection[];
-}
-
-interface ISection {
-  title: string;
-  articles: IArticle[];
-}
-
-interface IArticle {
-  date: Date;
-  highlight: boolean;
-  body: [];
-}
-
-interface IHeader {
-  title: string;
-  body: [];
-}
 
 interface IndexProps {
   data: HomeQuery;
 }
 
-const getSection = (section: any): ISection => ({
-  title: section.section_title,
-  articles: section.section_articles
-    .map(articles => articles.section_article)
-    .map(getArticle)
-})
-
-const getArticle = (article: any): IArticle => {
-
-  return ({
-    date: new Date(),
-    highlight: false,
-    body: []
-  })
-}
-
-const getColumnSections = (data: HomeQuery, column: number) =>
-  data.prismic.allSections!.edges!.map(edge => edge!.node!)
-    .filter(section => section.column === column.toString())
-    .map(getSection);
-
 const Index: React.SFC<IndexProps> = ({ data }) => {
 
-  const home = data.prismic.allHomes.edges?.[0]?.node;
+  const header = getHeader(data);
 
-  if (!home) return null;
+  if (!header) return null;
 
   const column1Sections = getColumnSections(data, 1);
+  const column2Sections = getColumnSections(data, 2);
+  const column3Sections = getColumnSections(data, 3);
+  const column4Sections = getColumnSections(data, 4);
+  const column5Sections = getColumnSections(data, 5);
 
   const [date, setDate] = useState<string | null>(null);
   useEffect(() => {
@@ -132,16 +82,16 @@ const Index: React.SFC<IndexProps> = ({ data }) => {
   }, []);
   return (
     <Layout>
-      <Header {...{ home }} />
+      <Header values={header} />
       <Columns>
-        {/* <Column />
-        <Column />
-        <Column />
-        <Column />
-        <Column /> */}
+        <Column values={column1Sections} />
+        <Column values={column2Sections} />
+        <Column values={column3Sections} />
+        <Column values={column4Sections} />
+        <Column values={column5Sections} />
       </Columns>
-      <h2>The date according to Node.js (TypeScript) is:</h2>
-      <p>{date ? date : 'Loading date...'}</p>
+      {/* <h2>The date according to Node.js (TypeScript) is:</h2>
+      <p>{date ? date : 'Loading date...'}</p> */}
     </Layout>
   );
 }
