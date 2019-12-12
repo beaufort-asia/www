@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/index.css';
 import { Layout, C1, C2, C3, C4, C5, HL, HR, HT } from '../components/Layout';
 import { graphql } from "gatsby";
 import styled from '@emotion/styled';
@@ -8,7 +7,7 @@ import {
 } from './__generated__/HomeQuery';
 import { getHeader } from '../utils/getHeader';
 import { getColumnSections } from '../utils/getColumnSections';
-import { mq, lt } from '../styles/media';
+import { lt } from '../styles/media';
 import { Column } from '../components/Column';
 import { Header } from '../components/Header';
 import { Title } from '../components/Title';
@@ -17,41 +16,97 @@ import { useMediaQuery } from 'react-responsive';
 export const query = graphql`
 query HomeQuery {
   prismic {
-    allHomes {
-    edges {
-      node {
-        homepageTitle,
-        header_left_title,
-        header_left_rich_text,
-        header_right_title,
-        header_right_rich_text
+    allArticles {
+      edges {
+        node {
+          body {
+            ... on PRISMIC_ArticleBodyHtml {
+              primary {
+                html_rich_text
+              }
+              type
+            }
+            ... on PRISMIC_ArticleBodyVimeo {
+              primary {
+                vimeo_embed
+                vimeo_link_text
+                vimeo_thumbnail_image
+              }
+              type
+            }
+            ... on PRISMIC_ArticleBodyYoutube {
+              primary {
+                youtube_embed
+                youtube_link_text
+                youtube_thumbnail_image
+              }
+              type
+            }
+            ... on PRISMIC_ArticleBodySoundcloud {
+              primary {
+                soundcloud_embed
+              }
+              type
+            }
+            ... on PRISMIC_ArticleBodyImage {
+              primary {
+                image_link_text
+                image_file
+                image_text_before
+                image_text_below
+              }
+              type
+            }
+            ... on PRISMIC_ArticleBodyLink {
+              primary {
+                link_text
+                link_text_after
+                link_text_before
+                link_thumbnail
+                link_url {
+                  _linkType
+                }
+              }
+              type
+            }
+          }
+          articleDate
+          _meta {
+            id
+          }
+          highlight
+        }
       }
     }
-  }
-  allSections {
-    edges {
-      node {
-        section_title,
-        column,
-        section_articles {
-          section_article {
-            ... on PRISMIC_Article {
-              articleDate,
-              highlight,
-              body {
-                ... on PRISMIC_ArticleBodyHtml {
-                  type,
-                  primary {
-                    html_rich_text
-                  }
+    allHomes {
+      edges {
+        node {
+          header_left_rich_text
+          header_left_title
+          header_right_rich_text
+          header_right_title
+          homepageTitle
+        }
+      }
+    }
+    allSections {
+      edges {
+        node {
+          column
+          section_title
+          section_articles {
+            section_article {
+              ... on PRISMIC_Article {
+                _meta {
+                  id
                 }
+                _linkType
               }
             }
           }
         }
       }
     }
-  }
   }
 }
 `;

@@ -7,6 +7,9 @@ import Helmet from "react-helmet";
 import { Global, css } from "@emotion/core";
 import emotionNormalize from 'emotion-normalize';
 import { mq } from "../styles/media";
+import { fonts } from "../styles/fonts";
+import { typography } from "../styles/typography";
+
 
 export const HL = css`grid-area: hL;`;
 export const HR = css`grid-area: hR;`;
@@ -38,7 +41,7 @@ const Grid = styled.main`
       "c4 c4"
       "c5 c5";
       grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(7, 1fr);
+      grid-template-rows: 120px 120px repeat(5, 1fr);
   `}
     max-width: 960px;
     min-height: 100%;
@@ -58,15 +61,16 @@ export const Layout: React.FC<ILayoutProps> = ({ children }) => {
             </Helmet>
             <Global
                 styles={css`
-                ${emotionNormalize}
-                html,
-                body {
-                padding: 0;
-                margin: 0;
-                background: white;
-                min-height: 100%;
-                font-family: Helvetica, Arial, sans-serif;
-                }
+                    ${emotionNormalize}
+                    ${fonts}
+                    ${typography}
+                    html,
+                    body {
+                    padding: 0;
+                    margin: 0;
+                    background: white;
+                    min-height: 100%;
+                    }
             `}
             />
             {children}

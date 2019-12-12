@@ -3,7 +3,9 @@ import styled from "@emotion/styled";
 import { DashColumn, IDashProps } from "../styles/DashBox";
 import { richText } from "../utils/richText";
 
-const Container = styled(DashColumn)``;
+const Container = styled(DashColumn)`
+    
+`;
 
 interface ITitleProps {
     values: string

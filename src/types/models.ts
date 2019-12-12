@@ -10,7 +10,12 @@ export interface ISection {
 export interface IArticle {
     date: Date;
     highlight: boolean;
-    body: [];
+    slices: (IHtmlSlice)[];
+}
+
+export interface IHtmlSlice {
+    html_rich_text: any[];
+    type: "html";
 }
 
 export interface IHeaderPart {
