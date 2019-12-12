@@ -1,20 +1,20 @@
 import React from "react";
 import { ISection } from "../types/models";
 import styled from "@emotion/styled";
-import { DashBox, DashColumn } from "../styles/DashBox";
+import { DashBox, DashColumn, IDashProps } from "../styles/DashBox";
 
 const Container = styled(DashColumn)`
-    width: 20%;
+    
 `;
 
 interface IColumnProps {
     values: ISection[];
 }
 
-export const Column: React.FC<IColumnProps> = (props) => {
+export const Column: React.FC<IColumnProps & IDashProps> = (props) => {
 
     return (
-        <Container>
+        <Container {...props}>
             <DashBox dash={{ bottom: true }} >Title</DashBox>
             <DashBox>Articles</DashBox>
         </Container>

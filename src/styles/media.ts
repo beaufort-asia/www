@@ -14,7 +14,7 @@ const em = (bp: number) => `${bp / 16}em`;
 const minw = (bp: number) => `(min-width: ${em(bp)})`;
 const maxw = (bp: number) => `(max-width: ${em(bp)})`;
 
-const gt = {
+export const gt = {
     xs: minw(bp.sm + 1),
     sm: minw(bp.md + 1),
     md: minw(bp.lg + 1),
@@ -25,7 +25,7 @@ type GtQueries = {
     [P in keyof typeof gt]: typeof css;
 }
 
-const lt = {
+export const lt = {
     sm: maxw(bp.sm),
     md: maxw(bp.md),
     lg: maxw(bp.lg),
@@ -36,7 +36,7 @@ type LtQueries = {
     [P in keyof typeof lt]: typeof css;
 }
 
-const is = {
+export const is = {
     xs: lt.sm,
     sm: `${gt.xs} and ${lt.md}`,
     md: `${gt.sm} and ${lt.lg}`,

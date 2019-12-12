@@ -5,7 +5,7 @@ import * as hor from "../images/rule-dotted-horizontal-black.png";
 import * as ver from "../images/rule-dotted-vertical-black.png";
 import styled from "@emotion/styled";
 
-interface IDashedProps {
+export interface IDashProps {
     dash?: {
         top?: boolean;
         bottom?: boolean;
@@ -55,7 +55,7 @@ const Right = styled.div`
     background-repeat: repeat-y;
 `;
 
-export const DashBox: React.FC<IDashedProps> = ({ dash, children, ...props }) => (
+export const DashBox: React.FC<IDashProps> = ({ dash, children, ...props }) => (
     <Container {...props}>
         {dash?.top && <Top></Top>}
         {dash?.bottom && <Bottom></Bottom>}
