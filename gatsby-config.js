@@ -20,7 +20,7 @@ module.exports = {
       options: {
         repositoryName: 'beaufort-asia', // (REQUIRED, replace with your own)
         // accessToken: '##########', // (optional API access token)
-        // path: '/preview', // (optional preview path. Default: /preview)
+        path: '/', // (optional preview path. Default: /preview)
         previews: true, // (optional, activated Previews. Default: false)
         // pages: [{ // (optional, builds pages dynamically)
         //   type: 'Page',         // TypeName from prismic
@@ -41,7 +41,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `${__dirname}/content/IMAGES/`,
+        path: `/`,
         ignore: [`**/\.*`], // ignore files starting with a dot
       },
     },
