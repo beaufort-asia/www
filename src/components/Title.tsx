@@ -4,7 +4,7 @@ import { DashColumn, IDashProps } from "../styles/DashBox";
 import { richText } from "../utils/richText";
 
 const Container = styled(DashColumn)`
-    
+    justify-content: center;
 `;
 
 interface ITitleProps {

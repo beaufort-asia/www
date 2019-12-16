@@ -11,7 +11,7 @@ import LucidaConsoleEot from "./LucidaConsole/LucidaConsole.eot"
 import LucidaConsoleSvg from "./LucidaConsole/LucidaConsole.svg"
 import LucidaConsoleTtf from "./LucidaConsole/LucidaConsole.ttf"
 import LucidaConsoleWoff from "./LucidaConsole/LucidaConsole.woff"
-console.log(EditionEot);
+
 export const fonts = css`
     @font-face {
     font-family: 'LetterGothicSlanted';

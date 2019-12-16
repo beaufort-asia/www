@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Layout, C1, C2, C3, C4, C5, HL, HR, HT } from '../components/Layout';
+import React, { useEffect, useState, useRef } from 'react';
+import { Layout, C1, C2, C3, C4, C5, HL, HR, HT, HH } from '../components/Layout';
 import { graphql } from "gatsby";
 import styled from '@emotion/styled';
 import {
@@ -12,6 +12,8 @@ import { Column } from '../components/Column';
 import { Header } from '../components/Header';
 import { Title } from '../components/Title';
 import { useMediaQuery } from 'react-responsive';
+import { DashRow } from '../styles/DashBox';
+import ReactResizeDetector from "react-resize-detector";
 
 export const query = graphql`
 query HomeQuery {
@@ -142,16 +144,32 @@ const Index: React.SFC<IndexProps> = ({ data }) => {
     query: lt.md
   })
 
+  const [c1Height, setC1Height] = useState(0);
+  const [c2Height, setC2Height] = useState(0);
+  const [c3Height, setC3Height] = useState(0);
+  const [c4Height, setC4Height] = useState(0);
+  const [c5Height, setC5Height] = useState(0);
+
   return (
     <Layout>
-      <Header values={header.left} css={HL} dash={{ right: !isMobile }} />
-      <Title values={header.title} css={HT} dash={{ bottom: isMobile }} />
-      <Header values={header.right} css={HR} dash={{ left: true }} />
-      <Column values={column1Sections} css={C1} dash={{ top: true, right: true }} ></Column>
-      <Column values={column2Sections} css={C2} dash={{ top: true, right: true }} ></Column>
-      <Column values={column3Sections} css={C3} dash={{ top: true, right: true }} ></Column>
-      <Column values={column4Sections} css={C4} dash={{ top: true, right: true }}></Column>
-      <Column values={column5Sections} css={C5} dash={{ top: true }}></Column>
+      <Header values={header.left} css={HL} dash={{ right: c1Height >= c2Height }} />
+      <Title values={header.title} css={HT} dash={{
+        left: !isMobile && c2Height > c1Height,
+        bottom: isMobile,
+        right: c4Height >= c5Height
+      }} />
+      <Header values={header.right} css={HR} dash={{ left: c5Height > c4Height }} />
+      <DashRow css={HH} dash={{ bottom: true }} />
+      <ReactResizeDetector handleHeight={true} querySelector={"#column-1-content"} onResize={(width, height) => setC1Height(height)} />
+      <ReactResizeDetector handleHeight={true} querySelector={"#column-2-content"} onResize={(width, height) => setC2Height(height)} />
+      <ReactResizeDetector handleHeight={true} querySelector={"#column-3-content"} onResize={(width, height) => setC3Height(height)} />
+      <ReactResizeDetector handleHeight={true} querySelector={"#column-4-content"} onResize={(width, height) => setC4Height(height)} />
+      <ReactResizeDetector handleHeight={true} querySelector={"#column-5-content"} onResize={(width, height) => setC5Height(height)} />
+      <Column contentId="column-1-content" {...{ isMobile }} dash={{ top: false, right: c1Height >= c2Height }} values={column1Sections} css={C1}></Column>
+      <Column contentId="column-2-content" {...{ isMobile }} dash={{ top: false, left: c2Height > c1Height, right: c2Height >= c3Height }} values={column2Sections} css={C2}></Column>
+      <Column contentId="column-3-content" {...{ isMobile }} dash={{ top: false, left: c3Height > c2Height, right: c3Height >= c4Height }} values={column3Sections} css={C3}></Column>
+      <Column contentId="column-4-content" {...{ isMobile }} dash={{ top: false, left: c4Height > c3Height, right: c4Height >= c5Height }} values={column4Sections} css={C4}></Column>
+      <Column contentId="column-5-content" {...{ isMobile }} dash={{ top: false, left: c5Height > c4Height }} values={column5Sections} css={C5}></Column>
     </Layout>
   );
 }

@@ -3,6 +3,7 @@ import { ISection } from "../types/models";
 import styled from "@emotion/styled";
 import { DashBox, DashColumn, IDashProps, DashRow } from "../styles/DashBox";
 import { richText } from "../utils/richText";
+import { css } from "@emotion/core";
 
 const Container = styled(DashColumn)`
     
@@ -10,36 +11,39 @@ const Container = styled(DashColumn)`
 
 interface IColumnProps {
     values: ISection[];
+    isMobile: boolean;
+    contentId: string;
 }
 
-export const Column: React.FC<IColumnProps & IDashProps> = ({ values, ...rest }) => {
+export const Column: React.FC<IColumnProps & IDashProps> = ({ contentId, values, dash, ...rest }) => {
 
-    console.log(values);
     return (
         <Container {...rest}>
-            {values.map(section => (
-                <>
-                    <DashRow dash={{ bottom: true }}>
-                        {richText(section.title)}
-                    </DashRow>
-                    {section.articles.map(article => (
-                        <>
-                            {article.slices.map(slice => {
-                                console.log("IN RENDER: ", slice);
-                                switch (slice.type) {
+            <DashColumn {...{ dash }} id={contentId}>
+                {values.map(section => (
+                    <>
+                        <DashRow dash={{ bottom: true }} padX={true} padY={true}>
+                            {richText(section.title)}
+                        </DashRow>
+                        {section.articles.map(article => (
+                            <DashColumn padX={true} padY={true}>
+                                {article.slices.map(slice => {
 
-                                    case ("html"): {
+                                    switch (slice.type) {
 
-                                        return (
-                                            richText(slice.html_rich_text)
-                                        )
+                                        case ("html"): {
+
+                                            return (
+                                                richText(slice.html_rich_text)
+                                            )
+                                        }
                                     }
-                                }
-                            })}
-                        </>
-                    ))}
-                </>
-            ))}
+                                })}
+                            </DashColumn>
+                        ))}
+                    </>
+                ))}
+            </DashColumn>
         </Container>
     );
 };

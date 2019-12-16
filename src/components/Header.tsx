@@ -20,8 +20,8 @@ export const Header: React.FC<IHeaderProps & IDashProps> = ({ values, ...rest })
 
     return (
         <DashColumn {...rest}>
-            {values.title && <DashBox pad={true} dash={{ bottom: true }} >{richText(values.title)}</DashBox>}
-            <DashBox pad={true}>
+            {values.title && <DashBox padX={true} dash={{ bottom: true }} >{richText(values.title)}</DashBox>}
+            <DashBox padX={true}>
                 {values.body && richText(values.body)}
             </DashBox>
         </DashColumn>
