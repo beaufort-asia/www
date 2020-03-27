@@ -39,7 +39,8 @@ export const Column: React.FC<IColumnProps & IDashProps> = ({ contentId, values,
                                                 )
                                             }
                                             case ("vimeo"): {
-                                                const thumbnailUrl = slice.vimeo_thumbnail_image.url || slice.vimeo_embed.thumbnail_url;
+                                                const thumbnailUrl = slice.vimeo_thumbnail_image?.url || slice.vimeo_embed?.thumbnail_url;
+                                                if (!thumbnailUrl) return;
                                                 return (
                                                     <>
                                                         <a href={slice.vimeo_embed.embed_url} target="_blank"><img src={thumbnailUrl} /></a>
