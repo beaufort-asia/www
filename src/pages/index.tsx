@@ -5,7 +5,7 @@ import {
   HomeQuery
 } from './__generated__/HomeQuery';
 import { getHeader } from '../utils/getHeader';
-import { getColumnSections } from '../utils/getColumnSections';
+import { getColumnSections, getArticlesBySectionId } from '../utils/getColumnSections';
 import { lt } from '../styles/media';
 import { Column } from '../components/Column';
 import { Header } from '../components/Header';
@@ -93,21 +93,60 @@ query HomeQuery {
           header_left_title
           header_right_rich_text
           header_right_title
-          homepageTitle
-        }
-      }
-    }
-    allSections {
-      edges {
-        node {
-          column
-          section_title
-          _meta {
-            id
+          homepageTitle,
+          column1_sections {
+          section {
+            ... on PRISMIC_Section {
+              _meta {
+                id
+              }
+              section_title
+            }
           }
         }
+        column2_sections {
+          section {
+            ... on PRISMIC_Section {
+              _meta {
+                id
+              }
+              section_title
+            }
+          }
+        }
+        column3_sections {
+          section {
+            ... on PRISMIC_Section {
+              _meta {
+                id
+              }
+              section_title
+            }
+          }
+        }
+        column4_sections {
+          section {
+            ... on PRISMIC_Section {
+              _meta {
+                id
+              }
+              section_title
+            }
+          }
+        }
+        column5_sections {
+          section {
+            ... on PRISMIC_Section {
+              _meta {
+                id
+              }
+              section_title
+            }
+          }
+        }
+        }
       }
-    }
+    }    
   }
 }
 `;
@@ -121,12 +160,13 @@ const Index: React.SFC<IndexProps> = ({ data }) => {
   const header = getHeader(data);
 
   if (!header) return null;
-
-  const column1Sections = getColumnSections(data, 1);
-  const column2Sections = getColumnSections(data, 2);
-  const column3Sections = getColumnSections(data, 3);
-  const column4Sections = getColumnSections(data, 4);
-  const column5Sections = getColumnSections(data, 5);
+  const home = data.prismic.allHomes.edges![0]?.node!;
+  const articlesBySectionId = getArticlesBySectionId(data);
+  const column1Sections = getColumnSections(articlesBySectionId, home.column1_sections!);
+  const column2Sections = getColumnSections(articlesBySectionId, home.column2_sections!);
+  const column3Sections = getColumnSections(articlesBySectionId, home.column3_sections!);
+  const column4Sections = getColumnSections(articlesBySectionId, home.column4_sections!);
+  const column5Sections = getColumnSections(articlesBySectionId, home.column5_sections!);
 
   const [date, setDate] = useState<string | null>(null);
 
@@ -155,7 +195,7 @@ const Index: React.SFC<IndexProps> = ({ data }) => {
       <Title values={header.title} css={HT} dash={{
         left: !isMobile && c2Height > c1Height,
         bottom: isMobile,
-        right: c4Height >= c5Height
+        right: c4Height >= c5Height && !isMobile
       }} />
       <Header values={header.right} css={HR} dash={{ left: c5Height > c4Height }} />
       <DashRow css={HH} dash={{ bottom: true }} />
@@ -164,10 +204,10 @@ const Index: React.SFC<IndexProps> = ({ data }) => {
       <ReactResizeDetector handleHeight={true} querySelector={"#column-3-content"} onResize={(width, height) => setC3Height(height)} />
       <ReactResizeDetector handleHeight={true} querySelector={"#column-4-content"} onResize={(width, height) => setC4Height(height)} />
       <ReactResizeDetector handleHeight={true} querySelector={"#column-5-content"} onResize={(width, height) => setC5Height(height)} />
-      <Column contentId="column-1-content" {...{ isMobile }} dash={{ top: false, right: c1Height >= c2Height }} values={column1Sections} css={C1}></Column>
-      <Column contentId="column-2-content" {...{ isMobile }} dash={{ top: false, left: c2Height > c1Height, right: c2Height >= c3Height }} values={column2Sections} css={C2}></Column>
-      <Column contentId="column-3-content" {...{ isMobile }} dash={{ top: false, left: c3Height > c2Height, right: c3Height >= c4Height }} values={column3Sections} css={C3}></Column>
-      <Column contentId="column-4-content" {...{ isMobile }} dash={{ top: false, left: c4Height > c3Height, right: c4Height >= c5Height }} values={column4Sections} css={C4}></Column>
+      <Column contentId="column-1-content" {...{ isMobile }} dash={{ top: false, right: c1Height >= c2Height && !isMobile }} values={column1Sections} css={C1}></Column>
+      <Column contentId="column-2-content" {...{ isMobile }} dash={{ top: false, left: c2Height > c1Height, right: c2Height >= c3Height && !isMobile }} values={column2Sections} css={C2}></Column>
+      <Column contentId="column-3-content" {...{ isMobile }} dash={{ top: false, left: c3Height > c2Height, right: c3Height >= c4Height && !isMobile }} values={column3Sections} css={C3}></Column>
+      <Column contentId="column-4-content" {...{ isMobile }} dash={{ top: false, left: c4Height > c3Height, right: c4Height >= c5Height && !isMobile }} values={column4Sections} css={C4}></Column>
       <Column contentId="column-5-content" {...{ isMobile }} dash={{ top: false, left: c5Height > c4Height }} values={column5Sections} css={C5}></Column>
     </Layout>
   );

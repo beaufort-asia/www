@@ -1,41 +1,49 @@
-import { HomeQuery, HomeQuery_prismic_allArticles_edges_node_section_PRISMIC_Section } from "../pages/__generated__/HomeQuery";
-import { ISection, IArticle, IHtmlSlice } from "../types/models";
+import { HomeQuery, HomeQuery_prismic_allArticles_edges_node_section_PRISMIC_Section, HomeQuery_prismic_allHomes_edges_node_column1_sections, HomeQuery_prismic_allArticles_edges, HomeQuery_prismic_allHomes_edges_node_column2_sections, HomeQuery_prismic_allHomes_edges_node_column3_sections, HomeQuery_prismic_allHomes_edges_node_column4_sections, HomeQuery_prismic_allHomes_edges_node_column5_sections } from "../pages/__generated__/HomeQuery";
+import { ISection, IArticle, IHtmlSlice, IVimeoSlice } from "../types/models";
 
 const fromYesNo = (str: string | undefined | null) => {
     if (!str) return false;
     return str.toLowerCase() === "yes";
 }
+export type ArticlesBySectionId = { [sectionId: string]: HomeQuery_prismic_allArticles_edges[] };
 
-export const getColumnSections = (data: HomeQuery, column: number): ISection[] => {
+export const getArticlesBySectionId = (data: HomeQuery) => {
     const articlesBySectionId = data.prismic.allArticles.edges?.reduce((acc, article) => {
         if (!article) return acc;
         const section = article.node.section as HomeQuery_prismic_allArticles_edges_node_section_PRISMIC_Section;
-        if (!section) {
+        if (section === null || section === undefined) {
             console.log('Section not set on Article: ', article);
+            return acc;
         }
         const sectionId = section._meta.id;
         acc[sectionId] = [...acc[sectionId] || [], article];
         return acc;
     }, {}) || {};
+    return articlesBySectionId as ArticlesBySectionId;
+}
+export type ColumnSection = HomeQuery_prismic_allHomes_edges_node_column1_sections | HomeQuery_prismic_allHomes_edges_node_column2_sections | HomeQuery_prismic_allHomes_edges_node_column3_sections | HomeQuery_prismic_allHomes_edges_node_column4_sections | HomeQuery_prismic_allHomes_edges_node_column5_sections;
 
-    console.log(articlesBySectionId);
+export const exists = <T>(value: T | undefined | null): value is T => !!value;
 
-    return data.prismic.allSections!.edges!.map(edge => edge!.node!)
-        .filter(section => section.column === column.toString())
-        .map(section => {
+export const getColumnSections = (articlesBySectionId: ArticlesBySectionId, columnSections: ColumnSection[]): ISection[] => {
+
+    return columnSections
+        .map(columnSection => columnSection.section)
+        .filter(exists)
+        .map((section: any) => {
             return {
+                id: section._meta.id,
                 title: section.section_title,
                 articles: (articlesBySectionId[section._meta.id] || [] as Array<IArticle>)
                     .map(article => {
                         const node = article!.node;
-                        console.log(node);
                         const art: IArticle = {
+                            id: node._meta.id,
                             date: new Date(node.articleDate),
                             highlight: fromYesNo(node.highlight),
                             slices: node.body?.map(slice => {
 
                                 const { primary, type } = slice;
-                                console.log(primary);
                                 switch (type) {
 
                                     case ("html"): {
@@ -46,6 +54,17 @@ export const getColumnSections = (data: HomeQuery, column: number): ISection[] =
                                         }
                                         return htmlSlice;
                                     }
+                                    case ("vimeo"): {
+                                        const { vimeo_link_text, vimeo_embed, vimeo_thumbnail_image } = primary as any;
+                                        const vimeoSlice: IVimeoSlice = {
+                                            type: "vimeo",
+                                            vimeo_embed,
+                                            vimeo_link_text,
+                                            vimeo_thumbnail_image
+                                        }
+                                        return vimeoSlice;
+                                    }
+
                                     default: throw "Unrecognised slice type: " + type;
                                 }
                             }).filter(s => !!s) as any || []

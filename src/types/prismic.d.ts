@@ -1,6 +1,6 @@
-declare module "prismic-reactjs" {
+// declare module "prismic-reactjs" {
 
 
 
-    export const RichText: React.FC<{ render: any, linkResolver: any }>;
-}
+//     export const RichText: React.FC<{ render: any, linkResolver: any }>;
+// }

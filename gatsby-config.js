@@ -34,7 +34,8 @@ module.exports = {
       resolve: "gatsby-plugin-codegen",
       options: {
         localSchemaFile: ".graphql-schema.json",
-        addTypename: true,
+        watch: true,
+
       }
     },
     // {

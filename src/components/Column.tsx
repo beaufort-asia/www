@@ -21,29 +21,40 @@ export const Column: React.FC<IColumnProps & IDashProps> = ({ contentId, values,
         <Container {...rest}>
             <DashColumn {...{ dash }} id={contentId}>
                 {values.map(section => (
-                    <>
+                    <React.Fragment key={section.id}>
                         <DashRow dash={{ bottom: true }} padX={true} padY={true}>
                             {richText(section.title)}
                         </DashRow>
-                        {section.articles.map(article => (
-                            <DashColumn padX={true} padY={true}>
-                                {article.slices.map(slice => {
+                        {
+                            section.articles.map(article => (
+                                <DashColumn padX={true} padY={true} key={article.id}>
+                                    {article.slices.map(slice => {
 
-                                    switch (slice.type) {
+                                        switch (slice.type) {
 
-                                        case ("html"): {
+                                            case ("html"): {
 
-                                            return (
-                                                richText(slice.html_rich_text)
-                                            )
+                                                return (
+                                                    richText(slice.html_rich_text)
+                                                )
+                                            }
+                                            case ("vimeo"): {
+                                                const thumbnailUrl = slice.vimeo_thumbnail_image.url || slice.vimeo_embed.thumbnail_url;
+                                                return (
+                                                    <>
+                                                        <a href={slice.vimeo_embed.embed_url} target="_blank"><img src={thumbnailUrl} /></a>
+                                                        {richText(slice.vimeo_link_text)}
+                                                    </>
+                                                )
+                                            }
                                         }
-                                    }
-                                })}
-                            </DashColumn>
-                        ))}
-                    </>
+                                    })}
+                                </DashColumn>
+                            ))
+                        }
+                    </React.Fragment>
                 ))}
             </DashColumn>
-        </Container>
+        </Container >
     );
 };
