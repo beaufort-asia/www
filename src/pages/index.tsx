@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Layout, C1, C2, C3, C4, C5, HL, HR, HT, HH } from '../components/Layout';
 import { graphql } from "gatsby";
-import styled from '@emotion/styled';
 import {
   HomeQuery
 } from './__generated__/HomeQuery';
@@ -18,7 +17,7 @@ import ReactResizeDetector from "react-resize-detector";
 export const query = graphql`
 query HomeQuery {
   prismic {
-    allArticles {
+    allArticles {         
       edges {
         node {
           body {
@@ -76,7 +75,14 @@ query HomeQuery {
           _meta {
             id
           }
-          highlight
+          highlight          
+          section {            
+            ... on PRISMIC_Section {              
+              _meta {
+                id
+              }
+            }
+          }
         }
       }
     }
@@ -96,15 +102,8 @@ query HomeQuery {
         node {
           column
           section_title
-          section_articles {
-            section_article {
-              ... on PRISMIC_Article {
-                _meta {
-                  id
-                }
-                _linkType
-              }
-            }
+          _meta {
+            id
           }
         }
       }

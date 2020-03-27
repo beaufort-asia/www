@@ -30,13 +30,13 @@ module.exports = {
         // }],
       }
     },
-    // {
-    //   resolve: "gatsby-plugin-codegen",
-    //   options: {
-    //     localSchemaFile: ".graphql-schema.json",
-    //     addTypename: true,
-    //   }
-    // },
+    {
+      resolve: "gatsby-plugin-codegen",
+      options: {
+        localSchemaFile: ".graphql-schema.json",
+        addTypename: true,
+      }
+    },
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {
