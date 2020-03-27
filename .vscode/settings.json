@@ -3,9 +3,9 @@
     "files.exclude": {
         "**/__generated__": false,
         "**/.cache": true,
-        "**/.graphql-schema.json": true,
+        "**/.graphql-schema.json": false,
         "**/public": true,
-        "**/apollo.config.js": true
+        "**/apollo.config.js": false
     },
     "god.tsconfig": "./tsconfig.json"
 }

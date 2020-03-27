@@ -30,20 +30,20 @@ module.exports = {
         // }],
       }
     },
-    {
-      resolve: "gatsby-plugin-codegen",
-      options: {
-        localSchemaFile: ".graphql-schema.json",
-        addTypename: true,
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `./`,
-        ignore: [`**/\.*`], // ignore files starting with a dot
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-codegen",
+    //   options: {
+    //     localSchemaFile: ".graphql-schema.json",
+    //     addTypename: true,
+    //   }
+    // },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `data`,
+    //     path: `./`,
+    //     ignore: [`**/\.*`], // ignore files starting with a dot
+    //   },
+    // },
   ]
 };
