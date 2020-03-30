@@ -1,5 +1,5 @@
-import { HomeQuery, HomeQuery_prismic_allArticles_edges_node_section_PRISMIC_Section, HomeQuery_prismic_allHomes_edges_node_column1_sections, HomeQuery_prismic_allArticles_edges, HomeQuery_prismic_allHomes_edges_node_column2_sections, HomeQuery_prismic_allHomes_edges_node_column3_sections, HomeQuery_prismic_allHomes_edges_node_column4_sections, HomeQuery_prismic_allHomes_edges_node_column5_sections } from "../pages/__generated__/HomeQuery";
-import { ISection, IArticle, IHtmlSlice, IVimeoSlice } from "../types/models";
+import { HomeQuery, HomeQuery_prismic_allArticles_edges_node_section_PRISMIC_Section, HomeQuery_prismic_allHomes_edges_node_column1_sections, HomeQuery_prismic_allArticles_edges, HomeQuery_prismic_allHomes_edges_node_column2_sections, HomeQuery_prismic_allHomes_edges_node_column3_sections, HomeQuery_prismic_allHomes_edges_node_column4_sections, HomeQuery_prismic_allHomes_edges_node_column5_sections } from "../templates/home/HomeQuery";
+import { ISection, IArticle, IHtmlSlice, IVimeoSlice, ILinkSlice, IImageSlice } from "../types/models";
 
 const fromYesNo = (str: string | undefined | null) => {
     if (!str) return false;
@@ -63,6 +63,34 @@ export const getColumnSections = (articlesBySectionId: ArticlesBySectionId, colu
                                             vimeo_thumbnail_image
                                         }
                                         return vimeoSlice;
+                                    }
+
+                                    case ("link"): {
+                                        const { link_text_before, link_text, link_url, link_thumbnail, link_text_after } = primary as any;
+                                        const linkSlice: ILinkSlice = {
+                                            type: "link",
+                                            link_text_before,
+                                            link_text,
+                                            link_url,
+                                            link_thumbnail,
+                                            link_text_after
+                                        }
+                                        return linkSlice;
+                                    }
+
+                                    case ("image"): {
+                                        const { image_file,
+                                            image_link_text,
+                                            image_text_after,
+                                            image_text_before } = primary as any;
+                                        const linkSlice: IImageSlice = {
+                                            type: "image",
+                                            image_file,
+                                            image_link_text,
+                                            image_text_after,
+                                            image_text_before
+                                        }
+                                        return linkSlice;
                                     }
 
                                     default: throw "Unrecognised slice type: " + type;
