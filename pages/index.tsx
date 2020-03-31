@@ -1,25 +1,20 @@
 import * as React from 'react';
 import { NextPage, GetStaticProps } from 'next';
 import { prismicClient } from '../getPrismicClient';
-import { HomeQueryDocument, HomeQueryQuery, HomeQueryQueryVariables } from '../graphql/__generated__/components';
+import { HomeDocument, HomeQuery, HomeQueryVariables } from '../graphql/__generated__';
 import { richText } from '../utils/richText';
 import DefaultLayout from '../layouts';
-import { destroyCookie } from 'nookies';
-import { previewCookie } from 'prismic-javascript';
 
 type Props = { greeting: any };
 
 const Home: NextPage<Props> = ({ greeting }) => <DefaultLayout>
-    Hello world! - user agent: {richText(greeting)}
+    {richText(greeting)}
 </DefaultLayout>;
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
 
-    console.log('Loading home query...');
-    if (context.preview) console.log('Running HomeQuery in preview mode!');
-
-    const result = await prismicClient.query<HomeQueryQuery, HomeQueryQueryVariables>({
-        query: HomeQueryDocument,
+    const result = await prismicClient.query<HomeQuery, HomeQueryVariables>({
+        query: HomeDocument,
         fetchPolicy: 'no-cache',
         context: context.previewData
     });
@@ -30,9 +25,5 @@ export const getStaticProps: GetStaticProps<Props> = async (context) => {
         props: { greeting }
     };
 };
-
-// Home.getInitialProps = async ({ }) => {
-//     return { greeting: "bar" }
-// }
 
 export default Home;

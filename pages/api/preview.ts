@@ -15,8 +15,6 @@ export const Preview = async (req: NextApiRequest, res: NextApiResponse) => {
     try {
         console.log('ENTERING PREVIEW MODE');
         const url = await Client(req).previewSession(token, linkResolver, "/");
-        console.log('redirecting to url: ', url);
-        console.log('token is: ', token);
         res.setPreviewData({
             headers: {
                 'Prismic-ref': token
@@ -25,8 +23,7 @@ export const Preview = async (req: NextApiRequest, res: NextApiResponse) => {
         const expectPrismicPreview = `expectPrismicPreview=entering; path=/;`;
         const cookies = res.getHeader('Set-Cookie') as string[];
         cookies.push(expectPrismicPreview);
-        console.log('setting cookies', cookies);
-        res.writeHead(302, { Location: url, "Set-Cookie": cookies });
+        res.writeHead(307, { Location: url, "Set-Cookie": cookies });
         res.end();
     } catch (error) {
         res

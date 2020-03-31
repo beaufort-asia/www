@@ -1,15 +1,10 @@
 overwrite: true
 schema: "prismic-schema.json"
-documents: "pages/**/*.gql"
+documents: "{pages,graphql}/**/*.{gql,graphql,ts,tsx}"
 generates:
-  graphql/__generated__/components.tsx:
+  graphql/__generated__/index.tsx:
     plugins:
       - "typescript"
       - "typescript-operations"      
-      - "typescript-react-apollo"
-  # graphql/requests.ts:
-  #   plugins:
-  #     - "typescript"
-  #     - "typescript-operations"
-  #     - "typescript-graphql-request"      
+      - "typescript-react-apollo"  
       

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -226,50 +226,55 @@ const Meta = () => {
     dangerouslySetInnerHTML: {
       __html: `
 
-          (function checkPreviewCookies() {
+          (function syncPrismicAndNextPreviews() {
 
             function getCookieValue(key) {              
               const cookieMatcher = new RegExp("(?:(?:^|.*;\\\\s*)" + key + "\\\\s*\\\\=\\\\s*([^;]*).*$)|^.*$");
               return document.cookie.replace(cookieMatcher, \"$1\");
             }
             
-            const previewCookieValue = getCookieValue("io.prismic.preview");
-            // console.log('value', previewCookieValue);
-            const decodedCookieValue = decodeURIComponent(previewCookieValue);
-            // console.log('decoded', decodedCookieValue);
-            const prismic = decodedCookieValue !== "" ? JSON.parse(decodedCookieValue) : {};
-            // console.log('prismic object', prismic);
-            const previewKey = "${repoName}.prismic.io";
+            const prismicCookieValue = getCookieValue("io.prismic.preview");            
+            const decodedCookieValue = decodeURIComponent(prismicCookieValue);            
+            const prismic = decodedCookieValue !== "" ? JSON.parse(decodedCookieValue) : {};            
+            const prismicSiteKey = "${repoName}.prismic.io";
+            const prismicSite = prismic[prismicSiteKey];
                                
             const isEntering = getCookieValue("expectPrismicPreview") === "entering";
             const isEntered = getCookieValue("expectPrismicPreview") === "entered";
-            const hasPrismicPreview = !!prismic[previewKey] && !!prismic[previewKey].preview;
+            const hasPrismicPreview = !!prismicSite && !!prismicSite.preview;
             
             if (hasPrismicPreview) {
-              if (isEntering) {
-                console.log('Entered prismic preview mode...');
+              if (isEntering) {                
                 // Set entered in cookie here.
                 document.cookie = "expectPrismicPreview=entered; path=/";
+                console.log('Entered prismic preview mode...');
               }
               else if (isEntered) {
                 console.log('Currently in prismic preview mode...');
               }
               else {
-                console.log('Nextjs preview was deactivated by the user or expired, but prismic preview is still activated.');
-                // Re-activate preview mode in nextjs api.
-                const previewToken = prismic[previewKey].preview;
-                // console.log('token', previewToken);
-                window.location.replace('/api/preview?token='+encodeURIComponent(previewToken));
+                console.log('Nextjs preview was deactivated by the user or expired, but prismic preview is still activated.');                
+                console.log('Reactivating nextjs preview...');
+                window.location.replace('/api/preview?token='+encodeURIComponent(prismicSite.preview));
               }
             }
             else {
               if (isEntering) {
                 console.log('Waiting to enter prismic preview mode...');                
+                
+                document.addEventListener("DOMContentLoaded", function(event) { 
+                  const loader = document.getElementById("modal-1")
+                  console.log(loader);
+                  if(loader) {
+                    loader.style.display = "block";
+                  }  
+                });
+
               }
               else if (isEntered) {
                 console.log('Prismic preview was deactivated by the user or expired, but nextjs preview is still activated.');
-                // Deactivate nextjs preview by calling /api/preview-clear.
-                window.location.replace('/api/preview-clear');
+                console.log('Deactivating nextjs preview...');                
+                window.location.replace('/api/preview-clear');                
               }
               else {
                 // console.log('In static viewing mode.');
@@ -286,7 +291,70 @@ const Meta = () => {
       lineNumber: 20,
       columnNumber: 9
     }
-  })));
+  })), __jsx("div", {
+    id: "modal-1",
+    "aria-hidden": "true",
+    style: {
+      display: 'none'
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83,
+      columnNumber: 7
+    }
+  }, __jsx("div", {
+    tabIndex: -1,
+    "data-micromodal-close": true,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84,
+      columnNumber: 9
+    }
+  }, __jsx("div", {
+    role: "dialog",
+    "aria-modal": "true",
+    "aria-labelledby": "modal-1-title",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85,
+      columnNumber: 11
+    }
+  }, __jsx("header", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86,
+      columnNumber: 13
+    }
+  }, __jsx("h2", {
+    id: "modal-1-title",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87,
+      columnNumber: 15
+    }
+  }, "Loading prismic preview mode..."), __jsx("button", {
+    "aria-label": "Close modal",
+    "data-micromodal-close": true,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 90,
+      columnNumber: 15
+    }
+  })), __jsx("div", {
+    id: "modal-1-content",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 92,
+      columnNumber: 13
+    }
+  }, "Just hold on a second...")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Meta);
@@ -324,11 +392,11 @@ const prismicClient = new apollo_client__WEBPACK_IMPORTED_MODULE_2__["ApolloClie
 
 /***/ }),
 
-/***/ "./graphql/__generated__/components.tsx":
-/*!**********************************************!*\
-  !*** ./graphql/__generated__/components.tsx ***!
-  \**********************************************/
-/*! exports provided: SortArticley, SortDocumentsBy, SortHomey, SortSectiony, HomeQueryDocument, HomeQueryComponent, withHomeQuery */
+/***/ "./graphql/__generated__/index.tsx":
+/*!*****************************************!*\
+  !*** ./graphql/__generated__/index.tsx ***!
+  \*****************************************/
+/*! exports provided: SortArticley, SortDocumentsBy, SortHomey, SortSectiony, HomeDocument, HomeComponent, withHome */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -337,9 +405,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SortDocumentsBy", function() { return SortDocumentsBy; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SortHomey", function() { return SortHomey; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SortSectiony", function() { return SortSectiony; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeQueryDocument", function() { return HomeQueryDocument; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeQueryComponent", function() { return HomeQueryComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "withHomeQuery", function() { return withHomeQuery; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeDocument", function() { return HomeDocument; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "withHome", function() { return withHome; });
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! graphql-tag */ "graphql-tag");
 /* harmony import */ var graphql_tag__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(graphql_tag__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
@@ -348,7 +416,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _apollo_react_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_apollo_react_components__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _apollo_react_hoc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @apollo/react-hoc */ "@apollo/react-hoc");
 /* harmony import */ var _apollo_react_hoc__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_apollo_react_hoc__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/martaver/Projects/beaufort-asia/www/graphql/__generated__/components.tsx";
+var _jsxFileName = "/Users/martaver/Projects/beaufort-asia/www/graphql/__generated__/index.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1__["createElement"];
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -417,8 +485,8 @@ let SortSectiony;
   SortSectiony["ColumnDesc"] = "column_DESC";
 })(SortSectiony || (SortSectiony = {}));
 
-const HomeQueryDocument = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default.a`
-    query HomeQuery {
+const HomeDocument = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default.a`
+    query Home {
   allHomes {
     edges {
       node {
@@ -482,8 +550,8 @@ const HomeQueryDocument = graphql_tag__WEBPACK_IMPORTED_MODULE_0___default.a`
   }
 }
     `;
-const HomeQueryComponent = props => __jsx(_apollo_react_components__WEBPACK_IMPORTED_MODULE_2__["Query"], _extends({
-  query: HomeQueryDocument
+const HomeComponent = props => __jsx(_apollo_react_components__WEBPACK_IMPORTED_MODULE_2__["Query"], _extends({
+  query: HomeDocument
 }, props, {
   __self: undefined,
   __source: {
@@ -492,9 +560,9 @@ const HomeQueryComponent = props => __jsx(_apollo_react_components__WEBPACK_IMPO
     columnNumber: 7
   }
 }));
-function withHomeQuery(operationOptions) {
-  return _apollo_react_hoc__WEBPACK_IMPORTED_MODULE_3__["withQuery"](HomeQueryDocument, _objectSpread({
-    alias: 'homeQuery'
+function withHome(operationOptions) {
+  return _apollo_react_hoc__WEBPACK_IMPORTED_MODULE_3__["withQuery"](HomeDocument, _objectSpread({
+    alias: 'home'
   }, operationOptions));
 }
 ;
@@ -572,7 +640,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _getPrismicClient__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../getPrismicClient */ "./getPrismicClient.ts");
-/* harmony import */ var _graphql_generated_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../graphql/__generated__/components */ "./graphql/__generated__/components.tsx");
+/* harmony import */ var _graphql_generated___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../graphql/__generated__ */ "./graphql/__generated__/index.tsx");
 /* harmony import */ var _utils_richText__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/richText */ "./utils/richText.tsx");
 /* harmony import */ var _layouts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../layouts */ "./layouts/index.tsx");
 var _jsxFileName = "/Users/martaver/Projects/beaufort-asia/www/pages/index.tsx";
@@ -589,18 +657,16 @@ const Home = ({
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 12,
+    lineNumber: 10,
     columnNumber: 49
   }
-}, "Hello world! - user agent: ", Object(_utils_richText__WEBPACK_IMPORTED_MODULE_3__["richText"])(greeting));
+}, Object(_utils_richText__WEBPACK_IMPORTED_MODULE_3__["richText"])(greeting));
 
 const getStaticProps = async context => {
   var _result$data$allHomes, _result$data$allHomes2;
 
-  console.log('Loading home query...');
-  if (context.preview) console.log('Running HomeQuery in preview mode!');
   const result = await _getPrismicClient__WEBPACK_IMPORTED_MODULE_1__["prismicClient"].query({
-    query: _graphql_generated_components__WEBPACK_IMPORTED_MODULE_2__["HomeQueryDocument"],
+    query: _graphql_generated___WEBPACK_IMPORTED_MODULE_2__["HomeDocument"],
     fetchPolicy: 'no-cache',
     context: context.previewData
   });
@@ -610,10 +676,7 @@ const getStaticProps = async context => {
       greeting
     }
   };
-}; // Home.getInitialProps = async ({ }) => {
-//     return { greeting: "bar" }
-// }
-
+};
 /* harmony default export */ __webpack_exports__["default"] = (Home);
 
 /***/ }),
@@ -693,7 +756,7 @@ const richText = rich_text_field => __jsx(prismic_reactjs__WEBPACK_IMPORTED_MODU
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!*******************************!*\
   !*** multi ./pages/index.tsx ***!
   \*******************************/

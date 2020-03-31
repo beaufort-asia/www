@@ -523,10 +523,10 @@ export type WhereSection = {
   column_fulltext?: Maybe<Scalars['String']>;
 };
 
-export type HomeQueryQueryVariables = {};
+export type HomeQueryVariables = {};
 
 
-export type HomeQueryQuery = (
+export type HomeQuery = (
   { __typename?: 'Query' }
   & { allHomes: (
     { __typename?: 'HomeConnectionConnection' }
@@ -592,8 +592,8 @@ export type HomeQueryQuery = (
 );
 
 
-export const HomeQueryDocument = gql`
-    query HomeQuery {
+export const HomeDocument = gql`
+    query Home {
   allHomes {
     edges {
       node {
@@ -657,21 +657,21 @@ export const HomeQueryDocument = gql`
   }
 }
     `;
-export type HomeQueryComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<HomeQueryQuery, HomeQueryQueryVariables>, 'query'>;
+export type HomeComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<HomeQuery, HomeQueryVariables>, 'query'>;
 
-    export const HomeQueryComponent = (props: HomeQueryComponentProps) => (
-      <ApolloReactComponents.Query<HomeQueryQuery, HomeQueryQueryVariables> query={HomeQueryDocument} {...props} />
+    export const HomeComponent = (props: HomeComponentProps) => (
+      <ApolloReactComponents.Query<HomeQuery, HomeQueryVariables> query={HomeDocument} {...props} />
     );
     
-export type HomeQueryProps<TChildProps = {}> = ApolloReactHoc.DataProps<HomeQueryQuery, HomeQueryQueryVariables> & TChildProps;
-export function withHomeQuery<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
+export type HomeProps<TChildProps = {}> = ApolloReactHoc.DataProps<HomeQuery, HomeQueryVariables> & TChildProps;
+export function withHome<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
   TProps,
-  HomeQueryQuery,
-  HomeQueryQueryVariables,
-  HomeQueryProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, HomeQueryQuery, HomeQueryQueryVariables, HomeQueryProps<TChildProps>>(HomeQueryDocument, {
-      alias: 'homeQuery',
+  HomeQuery,
+  HomeQueryVariables,
+  HomeProps<TChildProps>>) {
+    return ApolloReactHoc.withQuery<TProps, HomeQuery, HomeQueryVariables, HomeProps<TChildProps>>(HomeDocument, {
+      alias: 'home',
       ...operationOptions
     });
 };
-export type HomeQueryQueryResult = ApolloReactCommon.QueryResult<HomeQueryQuery, HomeQueryQueryVariables>;
+export type HomeQueryResult = ApolloReactCommon.QueryResult<HomeQuery, HomeQueryVariables>;

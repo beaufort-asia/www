@@ -1,9 +1,9 @@
 
-query HomeQuery {
+query Home {
         allHomes {
         edges {
             node {
-                homepageTitle                             
+                homepageTitle                          
                 header_left_rich_text
                 header_left_title
                 header_right_rich_text

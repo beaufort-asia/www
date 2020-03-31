@@ -9,8 +9,8 @@ import Footer from "../components/Footer";
 const DefaultLayout: React.FC = ({ children }) => (
   <div>
     <Meta />
-    < main > {children} </main>
-    < Footer />
+    <main> {children} </main>
+    <Footer />
   </div>
 );
 

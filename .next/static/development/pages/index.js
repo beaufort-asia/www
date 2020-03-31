@@ -137,7 +137,7 @@ var Meta = function Meta() {
   }), __jsx("script", {
     lang: "javascript",
     dangerouslySetInnerHTML: {
-      __html: "\n\n          (function checkPreviewCookies() {\n\n            function getCookieValue(key) {              \n              const cookieMatcher = new RegExp(\"(?:(?:^|.*;\\\\s*)\" + key + \"\\\\s*\\\\=\\\\s*([^;]*).*$)|^.*$\");\n              return document.cookie.replace(cookieMatcher, \"$1\");\n            }\n            \n            const previewCookieValue = getCookieValue(\"io.prismic.preview\");\n            // console.log('value', previewCookieValue);\n            const decodedCookieValue = decodeURIComponent(previewCookieValue);\n            // console.log('decoded', decodedCookieValue);\n            const prismic = decodedCookieValue !== \"\" ? JSON.parse(decodedCookieValue) : {};\n            // console.log('prismic object', prismic);\n            const previewKey = \"".concat(repoName, ".prismic.io\";\n                               \n            const isEntering = getCookieValue(\"expectPrismicPreview\") === \"entering\";\n            const isEntered = getCookieValue(\"expectPrismicPreview\") === \"entered\";\n            const hasPrismicPreview = !!prismic[previewKey] && !!prismic[previewKey].preview;\n            \n            if (hasPrismicPreview) {\n              if (isEntering) {\n                console.log('Entered prismic preview mode...');\n                // Set entered in cookie here.\n                document.cookie = \"expectPrismicPreview=entered; path=/\";\n              }\n              else if (isEntered) {\n                console.log('Currently in prismic preview mode...');\n              }\n              else {\n                console.log('Nextjs preview was deactivated by the user or expired, but prismic preview is still activated.');\n                // Re-activate preview mode in nextjs api.\n                const previewToken = prismic[previewKey].preview;\n                // console.log('token', previewToken);\n                window.location.replace('/api/preview?token='+encodeURIComponent(previewToken));\n              }\n            }\n            else {\n              if (isEntering) {\n                console.log('Waiting to enter prismic preview mode...');                \n              }\n              else if (isEntered) {\n                console.log('Prismic preview was deactivated by the user or expired, but nextjs preview is still activated.');\n                // Deactivate nextjs preview by calling /api/preview-clear.\n                window.location.replace('/api/preview-clear');\n              }\n              else {\n                // console.log('In static viewing mode.');\n                // Do nothing.\n              }\n            }\n          })();\n          \n          ")
+      __html: "\n\n          (function syncPrismicAndNextPreviews() {\n\n            function getCookieValue(key) {              \n              const cookieMatcher = new RegExp(\"(?:(?:^|.*;\\\\s*)\" + key + \"\\\\s*\\\\=\\\\s*([^;]*).*$)|^.*$\");\n              return document.cookie.replace(cookieMatcher, \"$1\");\n            }\n            \n            const prismicCookieValue = getCookieValue(\"io.prismic.preview\");            \n            const decodedCookieValue = decodeURIComponent(prismicCookieValue);            \n            const prismic = decodedCookieValue !== \"\" ? JSON.parse(decodedCookieValue) : {};            \n            const prismicSiteKey = \"".concat(repoName, ".prismic.io\";\n            const prismicSite = prismic[prismicSiteKey];\n                               \n            const isEntering = getCookieValue(\"expectPrismicPreview\") === \"entering\";\n            const isEntered = getCookieValue(\"expectPrismicPreview\") === \"entered\";\n            const hasPrismicPreview = !!prismicSite && !!prismicSite.preview;\n            \n            if (hasPrismicPreview) {\n              if (isEntering) {                \n                // Set entered in cookie here.\n                document.cookie = \"expectPrismicPreview=entered; path=/\";\n                console.log('Entered prismic preview mode...');\n              }\n              else if (isEntered) {\n                console.log('Currently in prismic preview mode...');\n              }\n              else {\n                console.log('Nextjs preview was deactivated by the user or expired, but prismic preview is still activated.');                \n                console.log('Reactivating nextjs preview...');\n                window.location.replace('/api/preview?token='+encodeURIComponent(prismicSite.preview));\n              }\n            }\n            else {\n              if (isEntering) {\n                console.log('Waiting to enter prismic preview mode...');                \n                \n                document.addEventListener(\"DOMContentLoaded\", function(event) { \n                  const loader = document.getElementById(\"modal-1\")\n                  console.log(loader);\n                  if(loader) {\n                    loader.style.display = \"block\";\n                  }  \n                });\n\n              }\n              else if (isEntered) {\n                console.log('Prismic preview was deactivated by the user or expired, but nextjs preview is still activated.');\n                console.log('Deactivating nextjs preview...');                \n                window.location.replace('/api/preview-clear');                \n              }\n              else {\n                // console.log('In static viewing mode.');\n                // Do nothing.\n              }\n            }\n          })();\n          \n          ")
     },
     __self: _this,
     __source: {
@@ -145,7 +145,70 @@ var Meta = function Meta() {
       lineNumber: 20,
       columnNumber: 9
     }
-  })));
+  })), __jsx("div", {
+    id: "modal-1",
+    "aria-hidden": "true",
+    style: {
+      display: 'none'
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83,
+      columnNumber: 7
+    }
+  }, __jsx("div", {
+    tabIndex: -1,
+    "data-micromodal-close": true,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84,
+      columnNumber: 9
+    }
+  }, __jsx("div", {
+    role: "dialog",
+    "aria-modal": "true",
+    "aria-labelledby": "modal-1-title",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85,
+      columnNumber: 11
+    }
+  }, __jsx("header", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86,
+      columnNumber: 13
+    }
+  }, __jsx("h2", {
+    id: "modal-1-title",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87,
+      columnNumber: 15
+    }
+  }, "Loading prismic preview mode..."), __jsx("button", {
+    "aria-label": "Close modal",
+    "data-micromodal-close": true,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 90,
+      columnNumber: 15
+    }
+  })), __jsx("div", {
+    id: "modal-1-content",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 92,
+      columnNumber: 13
+    }
+  }, "Just hold on a second...")))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Meta);
@@ -3532,15 +3595,12 @@ var Home = function Home(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 10,
       columnNumber: 49
     }
-  }, "Hello world! - user agent: ", Object(_utils_richText__WEBPACK_IMPORTED_MODULE_1__["richText"])(greeting));
+  }, Object(_utils_richText__WEBPACK_IMPORTED_MODULE_1__["richText"])(greeting));
 };
 
-// Home.getInitialProps = async ({ }) => {
-//     return { greeting: "bar" }
-// }
 var __N_SSG = true;
 /* harmony default export */ __webpack_exports__["default"] = (Home);
 
