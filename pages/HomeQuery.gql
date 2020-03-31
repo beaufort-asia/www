@@ -1,0 +1,64 @@
+
+query HomeQuery {
+        allHomes {
+        edges {
+            node {
+                homepageTitle                             
+                header_left_rich_text
+                header_left_title
+                header_right_rich_text
+                header_right_title
+                column1_sections {
+                    section {
+                        ... on Section {
+                            section_title,
+                            _meta {
+                                id
+                            }
+                        }
+                    }
+                },
+                column2_sections {
+                    section {
+                        ... on Section {
+                            section_title,
+                            _meta {
+                                id
+                            }
+                        }
+                    }
+                },
+                column3_sections {
+                    section {
+                        ... on Section {
+                            section_title,
+                            _meta {
+                                id
+                            }
+                        }
+                    }
+                },
+                column4_sections {
+                    section {
+                        ... on Section {
+                            section_title,
+                            _meta {
+                                id
+                            }
+                        }
+                    }
+                },
+                column5_sections {
+                    section {
+                        ... on Section {
+                            section_title,
+                            _meta {
+                                id
+                            }
+                        }
+                    }
+                } 
+            }
+        }
+    }
+} 

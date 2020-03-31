@@ -24,6 +24,8 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "getSchema.ts",
+    "prismic-configuration.ts"
   ]
 }
