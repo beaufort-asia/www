@@ -5,7 +5,7 @@ import {
   accessToken,
   linkResolver,
   hrefResolver
-} from './prismic-configuration'
+} from '../prismic-configuration'
 import { ApiOptions } from 'prismic-javascript/d.ts/Api';
 import { NextApiRequest } from 'next';
 

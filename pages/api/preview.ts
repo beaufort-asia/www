@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { Client } from "../../prismic-helpers";
+import { Client } from "../../utils/prismic-helpers";
 import { linkResolver } from "../../prismic-configuration";
 
 export const Preview = async (req: NextApiRequest, res: NextApiResponse) => {

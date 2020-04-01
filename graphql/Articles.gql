@@ -1,0 +1,79 @@
+query Articles($after: String) {
+    
+  allArticles(after: $after) {
+    pageInfo{
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }       
+    edges {
+      node {
+        body {
+          ... on ArticleBodyHtml { 
+            primary {
+              html_rich_text
+            }
+            type
+          }
+          ... on ArticleBodyVimeo {
+            primary {
+              vimeo_embed
+              vimeo_link_text
+              vimeo_thumbnail_image
+            }
+            type
+          }
+          ... on ArticleBodyYoutube {
+            primary {
+              youtube_embed
+              youtube_link_text
+              youtube_thumbnail_image
+            }
+            type
+          }
+          ... on ArticleBodySoundcloud {
+            primary {
+              soundcloud_embed
+            }
+            type
+          }
+          ... on ArticleBodyImage {
+            primary {
+              image_link_text
+              image_file
+              image_text_before
+              image_text_below
+            }
+            type
+          }
+          ... on ArticleBodyLink {
+            primary {
+              link_text
+              link_text_after
+              link_text_before
+              link_thumbnail
+              link_url {
+                _linkType
+              }
+            }
+            type
+          }
+        }
+        articleDate
+        _meta {
+          id
+        }
+        highlight          
+        section {            
+          ... on Section {              
+            _meta {
+              id
+            }
+          }
+        }
+      }
+    }
+  }            
+
+}

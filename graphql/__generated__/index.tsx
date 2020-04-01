@@ -6,7 +6,7 @@ import * as ApolloReactHoc from '@apollo/react-hoc';
 export type Maybe<T> = T | null;
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 /** All built-in and custom scalars, mapped to their actual values */
-export type Scalars = {
+export interface Scalars {
   ID: string;
   String: string;
   Boolean: boolean;
@@ -16,182 +16,182 @@ export type Scalars = {
   Long: any;
   Json: any;
   Date: any;
-};
+}
 
 /** A prismic document */
-export type _Document = {
+export interface _Document {
   _meta: Meta;
-};
+}
 
 /** A connection to a list of items. */
-export type _DocumentConnection = {
-   __typename?: '_DocumentConnection';
+export interface _DocumentConnection {
+   __typename: '_DocumentConnection';
   /** Information to aid in pagination. */
   pageInfo: PageInfo;
   /** A list of edges. */
   edges?: Maybe<Array<Maybe<_DocumentEdge>>>;
   totalCount: Scalars['Long'];
-};
+}
 
 /** An edge in a connection. */
-export type _DocumentEdge = {
-   __typename?: '_DocumentEdge';
+export interface _DocumentEdge {
+   __typename: '_DocumentEdge';
   /** The item at the end of the edge. */
   node: _Document;
   /** A cursor for use in pagination. */
   cursor: Scalars['String'];
-};
+}
 
 /** An external link */
-export type _ExternalLink = _Linkable & {
-   __typename?: '_ExternalLink';
+export interface _ExternalLink  extends _Linkable {
+   __typename: '_ExternalLink';
   url: Scalars['String'];
   _linkType?: Maybe<Scalars['String']>;
-};
+}
 
 /** A linked file */
-export type _FileLink = _Linkable & {
-   __typename?: '_FileLink';
+export interface _FileLink  extends _Linkable {
+   __typename: '_FileLink';
   name: Scalars['String'];
   url: Scalars['String'];
   size: Scalars['Long'];
   _linkType?: Maybe<Scalars['String']>;
-};
+}
 
 /** A linked image */
-export type _ImageLink = _Linkable & {
-   __typename?: '_ImageLink';
+export interface _ImageLink  extends _Linkable {
+   __typename: '_ImageLink';
   name: Scalars['String'];
   url: Scalars['String'];
   size: Scalars['Long'];
   height: Scalars['Int'];
   width: Scalars['Int'];
   _linkType?: Maybe<Scalars['String']>;
-};
+}
 
 /** A prismic link */
-export type _Linkable = {
+export interface _Linkable {
   _linkType?: Maybe<Scalars['String']>;
-};
+}
 
-export type Article = _Document & _Linkable & {
-   __typename?: 'Article';
+export interface Article  extends _Document, _Linkable {
+   __typename: 'Article';
   articleDate?: Maybe<Scalars['Date']>;
   highlight?: Maybe<Scalars['String']>;
   section?: Maybe<_Linkable>;
   body?: Maybe<Array<ArticleBody>>;
   _meta: Meta;
   _linkType?: Maybe<Scalars['String']>;
-};
+}
 
 export type ArticleBody = ArticleBodyHtml | ArticleBodyVimeo | ArticleBodyYoutube | ArticleBodySoundcloud | ArticleBodyImage | ArticleBodyLink;
 
-export type ArticleBodyHtml = {
-   __typename?: 'ArticleBodyHtml';
+export interface ArticleBodyHtml {
+   __typename: 'ArticleBodyHtml';
   type?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   primary?: Maybe<ArticleBodyHtmlPrimary>;
-};
+}
 
-export type ArticleBodyHtmlPrimary = {
-   __typename?: 'ArticleBodyHtmlPrimary';
+export interface ArticleBodyHtmlPrimary {
+   __typename: 'ArticleBodyHtmlPrimary';
   html_rich_text?: Maybe<Scalars['Json']>;
-};
+}
 
-export type ArticleBodyImage = {
-   __typename?: 'ArticleBodyImage';
+export interface ArticleBodyImage {
+   __typename: 'ArticleBodyImage';
   type?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   primary?: Maybe<ArticleBodyImagePrimary>;
-};
+}
 
-export type ArticleBodyImagePrimary = {
-   __typename?: 'ArticleBodyImagePrimary';
+export interface ArticleBodyImagePrimary {
+   __typename: 'ArticleBodyImagePrimary';
   image_text_before?: Maybe<Scalars['Json']>;
   image_link_text?: Maybe<Scalars['Json']>;
   image_file?: Maybe<Scalars['Json']>;
   image_text_below?: Maybe<Scalars['Json']>;
-};
+}
 
-export type ArticleBodyLink = {
-   __typename?: 'ArticleBodyLink';
+export interface ArticleBodyLink {
+   __typename: 'ArticleBodyLink';
   type?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   primary?: Maybe<ArticleBodyLinkPrimary>;
-};
+}
 
-export type ArticleBodyLinkPrimary = {
-   __typename?: 'ArticleBodyLinkPrimary';
+export interface ArticleBodyLinkPrimary {
+   __typename: 'ArticleBodyLinkPrimary';
   link_text_before?: Maybe<Scalars['Json']>;
   link_text?: Maybe<Scalars['Json']>;
   link_url?: Maybe<_Linkable>;
   link_thumbnail?: Maybe<Scalars['Json']>;
   link_text_after?: Maybe<Scalars['Json']>;
-};
+}
 
-export type ArticleBodySoundcloud = {
-   __typename?: 'ArticleBodySoundcloud';
+export interface ArticleBodySoundcloud {
+   __typename: 'ArticleBodySoundcloud';
   type?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   primary?: Maybe<ArticleBodySoundcloudPrimary>;
-};
+}
 
-export type ArticleBodySoundcloudPrimary = {
-   __typename?: 'ArticleBodySoundcloudPrimary';
+export interface ArticleBodySoundcloudPrimary {
+   __typename: 'ArticleBodySoundcloudPrimary';
   soundcloud_embed?: Maybe<Scalars['Json']>;
-};
+}
 
-export type ArticleBodyVimeo = {
-   __typename?: 'ArticleBodyVimeo';
+export interface ArticleBodyVimeo {
+   __typename: 'ArticleBodyVimeo';
   type?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   primary?: Maybe<ArticleBodyVimeoPrimary>;
-};
+}
 
-export type ArticleBodyVimeoPrimary = {
-   __typename?: 'ArticleBodyVimeoPrimary';
+export interface ArticleBodyVimeoPrimary {
+   __typename: 'ArticleBodyVimeoPrimary';
   vimeo_link_text?: Maybe<Scalars['Json']>;
   vimeo_embed?: Maybe<Scalars['Json']>;
   vimeo_thumbnail_image?: Maybe<Scalars['Json']>;
-};
+}
 
-export type ArticleBodyYoutube = {
-   __typename?: 'ArticleBodyYoutube';
+export interface ArticleBodyYoutube {
+   __typename: 'ArticleBodyYoutube';
   type?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   primary?: Maybe<ArticleBodyYoutubePrimary>;
-};
+}
 
-export type ArticleBodyYoutubePrimary = {
-   __typename?: 'ArticleBodyYoutubePrimary';
+export interface ArticleBodyYoutubePrimary {
+   __typename: 'ArticleBodyYoutubePrimary';
   youtube_link_text?: Maybe<Scalars['Json']>;
   youtube_embed?: Maybe<Scalars['Json']>;
   youtube_thumbnail_image?: Maybe<Scalars['Json']>;
-};
+}
 
 /** A connection to a list of items. */
-export type ArticleConnectionConnection = {
-   __typename?: 'ArticleConnectionConnection';
+export interface ArticleConnectionConnection {
+   __typename: 'ArticleConnectionConnection';
   /** Information to aid in pagination. */
   pageInfo: PageInfo;
   /** A list of edges. */
   edges?: Maybe<Array<Maybe<ArticleConnectionEdge>>>;
   totalCount: Scalars['Long'];
-};
+}
 
 /** An edge in a connection. */
-export type ArticleConnectionEdge = {
-   __typename?: 'ArticleConnectionEdge';
+export interface ArticleConnectionEdge {
+   __typename: 'ArticleConnectionEdge';
   /** The item at the end of the edge. */
   node: Article;
   /** A cursor for use in pagination. */
   cursor: Scalars['String'];
-};
+}
 
 
 
-export type Home = _Document & _Linkable & {
-   __typename?: 'Home';
+export interface Home  extends _Document, _Linkable {
+   __typename: 'Home';
   homepageTitle?: Maybe<Scalars['Json']>;
   header_left_title?: Maybe<Scalars['Json']>;
   header_left_rich_text?: Maybe<Scalars['Json']>;
@@ -204,56 +204,56 @@ export type Home = _Document & _Linkable & {
   header_right_rich_text?: Maybe<Scalars['Json']>;
   _meta: Meta;
   _linkType?: Maybe<Scalars['String']>;
-};
+}
 
-export type HomeColumn1_Sections = {
-   __typename?: 'HomeColumn1_sections';
+export interface HomeColumn1_Sections {
+   __typename: 'HomeColumn1_sections';
   section?: Maybe<_Linkable>;
-};
+}
 
-export type HomeColumn2_Sections = {
-   __typename?: 'HomeColumn2_sections';
+export interface HomeColumn2_Sections {
+   __typename: 'HomeColumn2_sections';
   section?: Maybe<_Linkable>;
-};
+}
 
-export type HomeColumn3_Sections = {
-   __typename?: 'HomeColumn3_sections';
+export interface HomeColumn3_Sections {
+   __typename: 'HomeColumn3_sections';
   section?: Maybe<_Linkable>;
-};
+}
 
-export type HomeColumn4_Sections = {
-   __typename?: 'HomeColumn4_sections';
+export interface HomeColumn4_Sections {
+   __typename: 'HomeColumn4_sections';
   section?: Maybe<_Linkable>;
-};
+}
 
-export type HomeColumn5_Sections = {
-   __typename?: 'HomeColumn5_sections';
+export interface HomeColumn5_Sections {
+   __typename: 'HomeColumn5_sections';
   section?: Maybe<_Linkable>;
-};
+}
 
 /** A connection to a list of items. */
-export type HomeConnectionConnection = {
-   __typename?: 'HomeConnectionConnection';
+export interface HomeConnectionConnection {
+   __typename: 'HomeConnectionConnection';
   /** Information to aid in pagination. */
   pageInfo: PageInfo;
   /** A list of edges. */
   edges?: Maybe<Array<Maybe<HomeConnectionEdge>>>;
   totalCount: Scalars['Long'];
-};
+}
 
 /** An edge in a connection. */
-export type HomeConnectionEdge = {
-   __typename?: 'HomeConnectionEdge';
+export interface HomeConnectionEdge {
+   __typename: 'HomeConnectionEdge';
   /** The item at the end of the edge. */
   node: Home;
   /** A cursor for use in pagination. */
   cursor: Scalars['String'];
-};
+}
 
 
 
-export type Meta = {
-   __typename?: 'Meta';
+export interface Meta {
+   __typename: 'Meta';
   /** The id of the document. */
   id: Scalars['String'];
   /** The uid of the document. */
@@ -270,11 +270,11 @@ export type Meta = {
   firstPublicationDate?: Maybe<Scalars['DateTime']>;
   /** The last publication date of the document. */
   lastPublicationDate?: Maybe<Scalars['DateTime']>;
-};
+}
 
 /** Information about pagination in a connection. */
-export type PageInfo = {
-   __typename?: 'PageInfo';
+export interface PageInfo {
+   __typename: 'PageInfo';
   /** When paginating forwards, are there more items? */
   hasNextPage: Scalars['Boolean'];
   /** When paginating backwards, are there more items? */
@@ -283,18 +283,18 @@ export type PageInfo = {
   startCursor?: Maybe<Scalars['String']>;
   /** When paginating forwards, the cursor to continue. */
   endCursor?: Maybe<Scalars['String']>;
-};
+}
 
-export type Query = {
-   __typename?: 'Query';
+export interface Query {
+   __typename: 'Query';
   _allDocuments: _DocumentConnection;
   allHomes: HomeConnectionConnection;
   allArticles: ArticleConnectionConnection;
   allSections: SectionConnectionConnection;
-};
+}
 
 
-export type Query_AllDocumentsArgs = {
+export interface Query_AllDocumentsArgs {
   sortBy?: Maybe<SortDocumentsBy>;
   id?: Maybe<Scalars['String']>;
   id_in?: Maybe<Array<Scalars['String']>>;
@@ -317,10 +317,10 @@ export type Query_AllDocumentsArgs = {
   after?: Maybe<Scalars['String']>;
   first?: Maybe<Scalars['Int']>;
   last?: Maybe<Scalars['Int']>;
-};
+}
 
 
-export type QueryAllHomesArgs = {
+export interface QueryAllHomesArgs {
   sortBy?: Maybe<SortHomey>;
   id?: Maybe<Scalars['String']>;
   id_in?: Maybe<Array<Scalars['String']>>;
@@ -344,10 +344,10 @@ export type QueryAllHomesArgs = {
   after?: Maybe<Scalars['String']>;
   first?: Maybe<Scalars['Int']>;
   last?: Maybe<Scalars['Int']>;
-};
+}
 
 
-export type QueryAllArticlesArgs = {
+export interface QueryAllArticlesArgs {
   sortBy?: Maybe<SortArticley>;
   id?: Maybe<Scalars['String']>;
   id_in?: Maybe<Array<Scalars['String']>>;
@@ -371,10 +371,10 @@ export type QueryAllArticlesArgs = {
   after?: Maybe<Scalars['String']>;
   first?: Maybe<Scalars['Int']>;
   last?: Maybe<Scalars['Int']>;
-};
+}
 
 
-export type QueryAllSectionsArgs = {
+export interface QueryAllSectionsArgs {
   sortBy?: Maybe<SortSectiony>;
   id?: Maybe<Scalars['String']>;
   id_in?: Maybe<Array<Scalars['String']>>;
@@ -398,10 +398,10 @@ export type QueryAllSectionsArgs = {
   after?: Maybe<Scalars['String']>;
   first?: Maybe<Scalars['Int']>;
   last?: Maybe<Scalars['Int']>;
-};
+}
 
-export type RelatedDocument = {
-   __typename?: 'RelatedDocument';
+export interface RelatedDocument {
+   __typename: 'RelatedDocument';
   /** The id of the document. */
   id: Scalars['String'];
   /** The uid of the document. */
@@ -410,39 +410,39 @@ export type RelatedDocument = {
   type: Scalars['String'];
   /** The language of the document. */
   lang: Scalars['String'];
-};
+}
 
-export type Section = _Document & _Linkable & {
-   __typename?: 'Section';
+export interface Section  extends _Document, _Linkable {
+   __typename: 'Section';
   section_title?: Maybe<Scalars['Json']>;
   column?: Maybe<Scalars['String']>;
   _meta: Meta;
   _linkType?: Maybe<Scalars['String']>;
-};
+}
 
 /** A connection to a list of items. */
-export type SectionConnectionConnection = {
-   __typename?: 'SectionConnectionConnection';
+export interface SectionConnectionConnection {
+   __typename: 'SectionConnectionConnection';
   /** Information to aid in pagination. */
   pageInfo: PageInfo;
   /** A list of edges. */
   edges?: Maybe<Array<Maybe<SectionConnectionEdge>>>;
   totalCount: Scalars['Long'];
-};
+}
 
 /** An edge in a connection. */
-export type SectionConnectionEdge = {
-   __typename?: 'SectionConnectionEdge';
+export interface SectionConnectionEdge {
+   __typename: 'SectionConnectionEdge';
   /** The item at the end of the edge. */
   node: Section;
   /** A cursor for use in pagination. */
   cursor: Scalars['String'];
-};
+}
 
-export type Similar = {
+export interface Similar {
   documentId: Scalars['String'];
   max: Scalars['Int'];
-};
+}
 
 export enum SortArticley {
   MetaFirstPublicationDateAsc = 'meta_firstPublicationDate_ASC',
@@ -490,7 +490,7 @@ export enum SortSectiony {
   ColumnDesc = 'column_DESC'
 }
 
-export type WhereArticle = {
+export interface WhereArticle {
   /** article-date */
   articleDate?: Maybe<Scalars['Date']>;
   /** article-date */
@@ -501,9 +501,9 @@ export type WhereArticle = {
   highlight_fulltext?: Maybe<Scalars['String']>;
   /** section */
   section?: Maybe<Scalars['String']>;
-};
+}
 
-export type WhereHome = {
+export interface WhereHome {
   /** homepage-title */
   homepageTitle_fulltext?: Maybe<Scalars['String']>;
   /** header_left_title */
@@ -514,77 +514,170 @@ export type WhereHome = {
   header_right_title_fulltext?: Maybe<Scalars['String']>;
   /** header_right_rich_text */
   header_right_rich_text_fulltext?: Maybe<Scalars['String']>;
-};
+}
 
-export type WhereSection = {
+export interface WhereSection {
   /** section_title */
   section_title_fulltext?: Maybe<Scalars['String']>;
   column?: Maybe<Scalars['String']>;
   column_fulltext?: Maybe<Scalars['String']>;
+}
+
+export type ArticlesQueryVariables = {
+  after?: Maybe<Scalars['String']>;
 };
+
+
+export type ArticlesQuery = (
+  { __typename: 'Query' }
+  & { allArticles: (
+    { __typename: 'ArticleConnectionConnection' }
+    & { pageInfo: (
+      { __typename: 'PageInfo' }
+      & Pick<PageInfo, 'hasPreviousPage' | 'hasNextPage' | 'startCursor' | 'endCursor'>
+    ), edges?: Maybe<Array<Maybe<(
+      { __typename: 'ArticleConnectionEdge' }
+      & { node: (
+        { __typename: 'Article' }
+        & Pick<Article, 'articleDate' | 'highlight'>
+        & { body?: Maybe<Array<(
+          { __typename: 'ArticleBodyHtml' }
+          & Pick<ArticleBodyHtml, 'type'>
+          & { primary?: Maybe<(
+            { __typename: 'ArticleBodyHtmlPrimary' }
+            & Pick<ArticleBodyHtmlPrimary, 'html_rich_text'>
+          )> }
+        ) | (
+          { __typename: 'ArticleBodyVimeo' }
+          & Pick<ArticleBodyVimeo, 'type'>
+          & { primary?: Maybe<(
+            { __typename: 'ArticleBodyVimeoPrimary' }
+            & Pick<ArticleBodyVimeoPrimary, 'vimeo_embed' | 'vimeo_link_text' | 'vimeo_thumbnail_image'>
+          )> }
+        ) | (
+          { __typename: 'ArticleBodyYoutube' }
+          & Pick<ArticleBodyYoutube, 'type'>
+          & { primary?: Maybe<(
+            { __typename: 'ArticleBodyYoutubePrimary' }
+            & Pick<ArticleBodyYoutubePrimary, 'youtube_embed' | 'youtube_link_text' | 'youtube_thumbnail_image'>
+          )> }
+        ) | (
+          { __typename: 'ArticleBodySoundcloud' }
+          & Pick<ArticleBodySoundcloud, 'type'>
+          & { primary?: Maybe<(
+            { __typename: 'ArticleBodySoundcloudPrimary' }
+            & Pick<ArticleBodySoundcloudPrimary, 'soundcloud_embed'>
+          )> }
+        ) | (
+          { __typename: 'ArticleBodyImage' }
+          & Pick<ArticleBodyImage, 'type'>
+          & { primary?: Maybe<(
+            { __typename: 'ArticleBodyImagePrimary' }
+            & Pick<ArticleBodyImagePrimary, 'image_link_text' | 'image_file' | 'image_text_before' | 'image_text_below'>
+          )> }
+        ) | (
+          { __typename: 'ArticleBodyLink' }
+          & Pick<ArticleBodyLink, 'type'>
+          & { primary?: Maybe<(
+            { __typename: 'ArticleBodyLinkPrimary' }
+            & Pick<ArticleBodyLinkPrimary, 'link_text' | 'link_text_after' | 'link_text_before' | 'link_thumbnail'>
+            & { link_url?: Maybe<(
+              { __typename: 'Home' }
+              & Pick<Home, '_linkType'>
+            ) | (
+              { __typename: 'Article' }
+              & Pick<Article, '_linkType'>
+            ) | (
+              { __typename: 'Section' }
+              & Pick<Section, '_linkType'>
+            ) | (
+              { __typename: '_ExternalLink' }
+              & Pick<_ExternalLink, '_linkType'>
+            ) | (
+              { __typename: '_FileLink' }
+              & Pick<_FileLink, '_linkType'>
+            ) | (
+              { __typename: '_ImageLink' }
+              & Pick<_ImageLink, '_linkType'>
+            )> }
+          )> }
+        )>>, _meta: (
+          { __typename: 'Meta' }
+          & Pick<Meta, 'id'>
+        ), section?: Maybe<{ __typename: 'Home' } | { __typename: 'Article' } | (
+          { __typename: 'Section' }
+          & { _meta: (
+            { __typename: 'Meta' }
+            & Pick<Meta, 'id'>
+          ) }
+        ) | { __typename: '_ExternalLink' } | { __typename: '_FileLink' } | { __typename: '_ImageLink' }> }
+      ) }
+    )>>> }
+  ) }
+);
 
 export type HomeQueryVariables = {};
 
 
 export type HomeQuery = (
-  { __typename?: 'Query' }
+  { __typename: 'Query' }
   & { allHomes: (
-    { __typename?: 'HomeConnectionConnection' }
+    { __typename: 'HomeConnectionConnection' }
     & { edges?: Maybe<Array<Maybe<(
-      { __typename?: 'HomeConnectionEdge' }
+      { __typename: 'HomeConnectionEdge' }
       & { node: (
-        { __typename?: 'Home' }
+        { __typename: 'Home' }
         & Pick<Home, 'homepageTitle' | 'header_left_rich_text' | 'header_left_title' | 'header_right_rich_text' | 'header_right_title'>
         & { column1_sections?: Maybe<Array<(
-          { __typename?: 'HomeColumn1_sections' }
-          & { section?: Maybe<{ __typename?: 'Home' } | { __typename?: 'Article' } | (
-            { __typename?: 'Section' }
+          { __typename: 'HomeColumn1_sections' }
+          & { section?: Maybe<{ __typename: 'Home' } | { __typename: 'Article' } | (
+            { __typename: 'Section' }
             & Pick<Section, 'section_title'>
             & { _meta: (
-              { __typename?: 'Meta' }
+              { __typename: 'Meta' }
               & Pick<Meta, 'id'>
             ) }
-          ) | { __typename?: '_ExternalLink' } | { __typename?: '_FileLink' } | { __typename?: '_ImageLink' }> }
+          ) | { __typename: '_ExternalLink' } | { __typename: '_FileLink' } | { __typename: '_ImageLink' }> }
         )>>, column2_sections?: Maybe<Array<(
-          { __typename?: 'HomeColumn2_sections' }
-          & { section?: Maybe<{ __typename?: 'Home' } | { __typename?: 'Article' } | (
-            { __typename?: 'Section' }
+          { __typename: 'HomeColumn2_sections' }
+          & { section?: Maybe<{ __typename: 'Home' } | { __typename: 'Article' } | (
+            { __typename: 'Section' }
             & Pick<Section, 'section_title'>
             & { _meta: (
-              { __typename?: 'Meta' }
+              { __typename: 'Meta' }
               & Pick<Meta, 'id'>
             ) }
-          ) | { __typename?: '_ExternalLink' } | { __typename?: '_FileLink' } | { __typename?: '_ImageLink' }> }
+          ) | { __typename: '_ExternalLink' } | { __typename: '_FileLink' } | { __typename: '_ImageLink' }> }
         )>>, column3_sections?: Maybe<Array<(
-          { __typename?: 'HomeColumn3_sections' }
-          & { section?: Maybe<{ __typename?: 'Home' } | { __typename?: 'Article' } | (
-            { __typename?: 'Section' }
+          { __typename: 'HomeColumn3_sections' }
+          & { section?: Maybe<{ __typename: 'Home' } | { __typename: 'Article' } | (
+            { __typename: 'Section' }
             & Pick<Section, 'section_title'>
             & { _meta: (
-              { __typename?: 'Meta' }
+              { __typename: 'Meta' }
               & Pick<Meta, 'id'>
             ) }
-          ) | { __typename?: '_ExternalLink' } | { __typename?: '_FileLink' } | { __typename?: '_ImageLink' }> }
+          ) | { __typename: '_ExternalLink' } | { __typename: '_FileLink' } | { __typename: '_ImageLink' }> }
         )>>, column4_sections?: Maybe<Array<(
-          { __typename?: 'HomeColumn4_sections' }
-          & { section?: Maybe<{ __typename?: 'Home' } | { __typename?: 'Article' } | (
-            { __typename?: 'Section' }
+          { __typename: 'HomeColumn4_sections' }
+          & { section?: Maybe<{ __typename: 'Home' } | { __typename: 'Article' } | (
+            { __typename: 'Section' }
             & Pick<Section, 'section_title'>
             & { _meta: (
-              { __typename?: 'Meta' }
+              { __typename: 'Meta' }
               & Pick<Meta, 'id'>
             ) }
-          ) | { __typename?: '_ExternalLink' } | { __typename?: '_FileLink' } | { __typename?: '_ImageLink' }> }
+          ) | { __typename: '_ExternalLink' } | { __typename: '_FileLink' } | { __typename: '_ImageLink' }> }
         )>>, column5_sections?: Maybe<Array<(
-          { __typename?: 'HomeColumn5_sections' }
-          & { section?: Maybe<{ __typename?: 'Home' } | { __typename?: 'Article' } | (
-            { __typename?: 'Section' }
+          { __typename: 'HomeColumn5_sections' }
+          & { section?: Maybe<{ __typename: 'Home' } | { __typename: 'Article' } | (
+            { __typename: 'Section' }
             & Pick<Section, 'section_title'>
             & { _meta: (
-              { __typename?: 'Meta' }
+              { __typename: 'Meta' }
               & Pick<Meta, 'id'>
             ) }
-          ) | { __typename?: '_ExternalLink' } | { __typename?: '_FileLink' } | { __typename?: '_ImageLink' }> }
+          ) | { __typename: '_ExternalLink' } | { __typename: '_FileLink' } | { __typename: '_ImageLink' }> }
         )>> }
       ) }
     )>>> }
@@ -592,6 +685,103 @@ export type HomeQuery = (
 );
 
 
+export const ArticlesDocument = gql`
+    query Articles($after: String) {
+  allArticles(after: $after) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    edges {
+      node {
+        body {
+          ... on ArticleBodyHtml {
+            primary {
+              html_rich_text
+            }
+            type
+          }
+          ... on ArticleBodyVimeo {
+            primary {
+              vimeo_embed
+              vimeo_link_text
+              vimeo_thumbnail_image
+            }
+            type
+          }
+          ... on ArticleBodyYoutube {
+            primary {
+              youtube_embed
+              youtube_link_text
+              youtube_thumbnail_image
+            }
+            type
+          }
+          ... on ArticleBodySoundcloud {
+            primary {
+              soundcloud_embed
+            }
+            type
+          }
+          ... on ArticleBodyImage {
+            primary {
+              image_link_text
+              image_file
+              image_text_before
+              image_text_below
+            }
+            type
+          }
+          ... on ArticleBodyLink {
+            primary {
+              link_text
+              link_text_after
+              link_text_before
+              link_thumbnail
+              link_url {
+                _linkType
+              }
+            }
+            type
+          }
+        }
+        articleDate
+        _meta {
+          id
+        }
+        highlight
+        section {
+          ... on Section {
+            _meta {
+              id
+            }
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+export type ArticlesComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<ArticlesQuery, ArticlesQueryVariables>, 'query'>;
+
+    export const ArticlesComponent = (props: ArticlesComponentProps) => (
+      <ApolloReactComponents.Query<ArticlesQuery, ArticlesQueryVariables> query={ArticlesDocument} {...props} />
+    );
+    
+export type ArticlesProps<TChildProps = {}> = ApolloReactHoc.DataProps<ArticlesQuery, ArticlesQueryVariables> & TChildProps;
+export function withArticles<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
+  TProps,
+  ArticlesQuery,
+  ArticlesQueryVariables,
+  ArticlesProps<TChildProps>>) {
+    return ApolloReactHoc.withQuery<TProps, ArticlesQuery, ArticlesQueryVariables, ArticlesProps<TChildProps>>(ArticlesDocument, {
+      alias: 'articles',
+      ...operationOptions
+    });
+};
+export type ArticlesQueryResult = ApolloReactCommon.QueryResult<ArticlesQuery, ArticlesQueryVariables>;
 export const HomeDocument = gql`
     query Home {
   allHomes {

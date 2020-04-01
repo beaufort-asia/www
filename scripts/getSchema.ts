@@ -1,9 +1,9 @@
-import apolloConfig from './apollo.config';
+import apolloConfig from '../apollo.config';
 import { writeFile } from 'fs';
 import { promisify } from 'util';
 import { introspectionQuery } from 'graphql';
 import qgl from 'graphql-tag';
-import { prismicClient } from './getPrismicClient';
+import { prismicClient } from '../utils/getPrismicClient';
 
 const _writeFile = promisify(writeFile);
 

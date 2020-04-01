@@ -5,6 +5,6 @@ module.exports = {
             name: 'beaufort-asia',
             localSchemaFile: './prismic-schema.json'
         },
-        includes: ['./pages/**/*.{ts,tsx,gql}']
+        includes: ['{pages,graphql}/**/*.{gql,graphql}'],
     }
 }
