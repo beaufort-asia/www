@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { NextPage, GetStaticProps } from 'next';
+import { GetStaticProps } from 'next';
 import { prismicClient } from '../utils/getPrismicClient';
-import { HomeDocument, HomeQuery, HomeQueryVariables, Home, ArticlesQueryResult, ArticlesQuery, ArticlesQueryVariables, ArticlesDocument, Article, Maybe } from '../graphql/__generated__';
-import { richText } from '../utils/richText';
+import { HomeDocument, HomeQuery, HomeQueryVariables, Home, ArticlesQuery, ArticlesQueryVariables, ArticlesDocument, Article } from '../graphql/__generated__';
 import DefaultLayout, { C1, C2, C3, C4, C5, HL, HR, HT, HH } from '../layouts';
 import { getHeader } from '../utils/getHeader';
 import { getColumnSections, getArticlesBySectionId } from '../utils/getColumnSections';
@@ -45,8 +44,6 @@ const Index: React.SFC<HomeProps> = (props) => {
     const column3Sections = getColumnSections(articlesBySectionId, home.column3_sections!);
     const column4Sections = getColumnSections(articlesBySectionId, home.column4_sections!);
     const column5Sections = getColumnSections(articlesBySectionId, home.column5_sections!);
-
-    const [date, setDate] = useState<string | null>(null);
 
     const isMobile = useMediaQuery({
         query: lt.md
@@ -99,9 +96,10 @@ export const getStaticProps: GetStaticProps<HomeProps> = async (context) => {
             fetchPolicy: 'no-cache',
             variables: {
                 after: last || ''
-            }
+            },
+            context: context.previewData
         });
-        console.log('merging...', data.allArticles?.edges?.length, ' edges', data);
+
         _.mergeWith(articlesQuery, data, (obj, src) => {
             if (!(Array.isArray(obj) && Array.isArray(src))) return undefined;
             return obj.concat(src);

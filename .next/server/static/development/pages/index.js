@@ -254,7 +254,6 @@ const Column = (_ref) => {
           {
             var _slice$image_file, _slice$image_file2;
 
-            console.log('image slice: ', slice);
             const thumbnailUrl = (_slice$image_file = slice.image_file) === null || _slice$image_file === void 0 ? void 0 : _slice$image_file.thumbnailUrl;
             if (!thumbnailUrl) return;
             return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, Object(_utils_richText__WEBPACK_IMPORTED_MODULE_2__["richText"])(slice.image_text_before), __jsx("a", {
@@ -263,7 +262,7 @@ const Column = (_ref) => {
               __self: undefined,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 71,
+                lineNumber: 70,
                 columnNumber: 57
               }
             }, __jsx("img", {
@@ -271,7 +270,7 @@ const Column = (_ref) => {
               __self: undefined,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 72,
+                lineNumber: 71,
                 columnNumber: 61
               }
             }), slice.image_link_text), Object(_utils_richText__WEBPACK_IMPORTED_MODULE_2__["richText"])(slice.image_text_after));
@@ -409,24 +408,7 @@ const Footer = () => __jsx("footer", {
     lineNumber: 8,
     columnNumber: 3
   }
-}, __jsx("p", {
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 9,
-    columnNumber: 5
-  }
-}, "Proudly published with \xA0", __jsx("a", {
-  href: "https://prismic.io",
-  target: "_blank",
-  rel: "noopener noreferrer",
-  __self: undefined,
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 11,
-    columnNumber: 7
-  }
-}, "Prismic")));
+});
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
 
@@ -1379,10 +1361,6 @@ const Index = props => {
   const column3Sections = Object(_utils_getColumnSections__WEBPACK_IMPORTED_MODULE_5__["getColumnSections"])(articlesBySectionId, home.column3_sections);
   const column4Sections = Object(_utils_getColumnSections__WEBPACK_IMPORTED_MODULE_5__["getColumnSections"])(articlesBySectionId, home.column4_sections);
   const column5Sections = Object(_utils_getColumnSections__WEBPACK_IMPORTED_MODULE_5__["getColumnSections"])(articlesBySectionId, home.column5_sections);
-  const {
-    0: date,
-    1: setDate
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
   const isMobile = Object(react_responsive__WEBPACK_IMPORTED_MODULE_6__["useMediaQuery"])({
     query: _styles_media__WEBPACK_IMPORTED_MODULE_7__["lt"].md
   });
@@ -1410,7 +1388,7 @@ const Index = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 59,
       columnNumber: 9
     }
   }, __jsx(HeaderLeft, {
@@ -1421,7 +1399,7 @@ const Index = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 60,
       columnNumber: 13
     }
   }), __jsx(HeaderTitle, {
@@ -1434,7 +1412,7 @@ const Index = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 61,
       columnNumber: 13
     }
   }), __jsx(HeaderRight, {
@@ -1445,7 +1423,7 @@ const Index = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 66,
       columnNumber: 13
     }
   }), __jsx(Horizontal, {
@@ -1455,7 +1433,7 @@ const Index = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 67,
       columnNumber: 13
     }
   }), __jsx(react_resize_detector__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -1465,7 +1443,7 @@ const Index = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 68,
       columnNumber: 13
     }
   }), __jsx(react_resize_detector__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -1475,7 +1453,7 @@ const Index = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 69,
       columnNumber: 13
     }
   }), __jsx(react_resize_detector__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -1485,7 +1463,7 @@ const Index = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 70,
       columnNumber: 13
     }
   }), __jsx(react_resize_detector__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -1495,7 +1473,7 @@ const Index = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 71,
       columnNumber: 13
     }
   }), __jsx(react_resize_detector__WEBPACK_IMPORTED_MODULE_11___default.a, {
@@ -1505,7 +1483,7 @@ const Index = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 72,
       columnNumber: 13
     }
   }), __jsx(Column1, _extends({
@@ -1521,7 +1499,7 @@ const Index = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 73,
       columnNumber: 13
     }
   })), __jsx(Column2, _extends({
@@ -1538,7 +1516,7 @@ const Index = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 74,
       columnNumber: 13
     }
   })), __jsx(Column3, _extends({
@@ -1555,7 +1533,7 @@ const Index = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 75,
       columnNumber: 13
     }
   })), __jsx(Column4, _extends({
@@ -1572,7 +1550,7 @@ const Index = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 76,
       columnNumber: 13
     }
   })), __jsx(Column5, _extends({
@@ -1588,7 +1566,7 @@ const Index = props => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 77,
       columnNumber: 13
     }
   })));
@@ -1607,7 +1585,7 @@ const getStaticProps = async context => {
   const articlesQuery = {};
 
   do {
-    var _articlesQuery$allArt, _articlesQuery$allArt2, _data$allArticles, _data$allArticles$edg;
+    var _articlesQuery$allArt, _articlesQuery$allArt2;
 
     const last = (_articlesQuery$allArt = articlesQuery.allArticles) === null || _articlesQuery$allArt === void 0 ? void 0 : (_articlesQuery$allArt2 = _articlesQuery$allArt.pageInfo) === null || _articlesQuery$allArt2 === void 0 ? void 0 : _articlesQuery$allArt2.endCursor;
     const {
@@ -1617,9 +1595,9 @@ const getStaticProps = async context => {
       fetchPolicy: 'no-cache',
       variables: {
         after: last || ''
-      }
+      },
+      context: context.previewData
     });
-    console.log('merging...', (_data$allArticles = data.allArticles) === null || _data$allArticles === void 0 ? void 0 : (_data$allArticles$edg = _data$allArticles.edges) === null || _data$allArticles$edg === void 0 ? void 0 : _data$allArticles$edg.length, ' edges', data);
 
     lodash__WEBPACK_IMPORTED_MODULE_14___default.a.mergeWith(articlesQuery, data, (obj, src) => {
       if (!(Array.isArray(obj) && Array.isArray(src))) return undefined;
@@ -1819,21 +1797,16 @@ const fromYesNo = str => {
 const getArticlesBySectionId = articles => {
   const articlesBySectionId = articles.reduce((acc, article) => {
     if (!article) return acc;
-    const section = article.section;
+    const sectionLink = article.section;
 
-    if (section === null || section === undefined) {
-      console.log('Section not set on Article: ', article);
+    if (sectionLink === null || sectionLink === undefined) {
+      console.log(`'section'  not set on Article: `, article);
       return acc;
     }
 
-    if (section._linkType !== "Section") {
-      console.log(`'section' return ${section._linkType}, should be a 'Section'.`);
-      return acc;
-    }
-
-    console.log('section:', section); // const sectionId = section._meta.id;
-    // acc[sectionId] = [...acc[sectionId] || [], article];
-
+    const section = sectionLink;
+    const sectionId = section._meta.id;
+    acc[sectionId] = [...(acc[sectionId] || []), article];
     return acc;
   }, {}) || {};
   return articlesBySectionId;

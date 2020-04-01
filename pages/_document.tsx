@@ -12,8 +12,6 @@ export default class StyledDocument extends Document<StyledDocumentProps> {
         return (
             <html>
                 <Head>
-                    <title>Beaufort</title>
-                    {/* Step 5: Output the styles in the head  */}
                     {this.props.styleTags}
                 </Head>
                 <body>

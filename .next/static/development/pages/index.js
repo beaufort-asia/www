@@ -160,8 +160,6 @@ var Column = function Column(_ref) {
             {
               var _slice$image_file, _slice$image_file2;
 
-              console.log('image slice: ', slice);
-
               var _thumbnailUrl2 = (_slice$image_file = slice.image_file) === null || _slice$image_file === void 0 ? void 0 : _slice$image_file.thumbnailUrl;
 
               if (!_thumbnailUrl2) return;
@@ -171,7 +169,7 @@ var Column = function Column(_ref) {
                 __self: _this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 71,
+                  lineNumber: 70,
                   columnNumber: 57
                 }
               }, __jsx("img", {
@@ -179,7 +177,7 @@ var Column = function Column(_ref) {
                 __self: _this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 72,
+                  lineNumber: 71,
                   columnNumber: 61
                 }
               }), slice.image_link_text), Object(_utils_richText__WEBPACK_IMPORTED_MODULE_4__["richText"])(slice.image_text_after));
@@ -313,24 +311,7 @@ var Footer = function Footer() {
       lineNumber: 8,
       columnNumber: 3
     }
-  }, __jsx("p", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 9,
-      columnNumber: 5
-    }
-  }, "Proudly published with \xA0", __jsx("a", {
-    href: "https://prismic.io",
-    target: "_blank",
-    rel: "noopener noreferrer",
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 7
-    }
-  }, "Prismic")));
+  });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
@@ -851,6 +832,46 @@ var DefaultLayout = function DefaultLayout(_ref) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _arrayLikeToArray; });
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _arrayWithoutHoles; });
+/* harmony import */ var _arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayLikeToArray */ "./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js");
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return Object(_arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(arr);
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js":
 /*!*******************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/defineProperty.js ***!
@@ -904,6 +925,38 @@ function _extends() {
   };
 
   return _extends.apply(this, arguments);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/iterableToArray.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/iterableToArray.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _iterableToArray; });
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _nonIterableSpread; });
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 
 /***/ }),
@@ -988,6 +1041,53 @@ function _taggedTemplateLiteral(strings, raw) {
       value: Object.freeze(raw)
     }
   }));
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _toConsumableArray; });
+/* harmony import */ var _arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js");
+/* harmony import */ var _iterableToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime/helpers/esm/iterableToArray.js");
+/* harmony import */ var _unsupportedIterableToArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./unsupportedIterableToArray */ "./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js");
+/* harmony import */ var _nonIterableSpread__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js");
+
+
+
+
+function _toConsumableArray(arr) {
+  return Object(_arrayWithoutHoles__WEBPACK_IMPORTED_MODULE_0__["default"])(arr) || Object(_iterableToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(arr) || Object(_unsupportedIterableToArray__WEBPACK_IMPORTED_MODULE_2__["default"])(arr) || Object(_nonIterableSpread__WEBPACK_IMPORTED_MODULE_3__["default"])();
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _unsupportedIterableToArray; });
+/* harmony import */ var _arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayLikeToArray */ "./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js");
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return Object(_arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(n);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return Object(_arrayLikeToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(o, minLen);
 }
 
 /***/ }),
@@ -11475,40 +11575,35 @@ var Index = function Index(props) {
   var column3Sections = Object(_utils_getColumnSections__WEBPACK_IMPORTED_MODULE_4__["getColumnSections"])(articlesBySectionId, home.column3_sections);
   var column4Sections = Object(_utils_getColumnSections__WEBPACK_IMPORTED_MODULE_4__["getColumnSections"])(articlesBySectionId, home.column4_sections);
   var column5Sections = Object(_utils_getColumnSections__WEBPACK_IMPORTED_MODULE_4__["getColumnSections"])(articlesBySectionId, home.column5_sections);
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
-      date = _useState[0],
-      setDate = _useState[1];
-
   var isMobile = Object(react_responsive__WEBPACK_IMPORTED_MODULE_5__["useMediaQuery"])({
     query: _styles_media__WEBPACK_IMPORTED_MODULE_6__["lt"].md
   });
 
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(0),
+      c1Height = _useState[0],
+      setC1Height = _useState[1];
+
   var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(0),
-      c1Height = _useState2[0],
-      setC1Height = _useState2[1];
+      c2Height = _useState2[0],
+      setC2Height = _useState2[1];
 
   var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(0),
-      c2Height = _useState3[0],
-      setC2Height = _useState3[1];
+      c3Height = _useState3[0],
+      setC3Height = _useState3[1];
 
   var _useState4 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(0),
-      c3Height = _useState4[0],
-      setC3Height = _useState4[1];
+      c4Height = _useState4[0],
+      setC4Height = _useState4[1];
 
   var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(0),
-      c4Height = _useState5[0],
-      setC4Height = _useState5[1];
-
-  var _useState6 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(0),
-      c5Height = _useState6[0],
-      setC5Height = _useState6[1];
+      c5Height = _useState5[0],
+      setC5Height = _useState5[1];
 
   return __jsx(_layouts__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 59,
       columnNumber: 9
     }
   }, __jsx(HeaderLeft, {
@@ -11519,7 +11614,7 @@ var Index = function Index(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 60,
       columnNumber: 13
     }
   }), __jsx(HeaderTitle, {
@@ -11532,7 +11627,7 @@ var Index = function Index(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 61,
       columnNumber: 13
     }
   }), __jsx(HeaderRight, {
@@ -11543,7 +11638,7 @@ var Index = function Index(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 66,
       columnNumber: 13
     }
   }), __jsx(Horizontal, {
@@ -11553,7 +11648,7 @@ var Index = function Index(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 67,
       columnNumber: 13
     }
   }), __jsx(react_resize_detector__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -11565,7 +11660,7 @@ var Index = function Index(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 68,
       columnNumber: 13
     }
   }), __jsx(react_resize_detector__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -11577,7 +11672,7 @@ var Index = function Index(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 69,
       columnNumber: 13
     }
   }), __jsx(react_resize_detector__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -11589,7 +11684,7 @@ var Index = function Index(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 70,
       columnNumber: 13
     }
   }), __jsx(react_resize_detector__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -11601,7 +11696,7 @@ var Index = function Index(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 71,
       columnNumber: 13
     }
   }), __jsx(react_resize_detector__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -11613,7 +11708,7 @@ var Index = function Index(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 72,
       columnNumber: 13
     }
   }), __jsx(Column1, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -11629,7 +11724,7 @@ var Index = function Index(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 73,
       columnNumber: 13
     }
   })), __jsx(Column2, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -11646,7 +11741,7 @@ var Index = function Index(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 74,
       columnNumber: 13
     }
   })), __jsx(Column3, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -11663,7 +11758,7 @@ var Index = function Index(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 75,
       columnNumber: 13
     }
   })), __jsx(Column4, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -11680,7 +11775,7 @@ var Index = function Index(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 76,
       columnNumber: 13
     }
   })), __jsx(Column5, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -11696,7 +11791,7 @@ var Index = function Index(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 77,
       columnNumber: 13
     }
   })));
@@ -11889,6 +11984,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getArticlesBySectionId", function() { return getArticlesBySectionId; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "exists", function() { return exists; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getColumnSections", function() { return getColumnSections; });
+/* harmony import */ var _babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+
+
 // import { HomeQuery, HomeQuery_prismic_allArticles_edges_node_section_PRISMIC_Section, HomeQuery_prismic_allHomes_edges_node_column1_sections, HomeQuery_prismic_allArticles_edges, HomeQuery_prismic_allHomes_edges_node_column2_sections, HomeQuery_prismic_allHomes_edges_node_column3_sections, HomeQuery_prismic_allHomes_edges_node_column4_sections, HomeQuery_prismic_allHomes_edges_node_column5_sections } from "../templates/home/HomeQuery";
 var fromYesNo = function fromYesNo(str) {
   if (!str) return false;
@@ -11898,21 +11996,16 @@ var fromYesNo = function fromYesNo(str) {
 var getArticlesBySectionId = function getArticlesBySectionId(articles) {
   var articlesBySectionId = articles.reduce(function (acc, article) {
     if (!article) return acc;
-    var section = article.section;
+    var sectionLink = article.section;
 
-    if (section === null || section === undefined) {
-      console.log('Section not set on Article: ', article);
+    if (sectionLink === null || sectionLink === undefined) {
+      console.log("'section'  not set on Article: ", article);
       return acc;
     }
 
-    if (section._linkType !== "Section") {
-      console.log("'section' return ".concat(section._linkType, ", should be a 'Section'."));
-      return acc;
-    }
-
-    console.log('section:', section); // const sectionId = section._meta.id;
-    // acc[sectionId] = [...acc[sectionId] || [], article];
-
+    var section = sectionLink;
+    var sectionId = section._meta.id;
+    acc[sectionId] = [].concat(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__["default"])(acc[sectionId] || []), [article]);
     return acc;
   }, {}) || {};
   return articlesBySectionId;

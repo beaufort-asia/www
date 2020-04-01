@@ -1117,32 +1117,25 @@ class StyledDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.
         lineNumber: 14,
         columnNumber: 17
       }
-    }, __jsx("title", {
+    }, this.props.styleTags), __jsx("body", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 15,
-        columnNumber: 21
-      }
-    }, "Beaufort"), this.props.styleTags), __jsx("body", {
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 19,
+        lineNumber: 17,
         columnNumber: 17
       }
     }, __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20,
+        lineNumber: 18,
         columnNumber: 21
       }
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 21,
+        lineNumber: 19,
         columnNumber: 21
       }
     })));
@@ -1160,7 +1153,7 @@ StyledDocument.getInitialProps = async ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 32,
       columnNumber: 29
     }
   })))); // Step 3: Extract the styles as <style> tags

@@ -11,19 +11,14 @@ export type ArticlesBySectionId = { [sectionId: string]: Article[] };
 export const getArticlesBySectionId = (articles: Article[]) => {
     const articlesBySectionId = articles.reduce((acc, article) => {
         if (!article) return acc;
-        const section = article.section;
-        if (section === null || section === undefined) {
-            console.log('Section not set on Article: ', article);
+        const sectionLink = article.section;
+        if (sectionLink === null || sectionLink === undefined) {
+            console.log(`'section'  not set on Article: `, article);
             return acc;
         }
-
-        if (section._linkType !== "Section") {
-            console.log(`'section' return ${section._linkType}, should be a 'Section'.`)
-            return acc;
-        }
-        console.log('section:', section);
-        // const sectionId = section._meta.id;
-        // acc[sectionId] = [...acc[sectionId] || [], article];
+        const section = sectionLink as Section;
+        const sectionId = section._meta.id;
+        acc[sectionId] = [...acc[sectionId] || [], article];
         return acc;
     }, {} as Record<string, any[]>) || {};
     return articlesBySectionId as ArticlesBySectionId;
