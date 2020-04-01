@@ -11,6 +11,8 @@
 /out
 .now
 .now/
+.next
+.next/
 
 # misc
 .DS_Store
