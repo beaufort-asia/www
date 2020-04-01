@@ -60,6 +60,9 @@ export const Column: React.FC<IColumnProps & IDashProps> = ({ contentId, values,
                                                     </>
                                                 )
                                             }
+                                            case (""): {
+
+                                            }
                                             case ("image"): {
                                                 const thumbnailUrl = slice.image_file?.thumbnailUrl;
                                                 if (!thumbnailUrl) return;

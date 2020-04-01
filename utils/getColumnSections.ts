@@ -44,6 +44,7 @@ export const getColumnSections = (articlesBySectionId: ArticlesBySectionId, colu
                             slices: article.body?.map(slice => {
 
                                 const { primary, type } = slice;
+
                                 switch (type) {
 
                                     case ("html"): {
@@ -66,6 +67,19 @@ export const getColumnSections = (articlesBySectionId: ArticlesBySectionId, colu
                                     }
 
                                     case ("link"): {
+                                        const { link_text_before, link_text, link_url, link_thumbnail, link_text_after } = primary as any;
+                                        const linkSlice: ILinkSlice = {
+                                            type: "link",
+                                            link_text_before,
+                                            link_text,
+                                            link_url,
+                                            link_thumbnail,
+                                            link_text_after
+                                        }
+                                        return linkSlice;
+                                    }
+
+                                    case ("bandcamp"): {
                                         const { link_text_before, link_text, link_url, link_thumbnail, link_text_after } = primary as any;
                                         const linkSlice: ILinkSlice = {
                                             type: "link",

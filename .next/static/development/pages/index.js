@@ -156,6 +156,9 @@ var Column = function Column(_ref) {
               }, content), Object(_utils_richText__WEBPACK_IMPORTED_MODULE_4__["richText"])(slice.link_text_after));
             }
 
+          case "":
+            {}
+
           case "image":
             {
               var _slice$image_file, _slice$image_file2;
@@ -169,7 +172,7 @@ var Column = function Column(_ref) {
                 __self: _this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 70,
+                  lineNumber: 73,
                   columnNumber: 57
                 }
               }, __jsx("img", {
@@ -177,7 +180,7 @@ var Column = function Column(_ref) {
                 __self: _this,
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 71,
+                  lineNumber: 74,
                   columnNumber: 61
                 }
               }), slice.image_link_text), Object(_utils_richText__WEBPACK_IMPORTED_MODULE_4__["richText"])(slice.image_text_after));
@@ -12077,21 +12080,40 @@ var getColumnSections = function getColumnSections(articlesBySectionId, columnSe
                   return linkSlice;
                 }
 
-              case "image":
+              case "bandcamp":
                 {
                   var _ref4 = primary,
-                      image_file = _ref4.image_file,
-                      image_link_text = _ref4.image_link_text,
-                      image_text_after = _ref4.image_text_after,
-                      image_text_before = _ref4.image_text_before;
+                      _link_text_before = _ref4.link_text_before,
+                      _link_text = _ref4.link_text,
+                      _link_url = _ref4.link_url,
+                      _link_thumbnail = _ref4.link_thumbnail,
+                      _link_text_after = _ref4.link_text_after;
                   var _linkSlice = {
+                    type: "link",
+                    link_text_before: _link_text_before,
+                    link_text: _link_text,
+                    link_url: _link_url,
+                    link_thumbnail: _link_thumbnail,
+                    link_text_after: _link_text_after
+                  };
+                  return _linkSlice;
+                }
+
+              case "image":
+                {
+                  var _ref5 = primary,
+                      image_file = _ref5.image_file,
+                      image_link_text = _ref5.image_link_text,
+                      image_text_after = _ref5.image_text_after,
+                      image_text_before = _ref5.image_text_before;
+                  var _linkSlice2 = {
                     type: "image",
                     image_file: image_file,
                     image_link_text: image_link_text,
                     image_text_after: image_text_after,
                     image_text_before: image_text_before
                   };
-                  return _linkSlice;
+                  return _linkSlice2;
                 }
 
               default:
@@ -12214,7 +12236,7 @@ var richText = function richText(rich_text_field) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!*****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fmartaver%2FProjects%2Fbeaufort-asia%2Fwww%2Fpages%2Findex.tsx ***!
   \*****************************************************************************************************************************************/
@@ -12237,5 +12259,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

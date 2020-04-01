@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -250,6 +250,9 @@ const Column = (_ref) => {
             }, content), Object(_utils_richText__WEBPACK_IMPORTED_MODULE_2__["richText"])(slice.link_text_after));
           }
 
+        case "":
+          {}
+
         case "image":
           {
             var _slice$image_file, _slice$image_file2;
@@ -262,7 +265,7 @@ const Column = (_ref) => {
               __self: undefined,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 70,
+                lineNumber: 73,
                 columnNumber: 57
               }
             }, __jsx("img", {
@@ -270,7 +273,7 @@ const Column = (_ref) => {
               __self: undefined,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 71,
+                lineNumber: 74,
                 columnNumber: 61
               }
             }), slice.image_link_text), Object(_utils_richText__WEBPACK_IMPORTED_MODULE_2__["richText"])(slice.image_text_after));
@@ -1057,7 +1060,7 @@ const ArticlesComponent = props => __jsx(_apollo_react_components__WEBPACK_IMPOR
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 770,
+    lineNumber: 782,
     columnNumber: 7
   }
 }));
@@ -1138,7 +1141,7 @@ const HomeComponent = props => __jsx(_apollo_react_components__WEBPACK_IMPORTED_
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 853,
+    lineNumber: 865,
     columnNumber: 7
   }
 }));
@@ -1879,6 +1882,26 @@ const getColumnSections = (articlesBySectionId, columnSections) => {
                   return linkSlice;
                 }
 
+              case "bandcamp":
+                {
+                  const {
+                    link_text_before,
+                    link_text,
+                    link_url,
+                    link_thumbnail,
+                    link_text_after
+                  } = primary;
+                  const linkSlice = {
+                    type: "link",
+                    link_text_before,
+                    link_text,
+                    link_url,
+                    link_thumbnail,
+                    link_text_after
+                  };
+                  return linkSlice;
+                }
+
               case "image":
                 {
                   const {
@@ -2044,7 +2067,7 @@ const richText = rich_text_field => __jsx(prismic_reactjs__WEBPACK_IMPORTED_MODU
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!*******************************!*\
   !*** multi ./pages/index.tsx ***!
   \*******************************/

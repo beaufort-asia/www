@@ -84,7 +84,19 @@ export interface Article  extends _Document, _Linkable {
   _linkType?: Maybe<Scalars['String']>;
 }
 
-export type ArticleBody = ArticleBodyHtml | ArticleBodyVimeo | ArticleBodyYoutube | ArticleBodySoundcloud | ArticleBodyImage | ArticleBodyLink;
+export type ArticleBody = ArticleBodyHtml | ArticleBodyVimeo | ArticleBodyYoutube | ArticleBodySoundcloud | ArticleBodyImage | ArticleBodyLink | ArticleBodyBandcamp_Part;
+
+export interface ArticleBodyBandcamp_Part {
+   __typename: 'ArticleBodyBandcamp_part';
+  type?: Maybe<Scalars['String']>;
+  label?: Maybe<Scalars['String']>;
+  primary?: Maybe<ArticleBodyBandcamp_PartPrimary>;
+}
+
+export interface ArticleBodyBandcamp_PartPrimary {
+   __typename: 'ArticleBodyBandcamp_partPrimary';
+  bandcamp_url?: Maybe<Scalars['String']>;
+}
 
 export interface ArticleBodyHtml {
    __typename: 'ArticleBodyHtml';
@@ -601,7 +613,7 @@ export type ArticlesQuery = (
               & Pick<_ImageLink, '_linkType'>
             )> }
           )> }
-        )>>, _meta: (
+        ) | { __typename: 'ArticleBodyBandcamp_part' }>>, _meta: (
           { __typename: 'Meta' }
           & Pick<Meta, 'id'>
         ), section?: Maybe<{ __typename: 'Home' } | { __typename: 'Article' } | (

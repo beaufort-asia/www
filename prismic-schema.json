@@ -175,8 +175,94 @@
             "name": "ArticleBodyLink",
             "ofType": null,
             "__typename": "__Type"
+          },
+          {
+            "kind": "OBJECT",
+            "name": "ArticleBodyBandcamp_part",
+            "ofType": null,
+            "__typename": "__Type"
           }
         ],
+        "__typename": "__Type"
+      },
+      {
+        "kind": "OBJECT",
+        "name": "ArticleBodyBandcamp_part",
+        "description": null,
+        "fields": [
+          {
+            "name": "type",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "isDeprecated": false,
+            "deprecationReason": null,
+            "__typename": "__Field"
+          },
+          {
+            "name": "label",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "isDeprecated": false,
+            "deprecationReason": null,
+            "__typename": "__Field"
+          },
+          {
+            "name": "primary",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "ArticleBodyBandcamp_partPrimary",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "isDeprecated": false,
+            "deprecationReason": null,
+            "__typename": "__Field"
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null,
+        "__typename": "__Type"
+      },
+      {
+        "kind": "OBJECT",
+        "name": "ArticleBodyBandcamp_partPrimary",
+        "description": null,
+        "fields": [
+          {
+            "name": "bandcamp_url",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "isDeprecated": false,
+            "deprecationReason": null,
+            "__typename": "__Field"
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null,
         "__typename": "__Type"
       },
       {
