@@ -26,55 +26,53 @@ export const Column: React.FC<IColumnProps & IDashProps> = ({ contentId, values,
                         </DashRow>
                         {
                             section.articles.map(article => {
-                                if (article.id === 'XoE7VRIAACTouko9') console.log(article);
-                                return (<DashColumn padX={true} padY={true} key={article.id}>
-                                    {article.slices.map(slice => {
 
-                                        switch (slice.type) {
+                                return (<DashColumn padX={true} padY={true} key={article._meta.id}>
+                                    {article.body?.map(slice => {
 
-                                            case ("html"): {
+                                        switch (slice.__typename) {
+
+                                            case ('ArticleBodyHtml'): {
 
                                                 return (
-                                                    richText(slice.html_rich_text)
+                                                    richText(slice.primary?.html_rich_text)
                                                 )
                                             }
-                                            case ("vimeo"): {
-                                                if (!slice.vimeo_embed) return;
-                                                const thumbnailUrl = slice.vimeo_thumbnail_image?.url || slice.vimeo_embed?.thumbnail_url;
+                                            case ("ArticleBodyVimeo"): {
+                                                if (!slice.primary?.vimeo_embed) return;
+                                                const thumbnailUrl = slice.primary?.vimeo_thumbnail_image?.url || slice.primary?.vimeo_embed?.thumbnail_url;
                                                 if (!thumbnailUrl) return;
                                                 return (
                                                     <>
-                                                        <a href={slice.vimeo_embed.embed_url} target="_blank"><img src={thumbnailUrl} /></a>
-                                                        {richText(slice.vimeo_link_text)}
+                                                        <a href={slice.primary?.vimeo_embed.embed_url} target="_blank"><img src={thumbnailUrl} /></a>
+                                                        {richText(slice.primary?.vimeo_link_text)}
                                                     </>
                                                 )
                                             }
-                                            case ("link"): {
-                                                const thumbnailUrl = slice.link_thumbnail?.url;
-                                                const content = (thumbnailUrl) ? <img src={thumbnailUrl} /> : <span>{slice.link_text}</span>
+                                            case ("ArticleBodyLink"): {
+                                                const thumbnailUrl = slice.primary?.link_thumbnail?.url;
+                                                const content = (thumbnailUrl) ? <img src={thumbnailUrl} /> : <span>{slice.primary?.link_text}</span>
                                                 return (
                                                     <>
-                                                        {richText(slice.link_text_before)}
-                                                        <a href={slice.link_url} target="_blank">{content}</a>
-                                                        {richText(slice.link_text_after)}
+                                                        {richText(slice.primary?.link_text_before)}
+                                                        <a href={slice.primary?.link_url as any || ''} target="_blank">{content}</a>
+                                                        {richText(slice.primary?.link_text_after)}
                                                     </>
                                                 )
                                             }
-                                            case (""): {
 
-                                            }
-                                            case ("image"): {
-                                                const thumbnailUrl = slice.image_file?.thumbnailUrl;
+                                            case ("ArticleBodyImage"): {
+                                                const thumbnailUrl = slice.primary?.image_file?.thumbnailUrl;
                                                 if (!thumbnailUrl) return;
 
                                                 return (
                                                     <>
-                                                        {richText(slice.image_text_before)}
-                                                        <a href={slice.image_file?.url} target="_blank">
+                                                        {richText(slice.primary?.image_text_before)}
+                                                        <a href={slice.primary?.image_file?.url} target="_blank">
                                                             <img src={thumbnailUrl} />
-                                                            {slice.image_link_text}
+                                                            {slice.primary?.image_link_text}
                                                         </a>
-                                                        {richText(slice.image_text_after)}
+                                                        {richText(slice.primary?.image_text_below)}
                                                     </>
                                                 )
                                             }
