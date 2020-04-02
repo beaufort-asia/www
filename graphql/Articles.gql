@@ -38,6 +38,12 @@ query Articles($after: String) {
             }
             type
           }
+          ... on ArticleBodyCustom_code_embed {
+            primary {
+               html
+            }
+            type
+          }
           ... on ArticleBodyImage {
             primary {
               image_link_text

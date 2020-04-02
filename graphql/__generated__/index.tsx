@@ -84,7 +84,7 @@ export interface Article  extends _Document, _Linkable {
   _linkType?: Maybe<Scalars['String']>;
 }
 
-export type ArticleBody = ArticleBodyHtml | ArticleBodyVimeo | ArticleBodyYoutube | ArticleBodySoundcloud | ArticleBodyImage | ArticleBodyLink | ArticleBodyBandcamp_Part;
+export type ArticleBody = ArticleBodyHtml | ArticleBodyVimeo | ArticleBodyYoutube | ArticleBodySoundcloud | ArticleBodyImage | ArticleBodyLink | ArticleBodyBandcamp_Part | ArticleBodyCustom_Code_Embed;
 
 export interface ArticleBodyBandcamp_Part {
    __typename: 'ArticleBodyBandcamp_part';
@@ -96,6 +96,18 @@ export interface ArticleBodyBandcamp_Part {
 export interface ArticleBodyBandcamp_PartPrimary {
    __typename: 'ArticleBodyBandcamp_partPrimary';
   bandcamp_url?: Maybe<Scalars['String']>;
+}
+
+export interface ArticleBodyCustom_Code_Embed {
+   __typename: 'ArticleBodyCustom_code_embed';
+  type?: Maybe<Scalars['String']>;
+  label?: Maybe<Scalars['String']>;
+  primary?: Maybe<ArticleBodyCustom_Code_EmbedPrimary>;
+}
+
+export interface ArticleBodyCustom_Code_EmbedPrimary {
+   __typename: 'ArticleBodyCustom_code_embedPrimary';
+  html?: Maybe<Scalars['Json']>;
 }
 
 export interface ArticleBodyHtml {
@@ -613,7 +625,14 @@ export type ArticlesQuery = (
               & Pick<_ImageLink, '_linkType'>
             )> }
           )> }
-        ) | { __typename: 'ArticleBodyBandcamp_part' }>>, _meta: (
+        ) | { __typename: 'ArticleBodyBandcamp_part' } | (
+          { __typename: 'ArticleBodyCustom_code_embed' }
+          & Pick<ArticleBodyCustom_Code_Embed, 'type'>
+          & { primary?: Maybe<(
+            { __typename: 'ArticleBodyCustom_code_embedPrimary' }
+            & Pick<ArticleBodyCustom_Code_EmbedPrimary, 'html'>
+          )> }
+        )>>, _meta: (
           { __typename: 'Meta' }
           & Pick<Meta, 'id'>
         ), section?: Maybe<{ __typename: 'Home' } | { __typename: 'Article' } | (
@@ -734,6 +753,12 @@ export const ArticlesDocument = gql`
           ... on ArticleBodySoundcloud {
             primary {
               soundcloud_embed
+            }
+            type
+          }
+          ... on ArticleBodyCustom_code_embed {
+            primary {
+              html
             }
             type
           }
