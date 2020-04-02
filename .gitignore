@@ -72,4 +72,6 @@ yarn-error.log
 .graphql.schema.json
 __generated__
 apollo.config.js
+
 .now
+.next
