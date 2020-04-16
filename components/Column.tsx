@@ -62,7 +62,6 @@ export const Column: React.FC<IColumnProps & IDashProps> = ({ contentId, values,
                                             }
 
                                             case ("ArticleBodyCustom_code_embed"): {
-                                                console.log('custom code: ', slice.primary?.html);
                                                 return (
                                                     <div dangerouslySetInnerHTML={{ __html: slice.primary?.html?.[0].text }} />
                                                 )
