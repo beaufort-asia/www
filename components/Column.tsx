@@ -25,7 +25,7 @@ export const Column: React.FC<IColumnProps & IDashProps> = ({ contentId, values,
                             {richText(section.title)}
                         </DashRow>
                         {
-                            section.articles.sort((left, right) => {
+                            section.articles?.sort((left, right) => {
                                 const leftOrderingNumber = Number.parseInt(left.ordering_number || "0");
                                 const rightOrderingNumber = Number.parseInt(right.ordering_number || "0");
 
