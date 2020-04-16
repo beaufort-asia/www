@@ -25,7 +25,22 @@ export const Column: React.FC<IColumnProps & IDashProps> = ({ contentId, values,
                             {richText(section.title)}
                         </DashRow>
                         {
-                            section.articles.map(article => {
+                            section.articles.sort((left, right) => {
+                                const leftOrderingNumber = Number.parseInt(left.ordering_number || "0");
+                                const rightOrderingNumber = Number.parseInt(right.ordering_number || "0");
+
+                                if (leftOrderingNumber < rightOrderingNumber) return -1;
+                                if (leftOrderingNumber > rightOrderingNumber) return 1;
+
+                                const leftDate = !!left.articleDate ? Date.parse(left.articleDate) : new Date(0);
+                                const rightDate = !!right.articleDate ? Date.parse(right.articleDate) : new Date(0);
+
+                                if (leftDate === rightDate) return 0;
+                                if (leftDate < rightDate) return -1;
+                                if (leftDate > rightDate) return 1;
+
+                                return 0;
+                            }).map(article => {
 
                                 return (<DashColumn padX={true} padY={true} key={article._meta.id}>
                                     {article.body?.map(slice => {

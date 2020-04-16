@@ -55,6 +55,20 @@
             "__typename": "__Field"
           },
           {
+            "name": "ordering_number",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "isDeprecated": false,
+            "deprecationReason": null,
+            "__typename": "__Field"
+          },
+          {
             "name": "body",
             "description": null,
             "args": [],
@@ -178,97 +192,11 @@
           },
           {
             "kind": "OBJECT",
-            "name": "ArticleBodyBandcamp_part",
-            "ofType": null,
-            "__typename": "__Type"
-          },
-          {
-            "kind": "OBJECT",
             "name": "ArticleBodyCustom_code_embed",
             "ofType": null,
             "__typename": "__Type"
           }
         ],
-        "__typename": "__Type"
-      },
-      {
-        "kind": "OBJECT",
-        "name": "ArticleBodyBandcamp_part",
-        "description": null,
-        "fields": [
-          {
-            "name": "type",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null,
-              "__typename": "__Type"
-            },
-            "isDeprecated": false,
-            "deprecationReason": null,
-            "__typename": "__Field"
-          },
-          {
-            "name": "label",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null,
-              "__typename": "__Type"
-            },
-            "isDeprecated": false,
-            "deprecationReason": null,
-            "__typename": "__Field"
-          },
-          {
-            "name": "primary",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "OBJECT",
-              "name": "ArticleBodyBandcamp_partPrimary",
-              "ofType": null,
-              "__typename": "__Type"
-            },
-            "isDeprecated": false,
-            "deprecationReason": null,
-            "__typename": "__Field"
-          }
-        ],
-        "inputFields": null,
-        "interfaces": [],
-        "enumValues": null,
-        "possibleTypes": null,
-        "__typename": "__Type"
-      },
-      {
-        "kind": "OBJECT",
-        "name": "ArticleBodyBandcamp_partPrimary",
-        "description": null,
-        "fields": [
-          {
-            "name": "bandcamp_url",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null,
-              "__typename": "__Type"
-            },
-            "isDeprecated": false,
-            "deprecationReason": null,
-            "__typename": "__Field"
-          }
-        ],
-        "inputFields": null,
-        "interfaces": [],
-        "enumValues": null,
-        "possibleTypes": null,
         "__typename": "__Type"
       },
       {
@@ -3616,6 +3544,20 @@
             "isDeprecated": false,
             "deprecationReason": null,
             "__typename": "__EnumValue"
+          },
+          {
+            "name": "ordering_number_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null,
+            "__typename": "__EnumValue"
+          },
+          {
+            "name": "ordering_number_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null,
+            "__typename": "__EnumValue"
           }
         ],
         "possibleTypes": null,
@@ -3908,6 +3850,30 @@
           {
             "name": "section",
             "description": "section",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "defaultValue": null,
+            "__typename": "__InputValue"
+          },
+          {
+            "name": "ordering_number",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "defaultValue": null,
+            "__typename": "__InputValue"
+          },
+          {
+            "name": "ordering_number_fulltext",
+            "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "String",

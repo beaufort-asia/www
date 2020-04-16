@@ -79,24 +79,13 @@ export interface Article  extends _Document, _Linkable {
   articleDate?: Maybe<Scalars['Date']>;
   highlight?: Maybe<Scalars['String']>;
   section?: Maybe<_Linkable>;
+  ordering_number?: Maybe<Scalars['String']>;
   body?: Maybe<Array<ArticleBody>>;
   _meta: Meta;
   _linkType?: Maybe<Scalars['String']>;
 }
 
-export type ArticleBody = ArticleBodyHtml | ArticleBodyVimeo | ArticleBodyYoutube | ArticleBodySoundcloud | ArticleBodyImage | ArticleBodyLink | ArticleBodyBandcamp_Part | ArticleBodyCustom_Code_Embed;
-
-export interface ArticleBodyBandcamp_Part {
-   __typename: 'ArticleBodyBandcamp_part';
-  type?: Maybe<Scalars['String']>;
-  label?: Maybe<Scalars['String']>;
-  primary?: Maybe<ArticleBodyBandcamp_PartPrimary>;
-}
-
-export interface ArticleBodyBandcamp_PartPrimary {
-   __typename: 'ArticleBodyBandcamp_partPrimary';
-  bandcamp_url?: Maybe<Scalars['String']>;
-}
+export type ArticleBody = ArticleBodyHtml | ArticleBodyVimeo | ArticleBodyYoutube | ArticleBodySoundcloud | ArticleBodyImage | ArticleBodyLink | ArticleBodyCustom_Code_Embed;
 
 export interface ArticleBodyCustom_Code_Embed {
    __typename: 'ArticleBodyCustom_code_embed';
@@ -476,7 +465,9 @@ export enum SortArticley {
   ArticleDateAsc = 'articleDate_ASC',
   ArticleDateDesc = 'articleDate_DESC',
   HighlightAsc = 'highlight_ASC',
-  HighlightDesc = 'highlight_DESC'
+  HighlightDesc = 'highlight_DESC',
+  OrderingNumberAsc = 'ordering_number_ASC',
+  OrderingNumberDesc = 'ordering_number_DESC'
 }
 
 export enum SortDocumentsBy {
@@ -525,6 +516,8 @@ export interface WhereArticle {
   highlight_fulltext?: Maybe<Scalars['String']>;
   /** section */
   section?: Maybe<Scalars['String']>;
+  ordering_number?: Maybe<Scalars['String']>;
+  ordering_number_fulltext?: Maybe<Scalars['String']>;
 }
 
 export interface WhereHome {
@@ -563,7 +556,7 @@ export type ArticlesQuery = (
       { __typename: 'ArticleConnectionEdge' }
       & { node: (
         { __typename: 'Article' }
-        & Pick<Article, 'articleDate' | 'highlight'>
+        & Pick<Article, 'articleDate' | 'highlight' | 'ordering_number'>
         & { body?: Maybe<Array<(
           { __typename: 'ArticleBodyHtml' }
           & Pick<ArticleBodyHtml, 'type'>
@@ -625,7 +618,7 @@ export type ArticlesQuery = (
               & Pick<_ImageLink, '_linkType'>
             )> }
           )> }
-        ) | { __typename: 'ArticleBodyBandcamp_part' } | (
+        ) | (
           { __typename: 'ArticleBodyCustom_code_embed' }
           & Pick<ArticleBodyCustom_Code_Embed, 'type'>
           & { primary?: Maybe<(
@@ -789,6 +782,7 @@ export const ArticlesDocument = gql`
           id
         }
         highlight
+        ordering_number
         section {
           ... on Section {
             _meta {

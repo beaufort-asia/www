@@ -70,7 +70,8 @@ query Articles($after: String) {
         _meta {
           id
         }
-        highlight          
+        highlight,
+        ordering_number,
         section {            
           ... on Section {              
             _meta {
