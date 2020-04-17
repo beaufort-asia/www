@@ -21,9 +21,9 @@ export const Column: React.FC<IColumnProps & IDashProps> = ({ contentId, values,
     return (
         <Container {...rest}>
             <DashColumn {...{ dash }} id={contentId}>
-                {values.map(section => (
+                {values.map((section, i) => (
                     <React.Fragment key={section.id}>
-                        <DashRow dash={{ bottom: true }} padX={true} padY={true}>
+                        <DashRow dash={{ bottom: true, top: i > 0 }} padX={true} padY={true}>
                             {richText(section.title)}
                         </DashRow>
                         {
