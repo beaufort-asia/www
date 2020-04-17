@@ -60,7 +60,15 @@ query Articles($after: String) {
               link_text_before
               link_thumbnail
               link_url {
-                _linkType
+                _linkType,
+                ... on _ExternalLink {
+                  url
+                }
+                ... on _FileLink {
+                  name
+                  size
+                  url
+                }
               }
             }
             type

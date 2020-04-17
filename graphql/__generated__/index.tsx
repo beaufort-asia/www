@@ -609,10 +609,10 @@ export type ArticlesQuery = (
               & Pick<Section, '_linkType'>
             ) | (
               { __typename: '_ExternalLink' }
-              & Pick<_ExternalLink, '_linkType'>
+              & Pick<_ExternalLink, 'url' | '_linkType'>
             ) | (
               { __typename: '_FileLink' }
-              & Pick<_FileLink, '_linkType'>
+              & Pick<_FileLink, 'name' | 'size' | 'url' | '_linkType'>
             ) | (
               { __typename: '_ImageLink' }
               & Pick<_ImageLink, '_linkType'>
@@ -772,6 +772,14 @@ export const ArticlesDocument = gql`
               link_thumbnail
               link_url {
                 _linkType
+                ... on _ExternalLink {
+                  url
+                }
+                ... on _FileLink {
+                  name
+                  size
+                  url
+                }
               }
             }
             type

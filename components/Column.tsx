@@ -3,6 +3,7 @@ import { ISection } from "../types/models";
 import { DashColumn, IDashProps, DashRow } from "./DashBox";
 import { richText } from "../utils/richText";
 import styled from "styled-components";
+import { _Linkable, _ExternalLink, _FileLink } from "../graphql/__generated__";
 
 const Container = styled(DashColumn)`
     
@@ -12,6 +13,29 @@ interface IColumnProps {
     values: ISection[];
     isMobile: boolean;
     contentId: string;
+}
+
+type LinkProps = {
+    linkable?: _Linkable | null;
+    target?: string;
+}
+
+const Link: React.FC<LinkProps> = ({ target, linkable, children }) => {
+
+    if (linkable === undefined || linkable === null) return <>{children}</>;
+
+    switch (linkable._linkType) {
+        case "Link.web": {
+            const { url } = linkable as _ExternalLink;
+            return <a href={url} {...{ target }}>{children}</a>
+        }
+        case "Link.file": {
+            const { url } = linkable as _FileLink;
+            return <a href={url} {...{ target }}>{children}</a>
+        }
+    }
+
+    return <>{children}</>;
 }
 
 export const Column: React.FC<IColumnProps & IDashProps> = ({ contentId, values, dash, ...rest }) => {
@@ -67,10 +91,11 @@ export const Column: React.FC<IColumnProps & IDashProps> = ({ contentId, values,
                                             case ("ArticleBodyLink"): {
                                                 const thumbnailUrl = slice.primary?.link_thumbnail?.url;
                                                 const content = (thumbnailUrl) ? <img src={thumbnailUrl} /> : <span>{slice.primary?.link_text}</span>
+                                                console.log(slice.primary?.link_url);
                                                 return (
                                                     <>
                                                         {richText(slice.primary?.link_text_before)}
-                                                        <a href={slice.primary?.link_url as any || ''} target="_blank">{content}</a>
+                                                        <Link linkable={slice.primary?.link_url} target="_blank">{content}</Link>
                                                         {richText(slice.primary?.link_text_after)}
                                                     </>
                                                 )
