@@ -13,6 +13,10 @@ const StyledModal = styled(Modal)`
     outline: none;
 `;
 
+const StyledA = styled.a`
+    cursor: pointer;
+`;
+
 export type ArticleBodyVimeoProps = {
     primary?: ArticleBodyVimeoPrimary | null;
 };
@@ -25,7 +29,7 @@ export const ArticleBodyVimeo: React.FC<ArticleBodyVimeoProps> = ({ primary }) =
     if (!thumbnailUrl) return <></>;
     return (
         <>
-            <a onClick={() => setOpen(true)}><img src={thumbnailUrl} /></a>
+            <StyledA onClick={() => setOpen(true)}><img src={thumbnailUrl} /></StyledA>
             <StyledModal isOpen={isOpen} shouldCloseOnOverlayClick={true} onRequestClose={() => setOpen(false)} >
                 <ReactPlayer url={primary?.vimeo_embed.embed_url} controls={true} playing={true} onEnded={() => setOpen(false)} />
             </StyledModal>
