@@ -6,12 +6,12 @@ import { ArticleBodyVimeo } from './ArticleBodyVimeo';
 import { ArticleBodyLink } from './ArticleBodyLink';
 import { ArticleBodyCustomCodeEmbed } from './ArticleBodyCustomCodeEmbed';
 import { ArticleBodyImage } from './ArticleBodyImage';
+import { ArticleBodyDottedLine } from './ArticleBodyDottedLine';
 
 export const ArticleBody: React.FC<{ article: Article }> = ({ article }) => {
 
     return (<DashColumn padX={true} padY={true} key={article._meta.id}>
         {article.body?.map(slice => {
-
             switch (slice.__typename) {
                 case ('ArticleBodyHtml'): {
                     return <ArticleBodyHtml {...{ primary: slice.primary }} />
@@ -27,6 +27,9 @@ export const ArticleBody: React.FC<{ article: Article }> = ({ article }) => {
                 }
                 case ("ArticleBodyImage"): {
                     return <ArticleBodyImage {...{ primary: slice.primary }} />
+                }
+                case ("ArticleBodyDotted_line"): {
+                    return <ArticleBodyDottedLine />
                 }
             }
         })}

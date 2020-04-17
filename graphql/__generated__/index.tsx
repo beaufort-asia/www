@@ -85,7 +85,7 @@ export interface Article  extends _Document, _Linkable {
   _linkType?: Maybe<Scalars['String']>;
 }
 
-export type ArticleBody = ArticleBodyHtml | ArticleBodyVimeo | ArticleBodyYoutube | ArticleBodySoundcloud | ArticleBodyImage | ArticleBodyLink | ArticleBodyCustom_Code_Embed;
+export type ArticleBody = ArticleBodyHtml | ArticleBodyVimeo | ArticleBodyYoutube | ArticleBodySoundcloud | ArticleBodyImage | ArticleBodyLink | ArticleBodyCustom_Code_Embed | ArticleBodyDotted_Line;
 
 export interface ArticleBodyCustom_Code_Embed {
    __typename: 'ArticleBodyCustom_code_embed';
@@ -97,6 +97,12 @@ export interface ArticleBodyCustom_Code_Embed {
 export interface ArticleBodyCustom_Code_EmbedPrimary {
    __typename: 'ArticleBodyCustom_code_embedPrimary';
   html?: Maybe<Scalars['Json']>;
+}
+
+export interface ArticleBodyDotted_Line {
+   __typename: 'ArticleBodyDotted_line';
+  type?: Maybe<Scalars['String']>;
+  label?: Maybe<Scalars['String']>;
 }
 
 export interface ArticleBodyHtml {
@@ -428,7 +434,6 @@ export interface RelatedDocument {
 export interface Section  extends _Document, _Linkable {
    __typename: 'Section';
   section_title?: Maybe<Scalars['Json']>;
-  column?: Maybe<Scalars['String']>;
   _meta: Meta;
   _linkType?: Maybe<Scalars['String']>;
 }
@@ -500,9 +505,7 @@ export enum SortSectiony {
   MetaLastPublicationDateAsc = 'meta_lastPublicationDate_ASC',
   MetaLastPublicationDateDesc = 'meta_lastPublicationDate_DESC',
   SectionTitleAsc = 'section_title_ASC',
-  SectionTitleDesc = 'section_title_DESC',
-  ColumnAsc = 'column_ASC',
-  ColumnDesc = 'column_DESC'
+  SectionTitleDesc = 'section_title_DESC'
 }
 
 export interface WhereArticle {
@@ -536,8 +539,6 @@ export interface WhereHome {
 export interface WhereSection {
   /** section_title */
   section_title_fulltext?: Maybe<Scalars['String']>;
-  column?: Maybe<Scalars['String']>;
-  column_fulltext?: Maybe<Scalars['String']>;
 }
 
 export type ArticlesQueryVariables = {
@@ -625,7 +626,7 @@ export type ArticlesQuery = (
             { __typename: 'ArticleBodyCustom_code_embedPrimary' }
             & Pick<ArticleBodyCustom_Code_EmbedPrimary, 'html'>
           )> }
-        )>>, _meta: (
+        ) | { __typename: 'ArticleBodyDotted_line' }>>, _meta: (
           { __typename: 'Meta' }
           & Pick<Meta, 'id'>
         ), section?: Maybe<{ __typename: 'Home' } | { __typename: 'Article' } | (
