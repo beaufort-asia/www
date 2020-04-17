@@ -16,4 +16,10 @@ export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+
+  .ReactModal__Overlay {        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 `;

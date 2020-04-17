@@ -3,7 +3,8 @@ import { ISection } from "../types/models";
 import { DashColumn, IDashProps, DashRow } from "./DashBox";
 import { richText } from "../utils/richText";
 import styled from "styled-components";
-import { _Linkable, _ExternalLink, _FileLink } from "../graphql/__generated__";
+import { ArticleBody } from "./ArticleBody";
+
 
 const Container = styled(DashColumn)`
     
@@ -13,29 +14,6 @@ interface IColumnProps {
     values: ISection[];
     isMobile: boolean;
     contentId: string;
-}
-
-type LinkProps = {
-    linkable?: _Linkable | null;
-    target?: string;
-}
-
-const Link: React.FC<LinkProps> = ({ target, linkable, children }) => {
-
-    if (linkable === undefined || linkable === null) return <>{children}</>;
-
-    switch (linkable._linkType) {
-        case "Link.web": {
-            const { url } = linkable as _ExternalLink;
-            return <a href={url} {...{ target }}>{children}</a>
-        }
-        case "Link.file": {
-            const { url } = linkable as _FileLink;
-            return <a href={url} {...{ target }}>{children}</a>
-        }
-    }
-
-    return <>{children}</>;
 }
 
 export const Column: React.FC<IColumnProps & IDashProps> = ({ contentId, values, dash, ...rest }) => {
@@ -64,68 +42,7 @@ export const Column: React.FC<IColumnProps & IDashProps> = ({ contentId, values,
                                 if (leftDate > rightDate) return 1;
 
                                 return 0;
-                            }).map(article => {
-
-                                return (<DashColumn padX={true} padY={true} key={article._meta.id}>
-                                    {article.body?.map(slice => {
-
-                                        switch (slice.__typename) {
-
-                                            case ('ArticleBodyHtml'): {
-
-                                                return (
-                                                    richText(slice.primary?.html_rich_text)
-                                                )
-                                            }
-                                            case ("ArticleBodyVimeo"): {
-                                                if (!slice.primary?.vimeo_embed) return;
-                                                const thumbnailUrl = slice.primary?.vimeo_thumbnail_image?.url || slice.primary?.vimeo_embed?.thumbnail_url;
-                                                if (!thumbnailUrl) return;
-                                                return (
-                                                    <>
-                                                        <a href={slice.primary?.vimeo_embed.embed_url} target="_blank"><img src={thumbnailUrl} /></a>
-                                                        {richText(slice.primary?.vimeo_link_text)}
-                                                    </>
-                                                )
-                                            }
-                                            case ("ArticleBodyLink"): {
-                                                const thumbnailUrl = slice.primary?.link_thumbnail?.url;
-                                                const content = (thumbnailUrl) ? <img src={thumbnailUrl} /> : <span>{slice.primary?.link_text}</span>
-                                                console.log(slice.primary?.link_url);
-                                                return (
-                                                    <>
-                                                        {richText(slice.primary?.link_text_before)}
-                                                        <Link linkable={slice.primary?.link_url} target="_blank">{content}</Link>
-                                                        {richText(slice.primary?.link_text_after)}
-                                                    </>
-                                                )
-                                            }
-
-                                            case ("ArticleBodyCustom_code_embed"): {
-                                                return (
-                                                    <div dangerouslySetInnerHTML={{ __html: slice.primary?.html?.[0].text }} />
-                                                )
-                                            }
-
-                                            case ("ArticleBodyImage"): {
-                                                const thumbnailUrl = slice.primary?.image_file?.thumbnailUrl;
-                                                if (!thumbnailUrl) return;
-
-                                                return (
-                                                    <>
-                                                        {richText(slice.primary?.image_text_before)}
-                                                        <a href={slice.primary?.image_file?.url} target="_blank">
-                                                            <img src={thumbnailUrl} />
-                                                            {slice.primary?.image_link_text}
-                                                        </a>
-                                                        {richText(slice.primary?.image_text_below)}
-                                                    </>
-                                                )
-                                            }
-                                        }
-                                    })}
-                                </DashColumn>)
-                            })
+                            }).map(article => <ArticleBody {...{ article }} />)
                         }
                     </React.Fragment>
                 ))}
