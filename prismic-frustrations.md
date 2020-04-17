@@ -1,0 +1,7 @@
+ - Their messed up types in prismic-reactjs (and general hostility towards typescript)
+ - Needing to publish a content item before changes to Custom Types are published to the graphql schema.
+ - Unable to specify that a link should open in a new browser window in rich text fields when linking a media item.
+ - 9 edge depth limit in graphql queries, even though their own structure takes up 2-5 edges to navigate through items.
+    - This makes single query setups like Gatsby difficult.
+ - No negative numbers in their number field.
+ - No way to generalize slices and re-use them.
