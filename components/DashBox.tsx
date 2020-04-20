@@ -27,7 +27,7 @@ const cover = css`
 `;
 
 const dotSize = 3;
-const size = 8;
+const size = 9;
 const r = dotSize / 2;
 
 const total = (size * 2) + 2 * r

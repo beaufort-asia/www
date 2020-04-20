@@ -59,7 +59,7 @@ const Index: React.SFC<HomeProps> = (props) => {
         <DefaultLayout>
             <HeaderLeft values={header.left} dash={{ right: c1Height >= c2Height }} />
             <HeaderTitle values={header.title} dash={{
-                left: !isMobile && c2Height > c1Height,
+                left: c2Height > c1Height && !isMobile,
                 bottom: isMobile,
                 right: c4Height >= c5Height && !isMobile
             }} />
@@ -70,11 +70,11 @@ const Index: React.SFC<HomeProps> = (props) => {
             <ReactResizeDetector handleHeight={true} querySelector={"#column-3-content"} onResize={(width, height) => setC3Height(height)} />
             <ReactResizeDetector handleHeight={true} querySelector={"#column-4-content"} onResize={(width, height) => setC4Height(height)} />
             <ReactResizeDetector handleHeight={true} querySelector={"#column-5-content"} onResize={(width, height) => setC5Height(height)} />
-            <Column1 contentId="column-1-content" {...{ isMobile }} dash={{ top: false, right: c1Height >= c2Height && !isMobile }} values={column1Sections} />
-            <Column2 contentId="column-2-content" {...{ isMobile }} dash={{ top: false, left: c2Height > c1Height, right: c2Height >= c3Height && !isMobile }} values={column2Sections} />
-            <Column3 contentId="column-3-content" {...{ isMobile }} dash={{ top: false, left: c3Height > c2Height, right: c3Height >= c4Height && !isMobile }} values={column3Sections} />
-            <Column4 contentId="column-4-content" {...{ isMobile }} dash={{ top: false, left: c4Height > c3Height, right: c4Height >= c5Height && !isMobile }} values={column4Sections} />
-            <Column5 contentId="column-5-content" {...{ isMobile }} dash={{ top: false, left: c5Height > c4Height }} values={column5Sections} />
+            <Column1 contentId="column-1-content" {...{ isMobile }} dash={{ right: c1Height >= c2Height && !isMobile }} values={column1Sections} />
+            <Column2 contentId="column-2-content" {...{ isMobile }} dash={{ left: c2Height > c1Height, right: c2Height >= c3Height && !isMobile }} values={column2Sections} />
+            <Column3 contentId="column-3-content" {...{ isMobile }} dash={{ left: c3Height > c2Height, right: c3Height >= c4Height && !isMobile }} values={column3Sections} />
+            <Column4 contentId="column-4-content" {...{ isMobile }} dash={{ left: c4Height > c3Height, right: c4Height >= c5Height && !isMobile }} values={column4Sections} />
+            <Column5 contentId="column-5-content" {...{ isMobile }} dash={{ left: c5Height > c4Height }} values={column5Sections} />
         </DefaultLayout>
     );
 }

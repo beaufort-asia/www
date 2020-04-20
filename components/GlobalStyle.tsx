@@ -18,8 +18,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .ReactModal__Overlay {        
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
