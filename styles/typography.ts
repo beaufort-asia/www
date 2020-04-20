@@ -1,4 +1,5 @@
 import { css } from "styled-components";
+import { lt, mq } from "./media";
 
 export const typography = css`
 
@@ -10,7 +11,10 @@ export const typography = css`
         text-transform: uppercase;
         margin: 0;
         /* letter spacing causes a gap at the end of the title, so we use a margin to align it. */
-        margin-right: -25px; 
+        margin-right: -12.5px; 
+        margin-left: 12.5px;
+        
+        ${mq.lt.sm`word-break: normal !important; font-size: 90px;`}
     }
 
     h2 {
