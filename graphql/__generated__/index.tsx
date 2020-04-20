@@ -221,6 +221,7 @@ export interface Home  extends _Document, _Linkable {
   column5_sections?: Maybe<Array<HomeColumn5_Sections>>;
   header_right_title?: Maybe<Scalars['Json']>;
   header_right_rich_text?: Maybe<Scalars['Json']>;
+  footer_content?: Maybe<Scalars['Json']>;
   _meta: Meta;
   _linkType?: Maybe<Scalars['String']>;
 }
@@ -496,7 +497,9 @@ export enum SortHomey {
   HeaderRightTitleAsc = 'header_right_title_ASC',
   HeaderRightTitleDesc = 'header_right_title_DESC',
   HeaderRightRichTextAsc = 'header_right_rich_text_ASC',
-  HeaderRightRichTextDesc = 'header_right_rich_text_DESC'
+  HeaderRightRichTextDesc = 'header_right_rich_text_DESC',
+  FooterContentAsc = 'footer_content_ASC',
+  FooterContentDesc = 'footer_content_DESC'
 }
 
 export enum SortSectiony {
@@ -534,6 +537,8 @@ export interface WhereHome {
   header_right_title_fulltext?: Maybe<Scalars['String']>;
   /** header_right_rich_text */
   header_right_rich_text_fulltext?: Maybe<Scalars['String']>;
+  /** footer_content */
+  footer_content_fulltext?: Maybe<Scalars['String']>;
 }
 
 export interface WhereSection {
@@ -652,7 +657,7 @@ export type HomeQuery = (
       { __typename: 'HomeConnectionEdge' }
       & { node: (
         { __typename: 'Home' }
-        & Pick<Home, 'homepageTitle' | 'header_left_rich_text' | 'header_left_title' | 'header_right_rich_text' | 'header_right_title'>
+        & Pick<Home, 'homepageTitle' | 'header_left_rich_text' | 'header_left_title' | 'header_right_rich_text' | 'header_right_title' | 'footer_content'>
         & { column1_sections?: Maybe<Array<(
           { __typename: 'HomeColumn1_sections' }
           & { section?: Maybe<{ __typename: 'Home' } | { __typename: 'Article' } | (
@@ -832,6 +837,7 @@ export const HomeDocument = gql`
         header_left_title
         header_right_rich_text
         header_right_title
+        footer_content
         column1_sections {
           section {
             ... on Section {

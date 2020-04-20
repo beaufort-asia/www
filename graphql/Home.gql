@@ -7,7 +7,8 @@ query Home {
                 header_left_rich_text
                 header_left_title
                 header_right_rich_text
-                header_right_title
+                header_right_title     
+                footer_content
                 column1_sections {
                     section {
                         ... on Section {

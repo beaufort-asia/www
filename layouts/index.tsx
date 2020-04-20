@@ -135,9 +135,7 @@ const DefaultLayout: React.FC = ({ children }) => {
 
         {children}
 
-
       </Grid>
-      <Footer />
     </>
   )
 };

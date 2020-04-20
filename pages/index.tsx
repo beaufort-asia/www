@@ -5,13 +5,12 @@ import { HomeDocument, HomeQuery, HomeQueryVariables, Home, ArticlesQuery, Artic
 import DefaultLayout, { C1, C2, C3, C4, C5, HL, HR, HT } from '../layouts';
 import { getHeader } from '../utils/getHeader';
 import { getColumnSections, getArticlesBySectionId } from '../utils/getColumnSections';
-import { useMediaQuery } from 'react-responsive';
-import { lt } from '../styles/media';
 import { Header } from '../components/Header';
 import { Title } from '../components/Title';
 import styled from 'styled-components';
 import { Column } from '../components/Column';
 import _ from 'lodash';
+import Footer from '../components/Footer';
 
 interface HomeProps {
     home: Home;
@@ -42,19 +41,20 @@ const Index: React.SFC<HomeProps> = (props) => {
     const column4Sections = getColumnSections(articlesBySectionId, home.column4_sections!);
     const column5Sections = getColumnSections(articlesBySectionId, home.column5_sections!);
 
-
-
     return (
-        <DefaultLayout>
-            <HeaderLeft values={header.left} />
-            <HeaderTitle values={header.title} />
-            <HeaderRight values={header.right} />
-            <Column1 contentId="column-1-content" values={column1Sections} />
-            <Column2 contentId="column-2-content" values={column2Sections} />
-            <Column3 contentId="column-3-content" values={column3Sections} />
-            <Column4 contentId="column-4-content" values={column4Sections} />
-            <Column5 contentId="column-5-content" values={column5Sections} />
-        </DefaultLayout>
+        <>
+            <DefaultLayout>
+                <HeaderLeft values={header.left} />
+                <HeaderTitle values={header.title} />
+                <HeaderRight values={header.right} />
+                <Column1 contentId="column-1-content" values={column1Sections} />
+                <Column2 contentId="column-2-content" values={column2Sections} />
+                <Column3 contentId="column-3-content" values={column3Sections} />
+                <Column4 contentId="column-4-content" values={column4Sections} />
+                <Column5 contentId="column-5-content" values={column5Sections} />
+            </DefaultLayout>
+            <Footer values={home.footer_content} />
+        </>
     );
 }
 

@@ -1296,6 +1296,20 @@
             "__typename": "__Field"
           },
           {
+            "name": "footer_content",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Json",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "isDeprecated": false,
+            "deprecationReason": null,
+            "__typename": "__Field"
+          },
+          {
             "name": "_meta",
             "description": null,
             "args": [],
@@ -3740,6 +3754,20 @@
             "isDeprecated": false,
             "deprecationReason": null,
             "__typename": "__EnumValue"
+          },
+          {
+            "name": "footer_content_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null,
+            "__typename": "__EnumValue"
+          },
+          {
+            "name": "footer_content_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null,
+            "__typename": "__EnumValue"
           }
         ],
         "possibleTypes": null,
@@ -3964,6 +3992,18 @@
           {
             "name": "header_right_rich_text_fulltext",
             "description": "header_right_rich_text",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "defaultValue": null,
+            "__typename": "__InputValue"
+          },
+          {
+            "name": "footer_content_fulltext",
+            "description": "footer_content",
             "type": {
               "kind": "SCALAR",
               "name": "String",

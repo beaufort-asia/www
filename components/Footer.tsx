@@ -1,13 +1,15 @@
 import React from 'react'
-// import { footerStyles } from 'styles'
+import { PadColumn } from './DashBox'
+import { richText } from '../utils/richText'
 
-/**
- * Site footer component
- */
-const Footer = () => (
-  <footer>
+type FooterProps = {
+  values: any;
+}
 
-  </footer>
+const Footer: React.FC<FooterProps> = ({ values }) => (
+  <PadColumn>
+    {richText(values)}
+  </PadColumn>
 )
 
 export default Footer
