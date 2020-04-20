@@ -1,6 +1,6 @@
 import React from 'react';
 import { _Linkable, _ExternalLink, _FileLink, Article } from "../graphql/__generated__";
-import { DashColumn } from './DashBox';
+import { PadColumn } from './DashBox';
 import { ArticleBodyHtml } from './ArticleBodyHtml';
 import { ArticleBodyVimeo } from './ArticleBodyVimeo';
 import { ArticleBodyLink } from './ArticleBodyLink';
@@ -10,7 +10,7 @@ import { ArticleBodyDottedLine } from './ArticleBodyDottedLine';
 
 export const ArticleBody: React.FC<{ article: Article }> = ({ article }) => {
 
-    return (<DashColumn padX={true} padY={true} key={article._meta.id}>
+    return (<PadColumn padX={true} padY={true} key={article._meta.id}>
         {article.body?.map(slice => {
             switch (slice.__typename) {
                 case ('ArticleBodyHtml'): {
@@ -33,5 +33,5 @@ export const ArticleBody: React.FC<{ article: Article }> = ({ article }) => {
                 }
             }
         })}
-    </DashColumn>)
+    </PadColumn>)
 }

@@ -1,31 +1,33 @@
 import React from "react";
 import { ISection } from "../types/models";
-import { DashColumn, IDashProps, DashRow } from "./DashBox";
+import { PadColumn } from "./DashBox";
 import { richText } from "../utils/richText";
 import styled from "styled-components";
 import { ArticleBody } from "./ArticleBody";
+import { HDots } from "../layouts";
 
 
-const Container = styled(DashColumn)`
+const Container = styled(PadColumn)`
     
 `;
 
 interface IColumnProps {
     values: ISection[];
-    isMobile: boolean;
     contentId: string;
 }
 
-export const Column: React.FC<IColumnProps & IDashProps> = ({ contentId, values, dash, ...rest }) => {
+export const Column: React.FC<IColumnProps> = ({ contentId, values, ...rest }) => {
 
     return (
         <Container {...rest}>
-            <DashColumn {...{ dash }} id={contentId}>
+            <PadColumn id={contentId}>
                 {values.map((section, i) => (
                     <React.Fragment key={section.id}>
-                        <DashRow dash={{ bottom: true, top: i > 0 }} padX={true} padY={true}>
+                        {i > 0 && <HDots />}
+                        <PadColumn padY={true}>
                             {richText(section.title)}
-                        </DashRow>
+                        </PadColumn>
+                        <HDots />
                         {
                             section.articles?.sort((left, right) => {
                                 const leftOrderingNumber = Number.parseInt(left.ordering_number || "0");
@@ -46,7 +48,7 @@ export const Column: React.FC<IColumnProps & IDashProps> = ({ contentId, values,
                         }
                     </React.Fragment>
                 ))}
-            </DashColumn>
+            </PadColumn>
         </Container >
     );
 };

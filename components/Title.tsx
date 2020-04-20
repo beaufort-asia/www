@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { DashColumn, IDashProps } from "./DashBox";
+import { PadBox, IDashProps, PadColumn } from "./DashBox";
 import { richText } from "../utils/richText";
 
-const Container = styled(DashColumn)`
+const Container = styled(PadColumn)`
     justify-content: center;
 `;
 

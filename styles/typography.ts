@@ -9,6 +9,8 @@ export const typography = css`
         font-weight: 400;
         text-transform: uppercase;
         margin: 0;
+        /* letter spacing causes a gap at the end of the title, so we use a margin to align it. */
+        margin-right: -25px; 
     }
 
     h2 {
