@@ -7,15 +7,15 @@ export type ArticleBodyImageProps = {
 }
 
 export const ArticleBodyImage: React.FC<ArticleBodyImageProps> = ({ primary }) => {
-    const thumbnailUrl = primary?.image_file?.thumbnailUrl;
-    if (!thumbnailUrl) return <></>;
+    const url = primary?.image_file?.url;
+    if (!url) return <></>;
 
     return (
         <>
             {richText(primary?.image_text_before)}
-            <a href={primary?.image_file?.url} target="_blank">
-                <img src={thumbnailUrl} />
-                {primary?.image_link_text}
+            <a href={url} target="_blank">
+                <img src={url} />
+                {richText(primary?.image_link_text)}
             </a>
             {richText(primary?.image_text_below)}
         </>
