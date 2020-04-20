@@ -15,7 +15,8 @@ const Container = styled.div<IDashProps>`
     position: relative;
     z-index: 0;
     ${p => p.padX ? `padding-left: 6px; padding-right: 6px;` : ``}
-    ${p => p.padY ? `padding-top: 6px; padding-bottom: 6px;` : ``}    
+    ${p => p.padY ? `padding-top: 6px; padding-bottom: 6px;` : ``}
+    word-break: break-word;
 `;
 
 export const PadBox: React.FC<IDashProps> = ({ children, ...props }) => (
