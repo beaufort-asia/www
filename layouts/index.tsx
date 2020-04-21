@@ -129,9 +129,9 @@ const DefaultLayout: React.FC = ({ children }) => {
         <HDots style={{ gridArea: 'h3' }} />
 
         <VDots style={{ gridArea: 'v1', ...(isMobile ? {} : { height: `${v1Height}px` }) }} />
-        <VDots style={{ gridArea: 'v2', height: `${v2Height}px` }} />
-        <VDots style={{ gridArea: 'v3', height: `${v3Height}px` }} />
-        <VDots style={{ gridArea: 'v4', height: `${v4Height}px` }} />
+        <VDots style={{ gridArea: 'v2', height: `${v2Height}px`, ...(isMobile ? { display: 'none' } : {}) }} />
+        <VDots style={{ gridArea: 'v3', height: `${v3Height}px`, ...(isMobile ? { display: 'none' } : {}) }} />
+        <VDots style={{ gridArea: 'v4', height: `${v4Height}px`, ...(isMobile ? { display: 'none' } : {}) }} />
 
         {children}
 
