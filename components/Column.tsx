@@ -44,7 +44,7 @@ export const Column: React.FC<IColumnProps> = ({ contentId, values, ...rest }) =
                                 if (leftDate > rightDate) return 1;
 
                                 return 0;
-                            }).map(article => <ArticleBody {...{ article }} />)
+                            }).map((article, key) => <ArticleBody {...{ key, article }} />)
                         }
                     </React.Fragment>
                 ))}

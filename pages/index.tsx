@@ -2,7 +2,7 @@ import * as React from 'react';
 import { GetStaticProps } from 'next';
 import { prismicClient } from '../utils/getPrismicClient';
 import { HomeDocument, HomeQuery, HomeQueryVariables, Home, ArticlesQuery, ArticlesQueryVariables, ArticlesDocument, Article } from '../graphql/__generated__';
-import DefaultLayout, { C1, C2, C3, C4, C5, HL, HR, HT } from '../layouts';
+import DefaultLayout, { C1, C2, C3, C4, C5, HL, HR, HT, FF } from '../layouts';
 import { getHeader } from '../utils/getHeader';
 import { getColumnSections, getArticlesBySectionId } from '../utils/getColumnSections';
 import { Header } from '../components/Header';
@@ -11,7 +11,6 @@ import styled from 'styled-components';
 import { Column } from '../components/Column';
 import _ from 'lodash';
 import Footer from '../components/Footer';
-import ApolloClient from 'apollo-client';
 
 interface HomeProps {
     home: Home;
@@ -26,6 +25,10 @@ const Column5 = styled(Column)`${C5}`;
 const HeaderLeft = styled(Header)`${HL}`;
 const HeaderTitle = styled(Title)`${HT}`;
 const HeaderRight = styled(Header)`${HR}`;
+const StyledFooter = styled(Footer)` 
+    ${FF}
+    padding: 12.5px;
+`;
 
 
 const Index: React.SFC<HomeProps> = (props) => {
@@ -53,8 +56,8 @@ const Index: React.SFC<HomeProps> = (props) => {
                 <Column3 contentId="column-3-content" values={column3Sections} />
                 <Column4 contentId="column-4-content" values={column4Sections} />
                 <Column5 contentId="column-5-content" values={column5Sections} />
+                <StyledFooter values={home.footer_content} />
             </DefaultLayout>
-            <Footer values={home.footer_content} />
         </>
     );
 }

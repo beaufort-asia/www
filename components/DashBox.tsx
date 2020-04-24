@@ -1,15 +1,11 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export interface IDashProps {
-
     padX?: boolean;
     padY?: boolean;
     id?: string;
 }
-
-const borderColor = `transparent`;
-// const borderColor = `red`;
 
 const Container = styled.div<IDashProps>`
     position: relative;
@@ -19,8 +15,8 @@ const Container = styled.div<IDashProps>`
     word-break: break-word;
 `;
 
-export const PadBox: React.FC<IDashProps> = ({ children, ...props }) => (
-    <Container {...props}>
+export const PadBox: React.FC<IDashProps> = ({ children, ...rest }) => (
+    <Container {...rest}>
         {children}
     </Container>
 )
@@ -44,5 +40,5 @@ export const PadColumn = styled(PadBox)`
     align-items: center;
     justify-content: flex-start;
     text-align: center;
-    width: 100%;
+    width: 100%;    
 `

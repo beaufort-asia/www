@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import Meta from "../components/Meta";
-import Footer from "../components/Footer";
 import { Normalize } from 'styled-normalize';
 import { GlobalStyle } from '../components/GlobalStyle';
 import styled, { css } from 'styled-components';
@@ -17,6 +16,7 @@ export const C2 = css`grid-area: c2;`;
 export const C3 = css`grid-area: c3;`;
 export const C4 = css`grid-area: c4;`;
 export const C5 = css`grid-area: c5;`;
+export const FF = css`grid-area: ff;`;
 
 const maxWidth = 960;
 const headerHeight = 113;
@@ -67,12 +67,13 @@ const Grid = styled.main`
   grid-template-areas:
     "hL   v1   hT    hT    hT    hT    hT    v4   hR"
     "h1   v1   h2    h2    h2    h2    h2    v4   h3"
-    "c1   v1   c2    v2    c3    v3    c4    v4   c5";
+    "c1   v1   c2    v2    c3    v3    c4    v4   c5"
+    "ff   ff   ff    ff    ff    ff    ff    ff   ff";
 
   grid-template-columns: 1fr 3px 1fr 3px 1fr 3px 1fr 3px 1fr;  
   grid-template-rows: ${headerHeight}px 3px;
   
-  ${mq.lt.md`
+  ${mq.lt.md`    
     grid-template-areas:
       "hT   hT   hT"
       "h1   h1   h1"
@@ -82,9 +83,10 @@ const Grid = styled.main`
       "c2   c2   c2"
       "c3   c3   c3"
       "c4   c4   c4"
-      "c5   c5   c5";
+      "c5   c5   c5"
+      "ff   ff   ff";
       grid-template-columns: 1fr 3px 1fr;
-      grid-template-rows: ${headerHeight}px 3px ${headerHeight}px 3px repeat(5, 1fr);
+      grid-template-rows: ${headerHeight}px 3px ${headerHeight}px 3px;
   `}
   max-width: 960px;
   min-height: 100%;
