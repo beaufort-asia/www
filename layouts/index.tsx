@@ -118,6 +118,7 @@ const DefaultLayout: React.FC = ({ children }) => {
       <GlobalStyle />
       <Meta />
       <Grid>
+
         <ReactResizeDetector handleWidth={false} handleHeight={!isMobile} querySelector={"#column-1-content"} onResize={(_, height) => setC1Height(height)} />
         <ReactResizeDetector handleWidth={false} handleHeight={!isMobile} querySelector={"#column-2-content"} onResize={(_, height) => setC2Height(height)} />
         <ReactResizeDetector handleWidth={false} handleHeight={!isMobile} querySelector={"#column-3-content"} onResize={(_, height) => setC3Height(height)} />

@@ -16,19 +16,19 @@ const Meta = () => {
   return (
     <Fragment>
       <Head>
-        {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-27468128-1"></script>
         <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-          gtag('config', 'UA-27468128-1');
+            gtag('config', 'UA-27468128-1');
+          `}
         </script>
         <title>Beaufort</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
-        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
         <link rel="icon" href="/favicon.png" type="image/png" />
         <script async defer src={`//static.cdn.prismic.io/prismic.js?repo=${repoName}&new=true`} />
         {repoName && <PreviewSync {...{ repoName, loadingElementId }} />}

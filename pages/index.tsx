@@ -11,6 +11,7 @@ import styled from 'styled-components';
 import { Column } from '../components/Column';
 import _ from 'lodash';
 import Footer from '../components/Footer';
+import ApolloClient from 'apollo-client';
 
 interface HomeProps {
     home: Home;
