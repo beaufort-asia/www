@@ -92,6 +92,13 @@ const Grid = styled.main`
   padding: 0;
 `;
 
+const HideInMobileVDots = styled(VDots)`
+
+  ${mq.lt.md`
+    display: none;
+  `}
+`;
+
 /**
  * Default layout component
  */
@@ -105,7 +112,9 @@ const DefaultLayout: React.FC = ({ children }) => {
 
   const isMobile = useMediaQuery({
     query: lt.md
-  })
+  });
+
+  console.log('isMobile:', isMobile);
 
   const v1Height = headerHeight + dotSize + (c1Height > c2Height ? c1Height : c2Height);
   const v2Height = c2Height > c3Height ? c2Height : c3Height;
@@ -130,9 +139,9 @@ const DefaultLayout: React.FC = ({ children }) => {
         <HDots style={{ gridArea: 'h3' }} />
 
         <VDots style={{ gridArea: 'v1', ...(isMobile ? {} : { height: `${v1Height}px` }) }} />
-        <VDots style={{ gridArea: 'v2', height: `${v2Height}px`, ...(isMobile ? { display: 'none' } : {}) }} />
-        <VDots style={{ gridArea: 'v3', height: `${v3Height}px`, ...(isMobile ? { display: 'none' } : {}) }} />
-        <VDots style={{ gridArea: 'v4', height: `${v4Height}px`, ...(isMobile ? { display: 'none' } : {}) }} />
+        <HideInMobileVDots style={{ gridArea: 'v2', height: `${v2Height}px` }} />
+        <HideInMobileVDots style={{ gridArea: 'v3', height: `${v3Height}px` }} />
+        <HideInMobileVDots style={{ gridArea: 'v4', height: `${v4Height}px` }} />
 
         {children}
 

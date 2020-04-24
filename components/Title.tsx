@@ -5,6 +5,7 @@ import { richText } from "../utils/richText";
 
 const Container = styled(PadColumn)`
     justify-content: center;
+    overflow: hidden;
 `;
 
 interface ITitleProps {
