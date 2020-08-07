@@ -24,6 +24,8 @@ export const typography = css`
         text-transform: uppercase;
         margin: 0;
         font-weight: 400;
+
+        ${mq.lt.sm`font-size: 33px;`}
     }
 
     h3 {
@@ -31,14 +33,18 @@ export const typography = css`
         font-size: 12px;
 	    text-transform: uppercase;	
         letter-spacing: -1;
-        font-weight: 400;
+        font-weight: 100;
+
+        ${mq.lt.sm`font-size: 17px;`}
     }
 
     h4, h5, h6, body {
         font-family: LucidaConsole;
         font-size: 10px;	
         letter-spacing: -1;
-        font-weight: 400;
+        font-weight: 100;
+
+        ${mq.lt.sm`font-size: 13px;`}
     }
 
 `;
