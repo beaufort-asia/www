@@ -16,7 +16,7 @@
     "graphql": "^14.6.0",
     "graphql-tag": "^2.10.3",
     "graphql-tools": "^4.0.7",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "next": "^9.3.2",
     "next-fonts": "^1.0.3",
     "prismic-javascript": "^2.7.0",
