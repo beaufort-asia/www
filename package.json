@@ -50,9 +50,9 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "dev": "concurrently \"yarn gql:codegen --watch\" \"next dev\"",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider concurrently \"yarn gql:codegen --watch\" \"next dev\"",
     "dev:now": "now dev",
-    "build": "next build",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
     "stage": "now --prod",
     "gql:schema": "ts-node -T -O '{ \"module\": \"commonjs\" }' ./scripts/getSchema.ts",
     "gql:codegen": "graphql-codegen --config codegen.yml"

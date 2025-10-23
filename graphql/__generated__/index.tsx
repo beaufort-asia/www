@@ -14,8 +14,8 @@ export interface Scalars {
   Float: number;
   DateTime: any;
   Long: any;
-  Json: any;
   Date: any;
+  Json: any;
 }
 
 /** A prismic document */
@@ -46,6 +46,7 @@ export interface _DocumentEdge {
 export interface _ExternalLink  extends _Linkable {
    __typename: '_ExternalLink';
   url: Scalars['String'];
+  target?: Maybe<Scalars['String']>;
   _linkType?: Maybe<Scalars['String']>;
 }
 
@@ -308,23 +309,21 @@ export interface PageInfo {
 export interface Query {
    __typename: 'Query';
   _allDocuments: _DocumentConnection;
-  allHomes: HomeConnectionConnection;
   allArticles: ArticleConnectionConnection;
+  allHomes: HomeConnectionConnection;
   allSections: SectionConnectionConnection;
 }
 
 
 export interface Query_AllDocumentsArgs {
   sortBy?: Maybe<SortDocumentsBy>;
+  type?: Maybe<Scalars['String']>;
+  type_in?: Maybe<Array<Scalars['String']>>;
   id?: Maybe<Scalars['String']>;
   id_in?: Maybe<Array<Scalars['String']>>;
-  uid?: Maybe<Scalars['String']>;
-  uid_in?: Maybe<Array<Scalars['String']>>;
   lang?: Maybe<Scalars['String']>;
   tags?: Maybe<Array<Scalars['String']>>;
   tags_in?: Maybe<Array<Scalars['String']>>;
-  type?: Maybe<Scalars['String']>;
-  type_in?: Maybe<Array<Scalars['String']>>;
   firstPublicationDate?: Maybe<Scalars['DateTime']>;
   firstPublicationDate_after?: Maybe<Scalars['DateTime']>;
   firstPublicationDate_before?: Maybe<Scalars['DateTime']>;
@@ -333,33 +332,6 @@ export interface Query_AllDocumentsArgs {
   lastPublicationDate_before?: Maybe<Scalars['DateTime']>;
   fulltext?: Maybe<Scalars['String']>;
   similar?: Maybe<Similar>;
-  before?: Maybe<Scalars['String']>;
-  after?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-}
-
-
-export interface QueryAllHomesArgs {
-  sortBy?: Maybe<SortHomey>;
-  id?: Maybe<Scalars['String']>;
-  id_in?: Maybe<Array<Scalars['String']>>;
-  uid?: Maybe<Scalars['String']>;
-  uid_in?: Maybe<Array<Scalars['String']>>;
-  lang?: Maybe<Scalars['String']>;
-  tags?: Maybe<Array<Scalars['String']>>;
-  tags_in?: Maybe<Array<Scalars['String']>>;
-  type?: Maybe<Scalars['String']>;
-  type_in?: Maybe<Array<Scalars['String']>>;
-  firstPublicationDate?: Maybe<Scalars['DateTime']>;
-  firstPublicationDate_after?: Maybe<Scalars['DateTime']>;
-  firstPublicationDate_before?: Maybe<Scalars['DateTime']>;
-  lastPublicationDate?: Maybe<Scalars['DateTime']>;
-  lastPublicationDate_after?: Maybe<Scalars['DateTime']>;
-  lastPublicationDate_before?: Maybe<Scalars['DateTime']>;
-  fulltext?: Maybe<Scalars['String']>;
-  similar?: Maybe<Similar>;
-  where?: Maybe<WhereHome>;
   before?: Maybe<Scalars['String']>;
   after?: Maybe<Scalars['String']>;
   first?: Maybe<Scalars['Int']>;
@@ -369,15 +341,13 @@ export interface QueryAllHomesArgs {
 
 export interface QueryAllArticlesArgs {
   sortBy?: Maybe<SortArticley>;
-  id?: Maybe<Scalars['String']>;
-  id_in?: Maybe<Array<Scalars['String']>>;
   uid?: Maybe<Scalars['String']>;
   uid_in?: Maybe<Array<Scalars['String']>>;
+  id?: Maybe<Scalars['String']>;
+  id_in?: Maybe<Array<Scalars['String']>>;
   lang?: Maybe<Scalars['String']>;
   tags?: Maybe<Array<Scalars['String']>>;
   tags_in?: Maybe<Array<Scalars['String']>>;
-  type?: Maybe<Scalars['String']>;
-  type_in?: Maybe<Array<Scalars['String']>>;
   firstPublicationDate?: Maybe<Scalars['DateTime']>;
   firstPublicationDate_after?: Maybe<Scalars['DateTime']>;
   firstPublicationDate_before?: Maybe<Scalars['DateTime']>;
@@ -394,17 +364,40 @@ export interface QueryAllArticlesArgs {
 }
 
 
-export interface QueryAllSectionsArgs {
-  sortBy?: Maybe<SortSectiony>;
-  id?: Maybe<Scalars['String']>;
-  id_in?: Maybe<Array<Scalars['String']>>;
+export interface QueryAllHomesArgs {
+  sortBy?: Maybe<SortHomey>;
   uid?: Maybe<Scalars['String']>;
   uid_in?: Maybe<Array<Scalars['String']>>;
+  id?: Maybe<Scalars['String']>;
+  id_in?: Maybe<Array<Scalars['String']>>;
   lang?: Maybe<Scalars['String']>;
   tags?: Maybe<Array<Scalars['String']>>;
   tags_in?: Maybe<Array<Scalars['String']>>;
-  type?: Maybe<Scalars['String']>;
-  type_in?: Maybe<Array<Scalars['String']>>;
+  firstPublicationDate?: Maybe<Scalars['DateTime']>;
+  firstPublicationDate_after?: Maybe<Scalars['DateTime']>;
+  firstPublicationDate_before?: Maybe<Scalars['DateTime']>;
+  lastPublicationDate?: Maybe<Scalars['DateTime']>;
+  lastPublicationDate_after?: Maybe<Scalars['DateTime']>;
+  lastPublicationDate_before?: Maybe<Scalars['DateTime']>;
+  fulltext?: Maybe<Scalars['String']>;
+  similar?: Maybe<Similar>;
+  where?: Maybe<WhereHome>;
+  before?: Maybe<Scalars['String']>;
+  after?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+}
+
+
+export interface QueryAllSectionsArgs {
+  sortBy?: Maybe<SortSectiony>;
+  uid?: Maybe<Scalars['String']>;
+  uid_in?: Maybe<Array<Scalars['String']>>;
+  id?: Maybe<Scalars['String']>;
+  id_in?: Maybe<Array<Scalars['String']>>;
+  lang?: Maybe<Scalars['String']>;
+  tags?: Maybe<Array<Scalars['String']>>;
+  tags_in?: Maybe<Array<Scalars['String']>>;
   firstPublicationDate?: Maybe<Scalars['DateTime']>;
   firstPublicationDate_after?: Maybe<Scalars['DateTime']>;
   firstPublicationDate_before?: Maybe<Scalars['DateTime']>;
@@ -533,12 +526,42 @@ export interface WhereHome {
   header_left_title_fulltext?: Maybe<Scalars['String']>;
   /** header_left_rich_text */
   header_left_rich_text_fulltext?: Maybe<Scalars['String']>;
+  column1_sections?: Maybe<WhereHomeColumn1_Sections>;
+  column2_sections?: Maybe<WhereHomeColumn2_Sections>;
+  column3_sections?: Maybe<WhereHomeColumn3_Sections>;
+  column4_sections?: Maybe<WhereHomeColumn4_Sections>;
+  column5_sections?: Maybe<WhereHomeColumn5_Sections>;
   /** header_right_title */
   header_right_title_fulltext?: Maybe<Scalars['String']>;
   /** header_right_rich_text */
   header_right_rich_text_fulltext?: Maybe<Scalars['String']>;
   /** footer_content */
   footer_content_fulltext?: Maybe<Scalars['String']>;
+}
+
+export interface WhereHomeColumn1_Sections {
+  /** section */
+  section?: Maybe<Scalars['String']>;
+}
+
+export interface WhereHomeColumn2_Sections {
+  /** section */
+  section?: Maybe<Scalars['String']>;
+}
+
+export interface WhereHomeColumn3_Sections {
+  /** section */
+  section?: Maybe<Scalars['String']>;
+}
+
+export interface WhereHomeColumn4_Sections {
+  /** section */
+  section?: Maybe<Scalars['String']>;
+}
+
+export interface WhereHomeColumn5_Sections {
+  /** section */
+  section?: Maybe<Scalars['String']>;
 }
 
 export interface WhereSection {
@@ -605,11 +628,11 @@ export type ArticlesQuery = (
             { __typename: 'ArticleBodyLinkPrimary' }
             & Pick<ArticleBodyLinkPrimary, 'link_text' | 'link_text_after' | 'link_text_before' | 'link_thumbnail'>
             & { link_url?: Maybe<(
-              { __typename: 'Home' }
-              & Pick<Home, '_linkType'>
-            ) | (
               { __typename: 'Article' }
               & Pick<Article, '_linkType'>
+            ) | (
+              { __typename: 'Home' }
+              & Pick<Home, '_linkType'>
             ) | (
               { __typename: 'Section' }
               & Pick<Section, '_linkType'>
@@ -634,7 +657,7 @@ export type ArticlesQuery = (
         ) | { __typename: 'ArticleBodyDotted_line' }>>, _meta: (
           { __typename: 'Meta' }
           & Pick<Meta, 'id'>
-        ), section?: Maybe<{ __typename: 'Home' } | { __typename: 'Article' } | (
+        ), section?: Maybe<{ __typename: 'Article' } | { __typename: 'Home' } | (
           { __typename: 'Section' }
           & { _meta: (
             { __typename: 'Meta' }
@@ -660,7 +683,7 @@ export type HomeQuery = (
         & Pick<Home, 'homepageTitle' | 'header_left_rich_text' | 'header_left_title' | 'header_right_rich_text' | 'header_right_title' | 'footer_content'>
         & { column1_sections?: Maybe<Array<(
           { __typename: 'HomeColumn1_sections' }
-          & { section?: Maybe<{ __typename: 'Home' } | { __typename: 'Article' } | (
+          & { section?: Maybe<{ __typename: 'Article' } | { __typename: 'Home' } | (
             { __typename: 'Section' }
             & Pick<Section, 'section_title'>
             & { _meta: (
@@ -670,7 +693,7 @@ export type HomeQuery = (
           ) | { __typename: '_ExternalLink' } | { __typename: '_FileLink' } | { __typename: '_ImageLink' }> }
         )>>, column2_sections?: Maybe<Array<(
           { __typename: 'HomeColumn2_sections' }
-          & { section?: Maybe<{ __typename: 'Home' } | { __typename: 'Article' } | (
+          & { section?: Maybe<{ __typename: 'Article' } | { __typename: 'Home' } | (
             { __typename: 'Section' }
             & Pick<Section, 'section_title'>
             & { _meta: (
@@ -680,7 +703,7 @@ export type HomeQuery = (
           ) | { __typename: '_ExternalLink' } | { __typename: '_FileLink' } | { __typename: '_ImageLink' }> }
         )>>, column3_sections?: Maybe<Array<(
           { __typename: 'HomeColumn3_sections' }
-          & { section?: Maybe<{ __typename: 'Home' } | { __typename: 'Article' } | (
+          & { section?: Maybe<{ __typename: 'Article' } | { __typename: 'Home' } | (
             { __typename: 'Section' }
             & Pick<Section, 'section_title'>
             & { _meta: (
@@ -690,7 +713,7 @@ export type HomeQuery = (
           ) | { __typename: '_ExternalLink' } | { __typename: '_FileLink' } | { __typename: '_ImageLink' }> }
         )>>, column4_sections?: Maybe<Array<(
           { __typename: 'HomeColumn4_sections' }
-          & { section?: Maybe<{ __typename: 'Home' } | { __typename: 'Article' } | (
+          & { section?: Maybe<{ __typename: 'Article' } | { __typename: 'Home' } | (
             { __typename: 'Section' }
             & Pick<Section, 'section_title'>
             & { _meta: (
@@ -700,7 +723,7 @@ export type HomeQuery = (
           ) | { __typename: '_ExternalLink' } | { __typename: '_FileLink' } | { __typename: '_ImageLink' }> }
         )>>, column5_sections?: Maybe<Array<(
           { __typename: 'HomeColumn5_sections' }
-          & { section?: Maybe<{ __typename: 'Home' } | { __typename: 'Article' } | (
+          & { section?: Maybe<{ __typename: 'Article' } | { __typename: 'Home' } | (
             { __typename: 'Section' }
             & Pick<Section, 'section_title'>
             & { _meta: (

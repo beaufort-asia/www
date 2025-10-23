@@ -1891,7 +1891,7 @@
                 "__typename": "__InputValue"
               },
               {
-                "name": "id",
+                "name": "type",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
@@ -1903,7 +1903,7 @@
                 "__typename": "__InputValue"
               },
               {
-                "name": "id_in",
+                "name": "type_in",
                 "description": null,
                 "type": {
                   "kind": "LIST",
@@ -1925,7 +1925,7 @@
                 "__typename": "__InputValue"
               },
               {
-                "name": "uid",
+                "name": "id",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
@@ -1937,7 +1937,7 @@
                 "__typename": "__InputValue"
               },
               {
-                "name": "uid_in",
+                "name": "id_in",
                 "description": null,
                 "type": {
                   "kind": "LIST",
@@ -1994,40 +1994,6 @@
               },
               {
                 "name": "tags_in",
-                "description": null,
-                "type": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "SCALAR",
-                      "name": "String",
-                      "ofType": null,
-                      "__typename": "__Type"
-                    },
-                    "__typename": "__Type"
-                  },
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "type",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "type_in",
                 "description": null,
                 "type": {
                   "kind": "LIST",
@@ -2209,352 +2175,6 @@
             "__typename": "__Field"
           },
           {
-            "name": "allHomes",
-            "description": null,
-            "args": [
-              {
-                "name": "sortBy",
-                "description": null,
-                "type": {
-                  "kind": "ENUM",
-                  "name": "SortHomey",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "id",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "id_in",
-                "description": null,
-                "type": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "SCALAR",
-                      "name": "String",
-                      "ofType": null,
-                      "__typename": "__Type"
-                    },
-                    "__typename": "__Type"
-                  },
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "uid",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "uid_in",
-                "description": null,
-                "type": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "SCALAR",
-                      "name": "String",
-                      "ofType": null,
-                      "__typename": "__Type"
-                    },
-                    "__typename": "__Type"
-                  },
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "lang",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "tags",
-                "description": null,
-                "type": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "SCALAR",
-                      "name": "String",
-                      "ofType": null,
-                      "__typename": "__Type"
-                    },
-                    "__typename": "__Type"
-                  },
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "tags_in",
-                "description": null,
-                "type": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "SCALAR",
-                      "name": "String",
-                      "ofType": null,
-                      "__typename": "__Type"
-                    },
-                    "__typename": "__Type"
-                  },
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "type",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "type_in",
-                "description": null,
-                "type": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "SCALAR",
-                      "name": "String",
-                      "ofType": null,
-                      "__typename": "__Type"
-                    },
-                    "__typename": "__Type"
-                  },
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "firstPublicationDate",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "DateTime",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "firstPublicationDate_after",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "DateTime",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "firstPublicationDate_before",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "DateTime",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "lastPublicationDate",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "DateTime",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "lastPublicationDate_after",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "DateTime",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "lastPublicationDate_before",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "DateTime",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "fulltext",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "similar",
-                "description": null,
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "similar",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "where",
-                "description": null,
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "WhereHome",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "before",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "after",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "first",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "last",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              }
-            ],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "HomeConnectionConnection",
-                "ofType": null,
-                "__typename": "__Type"
-              },
-              "__typename": "__Type"
-            },
-            "isDeprecated": false,
-            "deprecationReason": null,
-            "__typename": "__Field"
-          },
-          {
             "name": "allArticles",
             "description": null,
             "args": [
@@ -2571,7 +2191,7 @@
                 "__typename": "__InputValue"
               },
               {
-                "name": "id",
+                "name": "uid",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
@@ -2583,7 +2203,7 @@
                 "__typename": "__InputValue"
               },
               {
-                "name": "id_in",
+                "name": "uid_in",
                 "description": null,
                 "type": {
                   "kind": "LIST",
@@ -2605,7 +2225,7 @@
                 "__typename": "__InputValue"
               },
               {
-                "name": "uid",
+                "name": "id",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
@@ -2617,7 +2237,7 @@
                 "__typename": "__InputValue"
               },
               {
-                "name": "uid_in",
+                "name": "id_in",
                 "description": null,
                 "type": {
                   "kind": "LIST",
@@ -2674,40 +2294,6 @@
               },
               {
                 "name": "tags_in",
-                "description": null,
-                "type": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "SCALAR",
-                      "name": "String",
-                      "ofType": null,
-                      "__typename": "__Type"
-                    },
-                    "__typename": "__Type"
-                  },
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "type",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null,
-                  "__typename": "__Type"
-                },
-                "defaultValue": null,
-                "__typename": "__InputValue"
-              },
-              {
-                "name": "type_in",
                 "description": null,
                 "type": {
                   "kind": "LIST",
@@ -2901,7 +2487,7 @@
             "__typename": "__Field"
           },
           {
-            "name": "allSections",
+            "name": "allHomes",
             "description": null,
             "args": [
               {
@@ -2909,7 +2495,7 @@
                 "description": null,
                 "type": {
                   "kind": "ENUM",
-                  "name": "SortSectiony",
+                  "name": "SortHomey",
                   "ofType": null,
                   "__typename": "__Type"
                 },
@@ -2917,7 +2503,7 @@
                 "__typename": "__InputValue"
               },
               {
-                "name": "id",
+                "name": "uid",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
@@ -2929,7 +2515,7 @@
                 "__typename": "__InputValue"
               },
               {
-                "name": "id_in",
+                "name": "uid_in",
                 "description": null,
                 "type": {
                   "kind": "LIST",
@@ -2951,7 +2537,7 @@
                 "__typename": "__InputValue"
               },
               {
-                "name": "uid",
+                "name": "id",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
@@ -2963,7 +2549,7 @@
                 "__typename": "__InputValue"
               },
               {
-                "name": "uid_in",
+                "name": "id_in",
                 "description": null,
                 "type": {
                   "kind": "LIST",
@@ -3041,7 +2627,79 @@
                 "__typename": "__InputValue"
               },
               {
-                "name": "type",
+                "name": "firstPublicationDate",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null,
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "firstPublicationDate_after",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null,
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "firstPublicationDate_before",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null,
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "lastPublicationDate",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null,
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "lastPublicationDate_after",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null,
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "lastPublicationDate_before",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "DateTime",
+                  "ofType": null,
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "fulltext",
                 "description": null,
                 "type": {
                   "kind": "SCALAR",
@@ -3053,7 +2711,213 @@
                 "__typename": "__InputValue"
               },
               {
-                "name": "type_in",
+                "name": "similar",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "similar",
+                  "ofType": null,
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "WhereHome",
+                  "ofType": null,
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "before",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null,
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "after",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null,
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "first",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null,
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "last",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null,
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              }
+            ],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "HomeConnectionConnection",
+                "ofType": null,
+                "__typename": "__Type"
+              },
+              "__typename": "__Type"
+            },
+            "isDeprecated": false,
+            "deprecationReason": null,
+            "__typename": "__Field"
+          },
+          {
+            "name": "allSections",
+            "description": null,
+            "args": [
+              {
+                "name": "sortBy",
+                "description": null,
+                "type": {
+                  "kind": "ENUM",
+                  "name": "SortSectiony",
+                  "ofType": null,
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "uid",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null,
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "uid_in",
+                "description": null,
+                "type": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String",
+                      "ofType": null,
+                      "__typename": "__Type"
+                    },
+                    "__typename": "__Type"
+                  },
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "id",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null,
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "id_in",
+                "description": null,
+                "type": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String",
+                      "ofType": null,
+                      "__typename": "__Type"
+                    },
+                    "__typename": "__Type"
+                  },
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "lang",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null,
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "tags",
+                "description": null,
+                "type": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "name": null,
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String",
+                      "ofType": null,
+                      "__typename": "__Type"
+                    },
+                    "__typename": "__Type"
+                  },
+                  "__typename": "__Type"
+                },
+                "defaultValue": null,
+                "__typename": "__InputValue"
+              },
+              {
+                "name": "tags_in",
                 "description": null,
                 "type": {
                   "kind": "LIST",
@@ -3978,6 +3842,66 @@
             "__typename": "__InputValue"
           },
           {
+            "name": "column1_sections",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "WhereHomeColumn1_sections",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "defaultValue": null,
+            "__typename": "__InputValue"
+          },
+          {
+            "name": "column2_sections",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "WhereHomeColumn2_sections",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "defaultValue": null,
+            "__typename": "__InputValue"
+          },
+          {
+            "name": "column3_sections",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "WhereHomeColumn3_sections",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "defaultValue": null,
+            "__typename": "__InputValue"
+          },
+          {
+            "name": "column4_sections",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "WhereHomeColumn4_sections",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "defaultValue": null,
+            "__typename": "__InputValue"
+          },
+          {
+            "name": "column5_sections",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "WhereHomeColumn5_sections",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "defaultValue": null,
+            "__typename": "__InputValue"
+          },
+          {
             "name": "header_right_title_fulltext",
             "description": "header_right_title",
             "type": {
@@ -4004,6 +3928,126 @@
           {
             "name": "footer_content_fulltext",
             "description": "footer_content",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "defaultValue": null,
+            "__typename": "__InputValue"
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null,
+        "__typename": "__Type"
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "WhereHomeColumn1_sections",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "section",
+            "description": "section",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "defaultValue": null,
+            "__typename": "__InputValue"
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null,
+        "__typename": "__Type"
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "WhereHomeColumn2_sections",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "section",
+            "description": "section",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "defaultValue": null,
+            "__typename": "__InputValue"
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null,
+        "__typename": "__Type"
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "WhereHomeColumn3_sections",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "section",
+            "description": "section",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "defaultValue": null,
+            "__typename": "__InputValue"
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null,
+        "__typename": "__Type"
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "WhereHomeColumn4_sections",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "section",
+            "description": "section",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "defaultValue": null,
+            "__typename": "__InputValue"
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null,
+        "__typename": "__Type"
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "WhereHomeColumn5_sections",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "section",
+            "description": "section",
             "type": {
               "kind": "SCALAR",
               "name": "String",
@@ -4230,6 +4274,20 @@
                 "ofType": null,
                 "__typename": "__Type"
               },
+              "__typename": "__Type"
+            },
+            "isDeprecated": false,
+            "deprecationReason": null,
+            "__typename": "__Field"
+          },
+          {
+            "name": "target",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null,
               "__typename": "__Type"
             },
             "isDeprecated": false,
@@ -4686,63 +4744,6 @@
             "isDeprecated": false,
             "deprecationReason": null,
             "__typename": "__Field"
-          },
-          {
-            "name": "onOperation",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null,
-                "__typename": "__Type"
-              },
-              "__typename": "__Type"
-            },
-            "isDeprecated": true,
-            "deprecationReason": "Use `locations`.",
-            "__typename": "__Field"
-          },
-          {
-            "name": "onFragment",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null,
-                "__typename": "__Type"
-              },
-              "__typename": "__Type"
-            },
-            "isDeprecated": true,
-            "deprecationReason": "Use `locations`.",
-            "__typename": "__Field"
-          },
-          {
-            "name": "onField",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null,
-                "__typename": "__Type"
-              },
-              "__typename": "__Type"
-            },
-            "isDeprecated": true,
-            "deprecationReason": "Use `locations`.",
-            "__typename": "__Field"
           }
         ],
         "inputFields": null,
@@ -4804,6 +4805,13 @@
           {
             "name": "INLINE_FRAGMENT",
             "description": "Location adjacent to an inline fragment.",
+            "isDeprecated": false,
+            "deprecationReason": null,
+            "__typename": "__EnumValue"
+          },
+          {
+            "name": "VARIABLE_DEFINITION",
+            "description": "Location adjacent to a variable definition.",
             "isDeprecated": false,
             "deprecationReason": null,
             "__typename": "__EnumValue"
@@ -5176,6 +5184,20 @@
         "name": "__Schema",
         "description": "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation, and subscription operations.",
         "fields": [
+          {
+            "name": "description",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null,
+              "__typename": "__Type"
+            },
+            "isDeprecated": false,
+            "deprecationReason": null,
+            "__typename": "__Field"
+          },
           {
             "name": "types",
             "description": "A list of all types supported by this server.",
