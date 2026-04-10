@@ -6,6 +6,7 @@ generates:
     config:
       nonOptionalTypename: true
       declarationKind: "interface"
+      withHOC: false
     plugins:
       - "typescript"        
       - "typescript-operations"      

@@ -2,8 +2,10 @@ import gql from 'graphql-tag';
 import * as React from 'react';
 import * as ApolloReactCommon from '@apollo/react-common';
 import * as ApolloReactComponents from '@apollo/react-components';
-import * as ApolloReactHoc from '@apollo/react-hoc';
 export type Maybe<T> = T | null;
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
 /** All built-in and custom scalars, mapped to their actual values */
 export interface Scalars {
@@ -12,9 +14,13 @@ export interface Scalars {
   Boolean: boolean;
   Int: number;
   Float: number;
+  /** DateTime */
   DateTime: any;
+  /** The `Long` scalar type represents non-fractional signed whole numeric values. Long can represent values between -(2^63) and 2^63 - 1. */
   Long: any;
+  /** Date */
   Date: any;
+  /** Raw JSON value */
   Json: any;
 }
 
@@ -25,7 +31,7 @@ export interface _Document {
 
 /** A connection to a list of items. */
 export interface _DocumentConnection {
-   __typename: '_DocumentConnection';
+  __typename: '_DocumentConnection';
   /** Information to aid in pagination. */
   pageInfo: PageInfo;
   /** A list of edges. */
@@ -35,7 +41,7 @@ export interface _DocumentConnection {
 
 /** An edge in a connection. */
 export interface _DocumentEdge {
-   __typename: '_DocumentEdge';
+  __typename: '_DocumentEdge';
   /** The item at the end of the edge. */
   node: _Document;
   /** A cursor for use in pagination. */
@@ -43,16 +49,16 @@ export interface _DocumentEdge {
 }
 
 /** An external link */
-export interface _ExternalLink  extends _Linkable {
-   __typename: '_ExternalLink';
+export interface _ExternalLink extends _Linkable {
+  __typename: '_ExternalLink';
   url: Scalars['String'];
   target?: Maybe<Scalars['String']>;
   _linkType?: Maybe<Scalars['String']>;
 }
 
 /** A linked file */
-export interface _FileLink  extends _Linkable {
-   __typename: '_FileLink';
+export interface _FileLink extends _Linkable {
+  __typename: '_FileLink';
   name: Scalars['String'];
   url: Scalars['String'];
   size: Scalars['Long'];
@@ -60,8 +66,8 @@ export interface _FileLink  extends _Linkable {
 }
 
 /** A linked image */
-export interface _ImageLink  extends _Linkable {
-   __typename: '_ImageLink';
+export interface _ImageLink extends _Linkable {
+  __typename: '_ImageLink';
   name: Scalars['String'];
   url: Scalars['String'];
   size: Scalars['Long'];
@@ -75,8 +81,8 @@ export interface _Linkable {
   _linkType?: Maybe<Scalars['String']>;
 }
 
-export interface Article  extends _Document, _Linkable {
-   __typename: 'Article';
+export interface Article extends _Document, _Linkable {
+  __typename: 'Article';
   articleDate?: Maybe<Scalars['Date']>;
   highlight?: Maybe<Scalars['String']>;
   section?: Maybe<_Linkable>;
@@ -89,44 +95,44 @@ export interface Article  extends _Document, _Linkable {
 export type ArticleBody = ArticleBodyHtml | ArticleBodyVimeo | ArticleBodyYoutube | ArticleBodySoundcloud | ArticleBodyImage | ArticleBodyLink | ArticleBodyCustom_Code_Embed | ArticleBodyDotted_Line;
 
 export interface ArticleBodyCustom_Code_Embed {
-   __typename: 'ArticleBodyCustom_code_embed';
+  __typename: 'ArticleBodyCustom_code_embed';
   type?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   primary?: Maybe<ArticleBodyCustom_Code_EmbedPrimary>;
 }
 
 export interface ArticleBodyCustom_Code_EmbedPrimary {
-   __typename: 'ArticleBodyCustom_code_embedPrimary';
+  __typename: 'ArticleBodyCustom_code_embedPrimary';
   html?: Maybe<Scalars['Json']>;
 }
 
 export interface ArticleBodyDotted_Line {
-   __typename: 'ArticleBodyDotted_line';
+  __typename: 'ArticleBodyDotted_line';
   type?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
 }
 
 export interface ArticleBodyHtml {
-   __typename: 'ArticleBodyHtml';
+  __typename: 'ArticleBodyHtml';
   type?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   primary?: Maybe<ArticleBodyHtmlPrimary>;
 }
 
 export interface ArticleBodyHtmlPrimary {
-   __typename: 'ArticleBodyHtmlPrimary';
+  __typename: 'ArticleBodyHtmlPrimary';
   html_rich_text?: Maybe<Scalars['Json']>;
 }
 
 export interface ArticleBodyImage {
-   __typename: 'ArticleBodyImage';
+  __typename: 'ArticleBodyImage';
   type?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   primary?: Maybe<ArticleBodyImagePrimary>;
 }
 
 export interface ArticleBodyImagePrimary {
-   __typename: 'ArticleBodyImagePrimary';
+  __typename: 'ArticleBodyImagePrimary';
   image_text_before?: Maybe<Scalars['Json']>;
   image_link_text?: Maybe<Scalars['Json']>;
   image_file?: Maybe<Scalars['Json']>;
@@ -134,14 +140,14 @@ export interface ArticleBodyImagePrimary {
 }
 
 export interface ArticleBodyLink {
-   __typename: 'ArticleBodyLink';
+  __typename: 'ArticleBodyLink';
   type?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   primary?: Maybe<ArticleBodyLinkPrimary>;
 }
 
 export interface ArticleBodyLinkPrimary {
-   __typename: 'ArticleBodyLinkPrimary';
+  __typename: 'ArticleBodyLinkPrimary';
   link_text_before?: Maybe<Scalars['Json']>;
   link_text?: Maybe<Scalars['Json']>;
   link_url?: Maybe<_Linkable>;
@@ -150,40 +156,40 @@ export interface ArticleBodyLinkPrimary {
 }
 
 export interface ArticleBodySoundcloud {
-   __typename: 'ArticleBodySoundcloud';
+  __typename: 'ArticleBodySoundcloud';
   type?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   primary?: Maybe<ArticleBodySoundcloudPrimary>;
 }
 
 export interface ArticleBodySoundcloudPrimary {
-   __typename: 'ArticleBodySoundcloudPrimary';
+  __typename: 'ArticleBodySoundcloudPrimary';
   soundcloud_embed?: Maybe<Scalars['Json']>;
 }
 
 export interface ArticleBodyVimeo {
-   __typename: 'ArticleBodyVimeo';
+  __typename: 'ArticleBodyVimeo';
   type?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   primary?: Maybe<ArticleBodyVimeoPrimary>;
 }
 
 export interface ArticleBodyVimeoPrimary {
-   __typename: 'ArticleBodyVimeoPrimary';
+  __typename: 'ArticleBodyVimeoPrimary';
   vimeo_link_text?: Maybe<Scalars['Json']>;
   vimeo_embed?: Maybe<Scalars['Json']>;
   vimeo_thumbnail_image?: Maybe<Scalars['Json']>;
 }
 
 export interface ArticleBodyYoutube {
-   __typename: 'ArticleBodyYoutube';
+  __typename: 'ArticleBodyYoutube';
   type?: Maybe<Scalars['String']>;
   label?: Maybe<Scalars['String']>;
   primary?: Maybe<ArticleBodyYoutubePrimary>;
 }
 
 export interface ArticleBodyYoutubePrimary {
-   __typename: 'ArticleBodyYoutubePrimary';
+  __typename: 'ArticleBodyYoutubePrimary';
   youtube_link_text?: Maybe<Scalars['Json']>;
   youtube_embed?: Maybe<Scalars['Json']>;
   youtube_thumbnail_image?: Maybe<Scalars['Json']>;
@@ -191,7 +197,7 @@ export interface ArticleBodyYoutubePrimary {
 
 /** A connection to a list of items. */
 export interface ArticleConnectionConnection {
-   __typename: 'ArticleConnectionConnection';
+  __typename: 'ArticleConnectionConnection';
   /** Information to aid in pagination. */
   pageInfo: PageInfo;
   /** A list of edges. */
@@ -201,7 +207,7 @@ export interface ArticleConnectionConnection {
 
 /** An edge in a connection. */
 export interface ArticleConnectionEdge {
-   __typename: 'ArticleConnectionEdge';
+  __typename: 'ArticleConnectionEdge';
   /** The item at the end of the edge. */
   node: Article;
   /** A cursor for use in pagination. */
@@ -210,8 +216,8 @@ export interface ArticleConnectionEdge {
 
 
 
-export interface Home  extends _Document, _Linkable {
-   __typename: 'Home';
+export interface Home extends _Document, _Linkable {
+  __typename: 'Home';
   homepageTitle?: Maybe<Scalars['Json']>;
   header_left_title?: Maybe<Scalars['Json']>;
   header_left_rich_text?: Maybe<Scalars['Json']>;
@@ -228,33 +234,33 @@ export interface Home  extends _Document, _Linkable {
 }
 
 export interface HomeColumn1_Sections {
-   __typename: 'HomeColumn1_sections';
+  __typename: 'HomeColumn1_sections';
   section?: Maybe<_Linkable>;
 }
 
 export interface HomeColumn2_Sections {
-   __typename: 'HomeColumn2_sections';
+  __typename: 'HomeColumn2_sections';
   section?: Maybe<_Linkable>;
 }
 
 export interface HomeColumn3_Sections {
-   __typename: 'HomeColumn3_sections';
+  __typename: 'HomeColumn3_sections';
   section?: Maybe<_Linkable>;
 }
 
 export interface HomeColumn4_Sections {
-   __typename: 'HomeColumn4_sections';
+  __typename: 'HomeColumn4_sections';
   section?: Maybe<_Linkable>;
 }
 
 export interface HomeColumn5_Sections {
-   __typename: 'HomeColumn5_sections';
+  __typename: 'HomeColumn5_sections';
   section?: Maybe<_Linkable>;
 }
 
 /** A connection to a list of items. */
 export interface HomeConnectionConnection {
-   __typename: 'HomeConnectionConnection';
+  __typename: 'HomeConnectionConnection';
   /** Information to aid in pagination. */
   pageInfo: PageInfo;
   /** A list of edges. */
@@ -264,7 +270,7 @@ export interface HomeConnectionConnection {
 
 /** An edge in a connection. */
 export interface HomeConnectionEdge {
-   __typename: 'HomeConnectionEdge';
+  __typename: 'HomeConnectionEdge';
   /** The item at the end of the edge. */
   node: Home;
   /** A cursor for use in pagination. */
@@ -274,7 +280,7 @@ export interface HomeConnectionEdge {
 
 
 export interface Meta {
-   __typename: 'Meta';
+  __typename: 'Meta';
   /** The id of the document. */
   id: Scalars['String'];
   /** The uid of the document. */
@@ -295,7 +301,7 @@ export interface Meta {
 
 /** Information about pagination in a connection. */
 export interface PageInfo {
-   __typename: 'PageInfo';
+  __typename: 'PageInfo';
   /** When paginating forwards, are there more items? */
   hasNextPage: Scalars['Boolean'];
   /** When paginating backwards, are there more items? */
@@ -307,7 +313,7 @@ export interface PageInfo {
 }
 
 export interface Query {
-   __typename: 'Query';
+  __typename: 'Query';
   _allDocuments: _DocumentConnection;
   allArticles: ArticleConnectionConnection;
   allHomes: HomeConnectionConnection;
@@ -414,7 +420,7 @@ export interface QueryAllSectionsArgs {
 }
 
 export interface RelatedDocument {
-   __typename: 'RelatedDocument';
+  __typename: 'RelatedDocument';
   /** The id of the document. */
   id: Scalars['String'];
   /** The uid of the document. */
@@ -425,8 +431,8 @@ export interface RelatedDocument {
   lang: Scalars['String'];
 }
 
-export interface Section  extends _Document, _Linkable {
-   __typename: 'Section';
+export interface Section extends _Document, _Linkable {
+  __typename: 'Section';
   section_title?: Maybe<Scalars['Json']>;
   _meta: Meta;
   _linkType?: Maybe<Scalars['String']>;
@@ -434,7 +440,7 @@ export interface Section  extends _Document, _Linkable {
 
 /** A connection to a list of items. */
 export interface SectionConnectionConnection {
-   __typename: 'SectionConnectionConnection';
+  __typename: 'SectionConnectionConnection';
   /** Information to aid in pagination. */
   pageInfo: PageInfo;
   /** A list of edges. */
@@ -444,7 +450,7 @@ export interface SectionConnectionConnection {
 
 /** An edge in a connection. */
 export interface SectionConnectionEdge {
-   __typename: 'SectionConnectionEdge';
+  __typename: 'SectionConnectionEdge';
   /** The item at the end of the edge. */
   node: Section;
   /** A cursor for use in pagination. */
@@ -569,9 +575,9 @@ export interface WhereSection {
   section_title_fulltext?: Maybe<Scalars['String']>;
 }
 
-export type ArticlesQueryVariables = {
+export type ArticlesQueryVariables = Exact<{
   after?: Maybe<Scalars['String']>;
-};
+}>;
 
 
 export type ArticlesQuery = (
@@ -669,7 +675,7 @@ export type ArticlesQuery = (
   ) }
 );
 
-export type HomeQueryVariables = {};
+export type HomeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type HomeQuery = (
@@ -838,17 +844,6 @@ export type ArticlesComponentProps = Omit<ApolloReactComponents.QueryComponentOp
       <ApolloReactComponents.Query<ArticlesQuery, ArticlesQueryVariables> query={ArticlesDocument} {...props} />
     );
     
-export type ArticlesProps<TChildProps = {}> = ApolloReactHoc.DataProps<ArticlesQuery, ArticlesQueryVariables> & TChildProps;
-export function withArticles<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  ArticlesQuery,
-  ArticlesQueryVariables,
-  ArticlesProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, ArticlesQuery, ArticlesQueryVariables, ArticlesProps<TChildProps>>(ArticlesDocument, {
-      alias: 'articles',
-      ...operationOptions
-    });
-};
 export type ArticlesQueryResult = ApolloReactCommon.QueryResult<ArticlesQuery, ArticlesQueryVariables>;
 export const HomeDocument = gql`
     query Home {
@@ -922,15 +917,4 @@ export type HomeComponentProps = Omit<ApolloReactComponents.QueryComponentOption
       <ApolloReactComponents.Query<HomeQuery, HomeQueryVariables> query={HomeDocument} {...props} />
     );
     
-export type HomeProps<TChildProps = {}> = ApolloReactHoc.DataProps<HomeQuery, HomeQueryVariables> & TChildProps;
-export function withHome<TProps, TChildProps = {}>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  HomeQuery,
-  HomeQueryVariables,
-  HomeProps<TChildProps>>) {
-    return ApolloReactHoc.withQuery<TProps, HomeQuery, HomeQueryVariables, HomeProps<TChildProps>>(HomeDocument, {
-      alias: 'home',
-      ...operationOptions
-    });
-};
 export type HomeQueryResult = ApolloReactCommon.QueryResult<HomeQuery, HomeQueryVariables>;
