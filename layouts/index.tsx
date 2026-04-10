@@ -7,7 +7,7 @@ import styled, { css } from 'styled-components';
 import { mq, lt } from '../styles/media';
 import ReactResizeDetector from 'react-resize-detector';
 import { useMediaQuery } from 'react-responsive';
-import StyledComponentsRegistry from '../lib/registry';
+
 
 export const HL = css`grid-area: hL;`;
 export const HR = css`grid-area: hR;`;
@@ -46,7 +46,7 @@ const vDot = `
 </svg>    
 `;
 
-export const svgData = (svg: string) => `data:image/svg+xml;utf8,${svg}`;
+export const svgData = (svg: string) => `data:image/svg+xml;utf8,${svg.replace(/\n/g, '').replace(/\s{2,}/g, ' ').trim()}`;
 
 export const HDots = styled.div`
     background-image: url('${svgData(hDot)}');    
@@ -123,7 +123,7 @@ const DefaultLayout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   const v4Height = headerHeight + dotSize + (c4Height > c5Height ? c4Height : c5Height);
 
   return (
-    <StyledComponentsRegistry>
+    <>
       <Normalize />
       <GlobalStyle />
       <Meta />
@@ -147,7 +147,7 @@ const DefaultLayout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         {children}
 
       </Grid>
-    </StyledComponentsRegistry>
+    </>
   )
 };
 

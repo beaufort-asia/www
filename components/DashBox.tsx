@@ -42,7 +42,7 @@ const Container = styled.div<IDashProps>`
     `}
 `;
 
-export const PadBox: React.FC<IDashProps> = ({ children, padX, padY, ...rest }) => (
+export const PadBox: React.FC<IDashProps> = ({ children, ...rest }) => (
     <Container {...rest}>
         {children}
     </Container>
