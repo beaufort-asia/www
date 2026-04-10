@@ -47,15 +47,12 @@
     "concurrently": "^5.1.0",
     "eslint": "^9",
     "eslint-config-next": "16.0.1",
-    "now": "^21.0.1",
     "stylis": "^4.3.6",
     "typescript": "^5.1.0"
   },
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider concurrently \"yarn gql:codegen --watch\" \"next dev\"",
-    "dev:now": "now dev",
     "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
-    "stage": "now --prod",
     "gql:schema": "ts-node -T -O '{ \"module\": \"commonjs\" }' ./scripts/getSchema.ts",
     "gql:codegen": "graphql-codegen --config codegen.yml"
   },
