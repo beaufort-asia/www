@@ -33,7 +33,7 @@ declare module "prismic-reactjs" {
 
     declare class Richtext extends React.Component<RichTextProps, any>() {
         asText<string>(): string;
-        displayName: string = 'RichText';
+        displayName: string;
         asHtml(
             richText: any,
             linkResolver?: (doc: any) => string,
@@ -59,14 +59,14 @@ declare module "prismic-reactjs" {
     export const RichText: RichText;
     export const Link: Link;
     export const HTMLSerializer: HTMLSerializer<string>;
-    export const Date: Date = <string>(): Date => { };
+    export const Date: Date;
 
 
     declare const _default: {
         RichText: RichText,
         Elements: ElementType,
         Link: Link,
-        Date: Date = <string>(): Date => { },
+        Date: Date,
     };
 
     export default _default;

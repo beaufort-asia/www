@@ -16,8 +16,9 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "skipDefaultLibCheck": true
+    "jsx": "react-jsx",
+    "skipDefaultLibCheck": true,
+    "incremental": true
   },
   "exclude": [
     "node_modules"

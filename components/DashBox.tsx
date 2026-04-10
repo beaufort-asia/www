@@ -6,6 +6,7 @@ export interface IDashProps {
     padX?: boolean;
     padY?: boolean;
     id?: string;
+    children?: React.ReactNode
 }
 
 const Container = styled.div<IDashProps>`
@@ -41,15 +42,11 @@ const Container = styled.div<IDashProps>`
     `}
 `;
 
-export const PadBox: React.FC<IDashProps> = ({ children, ...rest }) => (
+export const PadBox: React.FC<IDashProps> = ({ children, padX, padY, ...rest }) => (
     <Container {...rest}>
         {children}
     </Container>
 )
-
-PadBox.defaultProps = {
-
-}
 
 export const PadRow = styled(PadBox)`
     display: flex;

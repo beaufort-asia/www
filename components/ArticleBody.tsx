@@ -14,22 +14,22 @@ export const ArticleBody: React.FC<{ article: Article }> = ({ article }) => {
         {article.body?.map((slice, key) => {
             switch (slice.__typename) {
                 case ('ArticleBodyHtml'): {
-                    return <ArticleBodyHtml {...{ key, primary: slice.primary }} />
+                    return <ArticleBodyHtml key={key} {...{ primary: slice.primary }} />
                 }
                 case ("ArticleBodyVimeo"): {
-                    return <ArticleBodyVimeo {...{ key, primary: slice.primary }} />
+                    return <ArticleBodyVimeo key={key} {...{ primary: slice.primary }} />
                 }
                 case ("ArticleBodyLink"): {
-                    return <ArticleBodyLink {...{ key, primary: slice.primary }} />
+                    return <ArticleBodyLink key={key} {...{ primary: slice.primary }} />
                 }
                 case ("ArticleBodyCustom_code_embed"): {
-                    return <ArticleBodyCustomCodeEmbed {...{ key, primary: slice.primary }} />
+                    return <ArticleBodyCustomCodeEmbed key={key} {...{ primary: slice.primary }} />
                 }
                 case ("ArticleBodyImage"): {
-                    return <ArticleBodyImage {...{ key, primary: slice.primary }} />
+                    return <ArticleBodyImage key={key} {...{ primary: slice.primary }} />
                 }
                 case ("ArticleBodyDotted_line"): {
-                    return <ArticleBodyDottedLine {...{ key }} />
+                    return <ArticleBodyDottedLine key={key} {...{}} />
                 }
             }
         })}

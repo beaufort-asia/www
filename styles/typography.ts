@@ -1,10 +1,13 @@
 import { css } from "styled-components";
 import { lt, mq } from "./media";
+import { Edition, LetterGothicStdSlanted, LucidaConsole } from "./fonts";
+
+
 
 export const typography = css`
 
     h1 {
-        font-family: EditionRegular;
+        font-family: ${Edition.style.fontFamily};
         font-size: 120px;
         letter-spacing: 25px;
         font-weight: 400;
@@ -18,7 +21,7 @@ export const typography = css`
     }
 
     h2 {
-        font-family: LetterGothicSlanted, LucidaConsole;
+        font-family: ${LetterGothicStdSlanted.style.fontFamily}, ${LucidaConsole.style.fontFamily};
         font-size: 25px;
         letter-spacing: -3px;
         text-transform: uppercase;
@@ -29,7 +32,7 @@ export const typography = css`
     }
 
     h3 {
-        font-family: LucidaConsole;
+        font-family: ${LucidaConsole.style.fontFamily};
         font-size: 12px;
 	    text-transform: uppercase;	
         letter-spacing: -1;
@@ -39,7 +42,7 @@ export const typography = css`
     }
 
     h4, h5, h6, body {
-        font-family: LucidaConsole;
+        font-family: ${LucidaConsole.style.fontFamily};
         font-size: 10px;	
         letter-spacing: -1;
         font-weight: 100;

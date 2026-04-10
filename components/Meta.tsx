@@ -4,6 +4,8 @@ import { apiEndpoint } from '../prismic-configuration'
 import { PreviewSync } from './PreviewSync';
 import { PreviewLoading } from './PreviewLoading';
 
+import Script from 'next/script'
+
 declare var dataLayer: any;
 /**
  * Meta data component
@@ -16,8 +18,8 @@ const Meta = () => {
   return (
     <Fragment>
       <Head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-27468128-1"></script>
-        <script dangerouslySetInnerHTML={{
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=UA-27468128-1" />
+        <Script dangerouslySetInnerHTML={{
           __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -30,7 +32,7 @@ const Meta = () => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
         <link rel="icon" href="/favicon.png" type="image/png" />
-        <script async defer src={`//static.cdn.prismic.io/prismic.js?repo=${repoName}&new=true`} />
+        <Script async defer src={`//static.cdn.prismic.io/prismic.js?repo=${repoName}&new=true`} />
         {repoName && <PreviewSync {...{ repoName, loadingElementId }} />}
       </Head>
       <PreviewLoading id={loadingElementId} />

@@ -7,6 +7,7 @@ import styled, { css } from 'styled-components';
 import { mq, lt } from '../styles/media';
 import ReactResizeDetector from 'react-resize-detector';
 import { useMediaQuery } from 'react-responsive';
+import StyledComponentsRegistry from '../lib/registry';
 
 export const HL = css`grid-area: hL;`;
 export const HR = css`grid-area: hR;`;
@@ -104,7 +105,7 @@ const HideInMobileVDots = styled(VDots)`
 /**
  * Default layout component
  */
-const DefaultLayout: React.FC = ({ children }) => {
+const DefaultLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   const [c1Height, setC1Height] = useState(0);
   const [c2Height, setC2Height] = useState(0);
@@ -116,15 +117,13 @@ const DefaultLayout: React.FC = ({ children }) => {
     query: lt.md
   });
 
-  console.log('isMobile:', isMobile);
-
   const v1Height = headerHeight + dotSize + (c1Height > c2Height ? c1Height : c2Height);
   const v2Height = c2Height > c3Height ? c2Height : c3Height;
   const v3Height = c3Height > c4Height ? c3Height : c4Height;
   const v4Height = headerHeight + dotSize + (c4Height > c5Height ? c4Height : c5Height);
 
   return (
-    <>
+    <StyledComponentsRegistry>
       <Normalize />
       <GlobalStyle />
       <Meta />
@@ -148,7 +147,7 @@ const DefaultLayout: React.FC = ({ children }) => {
         {children}
 
       </Grid>
-    </>
+    </StyledComponentsRegistry>
   )
 };
 
