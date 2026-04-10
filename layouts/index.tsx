@@ -8,6 +8,7 @@ import { mq, lt } from '../styles/media';
 import ReactResizeDetector from 'react-resize-detector';
 import { useMediaQuery } from 'react-responsive';
 
+
 export const HL = css`grid-area: hL;`;
 export const HR = css`grid-area: hR;`;
 export const HT = css`grid-area: hT;`;
@@ -45,7 +46,7 @@ const vDot = `
 </svg>    
 `;
 
-export const svgData = (svg: string) => `data:image/svg+xml;utf8,${svg}`;
+export const svgData = (svg: string) => `data:image/svg+xml;utf8,${svg.replace(/\n/g, '').replace(/\s{2,}/g, ' ').trim()}`;
 
 export const HDots = styled.div`
     background-image: url('${svgData(hDot)}');    
@@ -104,7 +105,7 @@ const HideInMobileVDots = styled(VDots)`
 /**
  * Default layout component
  */
-const DefaultLayout: React.FC = ({ children }) => {
+const DefaultLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   const [c1Height, setC1Height] = useState(0);
   const [c2Height, setC2Height] = useState(0);
@@ -115,8 +116,6 @@ const DefaultLayout: React.FC = ({ children }) => {
   const isMobile = useMediaQuery({
     query: lt.md
   });
-
-  console.log('isMobile:', isMobile);
 
   const v1Height = headerHeight + dotSize + (c1Height > c2Height ? c1Height : c2Height);
   const v2Height = c2Height > c3Height ? c2Height : c3Height;

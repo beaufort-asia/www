@@ -4,6 +4,7 @@ import { _Linkable, _ExternalLink, _FileLink } from "../graphql/__generated__";
 export type LinkProps = {
     linkable?: _Linkable | null;
     target?: string;
+    children: React.ReactNode
 };
 
 export const Link: React.FC<LinkProps> = ({ target, linkable, children }) => {

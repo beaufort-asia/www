@@ -18,7 +18,7 @@ export const getArticlesBySectionId = (articles: Article[]) => {
         }
         const section = sectionLink as Section;
         const sectionId = section._meta.id;
-        acc[sectionId] = [...acc[sectionId] || [], article];
+        acc[sectionId] = [...(acc[sectionId] || []), article];
         return acc;
     }, {} as Record<string, any[]>) || {};
     return articlesBySectionId as ArticlesBySectionId;

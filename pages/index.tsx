@@ -31,7 +31,7 @@ const StyledFooter = styled(Footer)`
 `;
 
 
-const Index: React.SFC<HomeProps> = (props) => {
+const Index: React.FC<HomeProps> = (props) => {
     const { home, articles } = props;
 
     const header = getHeader(home);

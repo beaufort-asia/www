@@ -1,9 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
-import { fonts } from '../styles/fonts';
+// import { fonts } from '../styles/fonts';
 import { typography } from '../styles/typography';
 
-export const GlobalStyle = createGlobalStyle`  
-  ${fonts}
+export const GlobalStyle = createGlobalStyle`    
   ${typography}
   html,
   body {

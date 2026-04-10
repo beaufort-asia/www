@@ -1,40 +1,43 @@
-import Document, { Head, Main, NextScript } from 'next/document';
-// Import styled components ServerStyleSheet
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
-type StyledDocumentProps = {
-    styleTags: Array<React.ReactElement<{}>>;
-}
+export default class StyledDocument extends Document {
 
-export default class StyledDocument extends Document<StyledDocumentProps> {
+    static async getInitialProps(ctx: DocumentContext) {
+        const sheet = new ServerStyleSheet();
+        const originalRenderPage = ctx.renderPage;
+
+        try {
+            ctx.renderPage = () =>
+                originalRenderPage({
+                    enhanceApp: (App) => (props) =>
+                        sheet.collectStyles(<App {...props} />),
+                });
+
+            const initialProps = await Document.getInitialProps(ctx);
+            return {
+                ...initialProps,
+                styles: (
+                    <>
+                        {initialProps.styles}
+                        {sheet.getStyleElement()}
+                    </>
+                ),
+            };
+        } finally {
+            sheet.seal();
+        }
+    }
 
     render() {
         return (
-            <html>
-                <Head>
-                    {this.props.styleTags}
-                </Head>
+            <Html>
+                <Head />
                 <body>
                     <Main />
                     <NextScript />
                 </body>
-            </html>
+            </Html>
         );
     }
-}
-
-StyledDocument.getInitialProps = async ({ renderPage }) => {
-    // Step 1: Create an instance of ServerStyleSheet
-    const sheet = new ServerStyleSheet();
-
-    // Step 2: Retrieve styles from components in the page
-    const page = renderPage((App) => (props) =>
-        sheet.collectStyles(<App {...props} />),
-    );
-
-    // Step 3: Extract the styles as <style> tags
-    const styleTags = sheet.getStyleElement();
-
-    // Step 4: Pass styleTags as a prop
-    return { ...page, styleTags };
 }

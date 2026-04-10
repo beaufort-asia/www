@@ -1,3 +1,4 @@
+import React from 'react'
 import Prismic from 'prismic-javascript'
 import Link from 'next/link'
 import {
@@ -10,7 +11,7 @@ import { ApiOptions } from 'prismic-javascript/d.ts/Api';
 import { NextApiRequest } from 'next';
 
 // Helper function to convert Prismic Rich Text links to Next/Link components
-type CustomLink = (type: any, element: any, content: any, children: any, index: any) => JSX.Element;
+type CustomLink = (type: any, element: any, content: any, children: any, index: any) => React.JSX.Element;
 
 export const customLink: CustomLink = (type, element, content, children, index) => (
   <Link
@@ -18,7 +19,7 @@ export const customLink: CustomLink = (type, element, content, children, index) 
     href={hrefResolver(element.data)}
     as={linkResolver(element.data)}
   >
-    <a>{content} </a>
+    {content} 
   </Link>
 )
 
