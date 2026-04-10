@@ -18,7 +18,9 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "skipDefaultLibCheck": true,
-    "incremental": true
+    "incremental": true,
+    "typeRoots": ["node_modules/@types"],
+    "types": ["node", "react", "react-dom", "react-modal", "react-resize-detector", "react-responsive", "lodash"]
   },
   "exclude": [
     "node_modules"
